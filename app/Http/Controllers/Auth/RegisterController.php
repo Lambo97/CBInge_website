@@ -55,15 +55,13 @@ class RegisterController extends Controller
             'surnom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            
             'date_de_naissance' => ['required', 'date'],
             'adresse' => ['required', 'string', 'max:255'],
             'ville' => ['required', 'string', 'max:255'],
             'code_postal' => ['required', 'integer'],
-            'gsm' => ['required', 'string', 'max:12'],
+            'gsm' => ['required', 'string', 'max:12', 'min:10'],
             'entree_inge' => ['required', 'integer', 'min:2000', 'max:'.date('Y')],
             'description' => ['required','string', 'max:4000']
-            
         ]);
     }
 

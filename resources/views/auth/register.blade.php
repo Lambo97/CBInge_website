@@ -192,7 +192,7 @@
                             <label for="probleme_sante" class="col-md-4 col-form-label text-md-right">Probleme(s) de santé</label>
 
                             <div class="col-md-6">
-                                <textarea id="probleme_sante" rows="5" class="form-control @error('probleme_sante') is-invalid @enderror" name="probleme_sante" value="{{ old('probleme_sante') }}" autocomplete="probleme_sante" autofocus placeholder="Ne rigole pas avec cette section"></textarea>
+                                <textarea id="probleme_sante" rows="5" class="form-control @error('probleme_sante') is-invalid @enderror" name="probleme_sante" autocomplete="probleme_sante" autofocus placeholder="Ne rigole pas avec cette section">{{ old('probleme_sante') }}</textarea>
     
                                 @error('probleme_sante')
                                     <span class="invalid-feedback" role="alert">
@@ -206,7 +206,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" rows="5" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus placeholder="Decris toi en quelques mots" required></textarea>
+                                <textarea id="description" rows="5" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus placeholder="Decris toi en quelques mots" required>{{ old('description') }}</textarea>
     
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
