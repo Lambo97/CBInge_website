@@ -16,18 +16,19 @@ class AddInfoToUser extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('prenom');
             $table->string('surnom');
-            $table->string('login');
+            $table->string('login')->unique();
             $table->date('date_de_naissance');
             $table->string('adresse');
             $table->string('ville');
             $table->integer('code_postal');
-            $table->integer('gsm');
+            $table->string('gsm');
             $table->year('entree_inge');
-            $table->year('annee_batpeme');
-            $table->string('autre_etudes');
-            $table->text('probleme_sante');
-            $table->text('descritpion');
+            $table->year('annee_bapteme');
+            $table->string('autre_etudes')->nullable();
+            $table->text('probleme_sante')->nullable();
+            $table->text('description')->nullable();
             $table->integer('droit');
+            $table->text('photo');
         });
     }
 
@@ -48,10 +49,10 @@ class AddInfoToUser extends Migration
             $table->dropColumn('code_postal');
             $table->dropColumn('gsm');
             $table->dropColumn('entree_inge');
-            $table->dropColumn('annee_batpeme');
+            $table->dropColumn('annee_bapteme');
             $table->dropColumn('autre_etudes');
             $table->dropColumn('probleme_sante');
-            $table->dropColumn('descritpion');
+            $table->dropColumn('description');
             $table->dropColumn('droit');
         });
     }

@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,9 +49,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            
             'name' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'surnom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+            'date_de_naissance' => ['required', 'date'],
+            'adresse' => ['required', 'string', 'max:255'],
+            'ville' => ['required', 'string', 'max:255'],
+            'code_postal' => ['required', 'integer'],
+            'gsm' => ['required', 'string', 'max:12'],
+            'entree_inge' => ['required', 'integer', 'min:2000', 'max:'.date('Y')],
+            'description' => ['required','string', 'max:4000']
+            
         ]);
     }
 
@@ -63,10 +75,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+        //Remove space and - from name and firstname
+        $prenom_ok = str_replace([' ','-'], '', $data['prenom']);
+        $name_ok = str_replace([' ','-'], '', $data['name']);
+        // Create the login of the user
+        $login = strtolower(substr($prenom_ok, 0, 2)).strtolower($name_ok);
+        $year = date('Y');
+        
+
         return User::create([
             'name' => $data['name'],
+            'prenom' => $data['prenom'],
+            'surnom' => $data['surnom'],
+            'login' => $login,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'date_de_naissance' => date("Y-m-d", strtotime($data['date_de_naissance'])),
+            'adresse' => $data['adresse'],
+            'ville' => $data['ville'],
+            'code_postal' => $data['code_postal'],
+            'gsm' => str_replace([' ','-','.','/'], '', $data['gsm']),
+            'entree_inge' => $data['entree_inge'],
+            'annee_bapteme' => $year,
+            'autre_etudes' => $data['autre_etudes'],
+            'probleme_sante' => $data['probleme_sante'],
+            'description' => $data['description'],
+            'droit' => 7,
+            'photo' => 'noimage.jpg'
         ]);
     }
 }
