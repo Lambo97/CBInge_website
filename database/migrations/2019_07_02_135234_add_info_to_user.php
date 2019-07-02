@@ -16,7 +16,7 @@ class AddInfoToUser extends Migration
         Schema::table('user', function (Blueprint $table) {
             $table->string('first_name');
             $table->string('surname');
-            $table->date('')
+            $table->date('');
         });
     }
 
