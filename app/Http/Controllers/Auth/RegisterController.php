@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Notifications\NewUser;
 
 class RegisterController extends Controller
 {
@@ -80,9 +81,8 @@ class RegisterController extends Controller
         // Create the login of the user
         $login = strtolower(substr($prenom_ok, 0, 2)).strtolower($name_ok);
         $year = date('Y');
-        
 
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'prenom' => $data['prenom'],
             'surnom' => $data['surnom'],
@@ -99,8 +99,16 @@ class RegisterController extends Controller
             'autre_etudes' => $data['autre_etudes'],
             'probleme_sante' => $data['probleme_sante'],
             'description' => $data['description'],
-            'droit' => 7,
+            'droit' => 8,
             'photo' => 'noimage.jpg'
         ]);
+
+        $admin = User::where('droit', 1)->first();
+        if($admin){
+            $admin->notify(new NewUser($user));
+        }
+        
+
+        return $user;
     }
 }

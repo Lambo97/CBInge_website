@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Intervention\Image\Facades\Image;
+use App\Notifications\UserApproved;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
+
     /**
      * Display the specified user.
      *
@@ -27,12 +30,12 @@ class ProfileController extends Controller
      */
     public function edit(User $user)
     {        
-        //Check if user exists before deleting
+        //Check if user exists before editing
         if (!isset($user)){
             return redirect('/')->with('error', 'No Profile Found');
         }
         // Check for correct user
-        if(auth()->user()->id !== $user->id){
+        if(auth()->user()->id !== $user->id and auth()->user()->droit > 1){
             return redirect('/')->with('error', 'Unauthorized Page');
         }
 
@@ -101,5 +104,57 @@ class ProfileController extends Controller
         $user->description = $request->input('description');
         $user->save();
         return redirect('/profile/show/'.$user->id)->with('success', 'Page mise à jour');
+    }
+
+    /**
+     * Remove the specified user from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user)
+    {
+        //Check if user exists before deleting
+        if (!isset($user))
+        {
+            return redirect('/profile/newusers')->with('error', "Pas d'utilisateur trouvé");
+        }
+
+        if($user->photo != 'noimage.jpg'){
+            // Delete Image
+            Storage::delete('public/profile/'.$user->annee_bapteme.'/'.$user->photo);
+        }
+
+        $user->delete();
+        return redirect('/profile/newusers')->with('success', 'Utilisateur supprimé');
+    }
+
+
+    /**
+     * Approve the user (by an admin)
+     *
+     * @param  User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function approve(User $user)
+    {
+        $user->update(['droit' => 7]);
+        $user->notify(new UserApproved($user));
+
+        return redirect('/profile/newusers')->with('success', 'Utilisateur supprimé');
+
+    }
+
+    /**
+     * List the user to be approved
+     *
+     * @param  User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function newusers()
+    {
+        $users = User::where('droit', 8)->get();
+
+        return view('profile.newusers', compact('users'));
     }
 }

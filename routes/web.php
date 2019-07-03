@@ -14,8 +14,11 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/profile/show/{user}', ('ProfileController@show'));
-Route::get('/profile/edit/{user}', ('ProfileController@edit'));
-Route::post('/profile/update/{user}', ('ProfileController@update'));
+Route::get('/profile/edit/{user}', ('ProfileController@edit'))->middleware(['auth', 'approved']);
+Route::post('/profile/update/{user}', ('ProfileController@update'))->middleware(['auth', 'approved']);
+Route::get('/profile/destroy/{user}', ('ProfileController@destroy'))->middleware(['auth', 'admin']);
+Route::get('/profile/approve/{user}', ('ProfileController@approve'))->middleware(['auth', 'admin']);
+Route::get('/profile/newusers', ('ProfileController@newusers'))->middleware(['auth', 'admin']);
 
 Auth::routes();
 
