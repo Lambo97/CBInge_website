@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,22 +12,14 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
+        
     </head>
     <body>
         
-        <div class="bloc_black"></div>
+        
         <div class = "container" > 
 
-        <header>
-            <div class="div_logo">
-                <img src="img/logo.png" alt="Logo Comité Baptême Ingénieur">
-            </div>
-            <div class = "top">
-                <p>Comité de Baptême<p>
-                <p>Ingénieur civil<p>
-            </div>
-        </header>
+        
      <!--   <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
