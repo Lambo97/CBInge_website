@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/nav.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -64,12 +65,12 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown text-light" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
     
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-light" href="{{ route('logout') }}"
+                                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -82,7 +83,7 @@
                             </li>
                         @endguest
                             <li>
-                                <div class="hamburger-menu">
+                                <div class="hamburger-menu" id="open_nav">
                                     <img src="img/menu.svg" alt="menu">
                                 </div>
                                 
@@ -91,11 +92,11 @@
                 </div>
             </div>
         </nav>
-        <div>
+        <div id="navigation" class="d-none position-absolute col-xs-12 col-sm-12 col-md-6 col-lg-6 bg-black top-0 right-0">
             @include('layouts.navbar')
         </div>
         <div class="container">
-        <main class="py-4">
+        <main class="pt-6 pb-5">
             @include('layouts.messages')
             @yield('content')
         </main>
