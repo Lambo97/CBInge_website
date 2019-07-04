@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card bg-dark">
                 <div class="card-header">Inscription au baptême</div>
                 <p class="m-3">Les données que vous entrez ici doivent-être correctes. Ces informations ne seront visibles que par les membres du comité et servent à garantir votre sécurité lors de nos événements.
                 Le comité ne peut être tenu responsable des déclarations fausses ou incomplètes des bleus concernant leur état de santé (Charte des Baptêmes de l'ULg, article 5).</p>
