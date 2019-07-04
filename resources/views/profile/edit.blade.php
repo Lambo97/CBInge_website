@@ -52,6 +52,24 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="surnom_forum" class="col-md-4 col-form-label text-md-right">Pseudo du forum</label>
+
+                            <div class="col-md-6">
+                                <div class="radio pt-2">
+                                    <label><input type="radio" value="1" name="surnom_forum" @if($surnom_forum == 1) checked @endif>  Prénom et nom  </label>
+                                    <label><input type="radio" value="2" name="surnom_forum" @if($surnom_forum == 2) checked @endif>  Nom  </label>
+                                    <label><input type="radio" value="3" name="surnom_forum" @if($surnom_forum == 3) checked @endif>  Prénom  </label>
+                                    <label><input type="radio" value="4" name="surnom_forum" @if($surnom_forum == 4) checked @endif>  Surnom  </label>
+                                  </div>
+                                @error('surnom_forum')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
                             <div class="col-md-6">
