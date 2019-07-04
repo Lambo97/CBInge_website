@@ -6,6 +6,15 @@
 
 @section('content')
     <h2><strong>Le comité de baptême</strong></h2>
+        <a href="{{ route('logout') }}" class="btn btn-primary"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+            Se deconnecter
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae. Aliquet lectus proin nibh nisl condimentum id venenatis. Ullamcorper malesuada proin libero nunc consequat. Viverra nam libero justo laoreet sit amet cursus sit amet. Suscipit adipiscing bibendum est ultricies integer. Sit amet justo donec enim diam vulputate. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Enim ut sem viverra aliquet. Diam vel quam elementum pulvinar etiam non quam. Tempor commodo ullamcorper a lacus vestibulum. At erat pellentesque adipiscing commodo elit at. Nisi est sit amet facilisis magna etiam tempor orci eu.</p>
 
         <p> Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Eget nunc scelerisque viverra mauris in aliquam sem. Gravida in fermentum et sollicitudin. Blandit cursus risus at ultrices mi tempus imperdiet nulla. Nec dui nunc mattis enim ut tellus elementum. Ut tristique et egestas quis ipsum. Proin sagittis nisl rhoncus mattis rhoncus urna. Ac orci phasellus egestas tellus. Bibendum at varius vel pharetra vel turpis nunc. Amet risus nullam eget felis. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Sollicitudin nibh sit amet commodo. Felis eget velit aliquet sagittis id consectetur purus ut faucibus.</p>
