@@ -83,7 +83,7 @@
                             </li>
                         @endguest
                             <li>
-                                <div class="hamburger-menu p-nav" id="open_nav">
+                                <div class="hamburger-menu" id="open_nav">
                                     <img src="img/menu.svg" alt="menu">
                                 </div>
                                 
