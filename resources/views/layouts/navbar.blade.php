@@ -1,4 +1,4 @@
-<div id="close_nav" class="hamburger-menu position-absolute top-0 right-0 pt-3 pr-3">
+<div id="close_nav" class="hamburger-menu p-nav position-absolute top-0 right-0 pt-3 pr-3">
     <img src="img/close.svg" alt="close">
 </div>
 <div class="nav-content pt-5 pb-5 pl-3">
