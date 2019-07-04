@@ -29,7 +29,7 @@
                             <label for="prenom" class="col-md-4 col-form-label text-md-right">Prenom</label>
 
                             <div class="col-md-6">
-                                <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
+                                <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom">
 
                                 @error('prenom')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="surnom" class="col-md-4 col-form-label text-md-right">Surnom <small>(Bleu-ette ou Fossille + nom)</small></label>
 
                             <div class="col-md-6">
-                                <input id="surnom" type="text" class="form-control @error('surnom') is-invalid @enderror" name="surnom" value="{{ old('surnom') }}" required autocomplete="surnom" autofocus>
+                                <input id="surnom" type="text" class="form-control @error('surnom') is-invalid @enderror" name="surnom" value="{{ old('surnom') }}" required autocomplete="surnom">
 
                                 @error('surnom')
                                     <span class="invalid-feedback" role="alert">
@@ -107,7 +107,7 @@
                             <label for="adresse" class="col-md-4 col-form-label text-md-right">Adresse <small>(maison ou kot)</small></label>
 
                             <div class="col-md-6">
-                                <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse" autofocus>
+                                <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse">
 
                                 @error('adresse')
                                     <span class="invalid-feedback" role="alert">
@@ -121,7 +121,7 @@
                             <label for="code_postal" class="col-md-4 col-form-label text-md-right">Code postal</label>
 
                             <div class="col-md-6">
-                                <input id="code_postal" type="number" class="form-control @error('code_postal') is-invalid @enderror" name="code_postal" value="{{ old('code_postal') }}" required autocomplete="code_postal" autofocus>
+                                <input id="code_postal" type="number" class="form-control @error('code_postal') is-invalid @enderror" name="code_postal" value="{{ old('code_postal') }}" required autocomplete="code_postal">
 
                                 @error('code_postal')
                                     <span class="invalid-feedback" role="alert">
@@ -135,7 +135,7 @@
                                 <label for="ville" class="col-md-4 col-form-label text-md-right">Ville</label>
     
                                 <div class="col-md-6">
-                                    <input id="ville" type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" value="{{ old('ville') }}" required autocomplete="ville" autofocus>
+                                    <input id="ville" type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" value="{{ old('ville') }}" required autocomplete="ville">
     
                                     @error('ville')
                                         <span class="invalid-feedback" role="alert">
@@ -149,7 +149,7 @@
                             <label for="gsm" class="col-md-4 col-form-label text-md-right">GSM</label>
 
                             <div class="col-md-6">
-                                <input id="gsm" type="text" class="form-control @error('gsm') is-invalid @enderror" name="gsm" value="{{ old('gsm') }}" required autocomplete="gsm" autofocus placeholder="04XXXXXXXX">
+                                <input id="gsm" type="text" class="form-control @error('gsm') is-invalid @enderror" name="gsm" value="{{ old('gsm') }}" required autocomplete="gsm" placeholder="04XXXXXXXX">
 
                                 @error('gsm')
                                     <span class="invalid-feedback" role="alert">
@@ -163,7 +163,7 @@
                             <label for="entree_inge" class="col-md-4 col-form-label text-md-right">Entrée en ingé</label>
 
                             <div class="col-md-6">
-                                <input id="entree_inge" type="year" class="form-control @error('entree_inge') is-invalid @enderror" name="entree_inge" value="{{ old('entree_inge') }}" required autocomplete="entree_inge" autofocus>
+                                <input id="entree_inge" type="year" class="form-control @error('entree_inge') is-invalid @enderror" name="entree_inge" value="{{ old('entree_inge') }}" required autocomplete="entree_inge">
 
                                 @error('entree_inge')
                                     <span class="invalid-feedback" role="alert">
@@ -177,7 +177,7 @@
                             <label for="autre_etudes" class="col-md-4 col-form-label text-md-right">Autre(s) études</label>
 
                             <div class="col-md-6">
-                                <input id="autre_etudes" type="text" class="form-control @error('autre_etudes') is-invalid @enderror" name="autre_etudes" value="{{ old('autre_etudes') }}" autocomplete="autre_etudes" autofocus>
+                                <input id="autre_etudes" type="text" class="form-control @error('autre_etudes') is-invalid @enderror" name="autre_etudes" value="{{ old('autre_etudes') }}" autocomplete="autre_etudes">
 
                                 @error('autre_etudes')
                                     <span class="invalid-feedback" role="alert">
@@ -191,7 +191,7 @@
                             <label for="probleme_sante" class="col-md-4 col-form-label text-md-right">Probleme(s) de santé</label>
 
                             <div class="col-md-6">
-                                <textarea id="probleme_sante" rows="5" class="form-control @error('probleme_sante') is-invalid @enderror" name="probleme_sante" autocomplete="probleme_sante" autofocus placeholder="Ne rigole pas avec cette section">{{ old('probleme_sante') }}</textarea>
+                                <textarea id="probleme_sante" rows="5" class="form-control @error('probleme_sante') is-invalid @enderror" name="probleme_sante" autocomplete="probleme_sante" placeholder="Ne rigole pas avec cette section">{{ old('probleme_sante') }}</textarea>
     
                                 @error('probleme_sante')
                                     <span class="invalid-feedback" role="alert">
@@ -205,7 +205,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" rows="5" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus placeholder="Decris toi en quelques mots" required>{{ old('description') }}</textarea>
+                                <textarea id="description" rows="5" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" placeholder="Decris toi en quelques mots" required>{{ old('description') }}</textarea>
     
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">

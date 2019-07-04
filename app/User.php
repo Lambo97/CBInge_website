@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public static function connectedNow()
+    {
+        $timenow = time() - (15*60); // 15 min
+        return User::where('last_login_at', '>=', $timenow)->get();
+    }
+
+    public static function connectedToday()
+    {
+        $timeYesterday = time() - (24*60*60); // 24 h
+        $dateYesterday = date("Y-m-d H:i:s",$timeYesterday);
+
+        return User::where([['last_login_at', '>=', $dateYesterday], ['droit', '<', 7]])->get();
+    }
 }
