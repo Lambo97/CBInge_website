@@ -103,9 +103,9 @@ class RegisterController extends Controller
             'photo' => 'noimage.jpg'
         ]);
 
-        $admin = User::where('droit', 1)->first();
-        if($admin){
-            $admin->notify(new NewUser($user));
+        $admins = User::where('droit', 1);
+        if($admins){
+            Notification::send($users, new InvoicePaid($invoice));
         }
         
 
