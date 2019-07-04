@@ -6,6 +6,15 @@
 
 @section('content')
     <h2><strong>Le comité de baptême</strong></h2>
+        <a href="{{ route('logout') }}" class="btn btn-primary"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+            Se deconnecter
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae. Aliquet lectus proin nibh nisl condimentum id venenatis. Ullamcorper malesuada proin libero nunc consequat. Viverra nam libero justo laoreet sit amet cursus sit amet. Suscipit adipiscing bibendum est ultricies integer. Sit amet justo donec enim diam vulputate. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Enim ut sem viverra aliquet. Diam vel quam elementum pulvinar etiam non quam. Tempor commodo ullamcorper a lacus vestibulum. At erat pellentesque adipiscing commodo elit at. Nisi est sit amet facilisis magna etiam tempor orci eu.</p>
 
         <p> Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Eget nunc scelerisque viverra mauris in aliquam sem. Gravida in fermentum et sollicitudin. Blandit cursus risus at ultrices mi tempus imperdiet nulla. Nec dui nunc mattis enim ut tellus elementum. Ut tristique et egestas quis ipsum. Proin sagittis nisl rhoncus mattis rhoncus urna. Ac orci phasellus egestas tellus. Bibendum at varius vel pharetra vel turpis nunc. Amet risus nullam eget felis. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Sollicitudin nibh sit amet commodo. Felis eget velit aliquet sagittis id consectetur purus ut faucibus.</p>
@@ -26,23 +35,65 @@
                                 @csrf
         
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Nom et prénom</label>
-        
-                                    <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-        
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                    <div class="col-md-10">
+                                    <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}" required autocomplete="nom" placeholder="Nom et prénom">
+                                    @error('nom')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <div class="col-md-10">
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  placeholder="Email">
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
-        
+
+                                <div class="form-group row">
+                                    <div class="col-md-10">
+                                    <input id="cb" type="text" class="form-control @error('cb') is-invalid @enderror" name="cb" value="{{ old('cb') }}" autocomplete="cb"  placeholder="Comité de baptême (facultatif)">
+                                    @error('cb')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-10">
+                                    <input id="test" type="text" class="form-control @error('test') is-invalid @enderror" name="test" value="{{ old('test') }}" required autocomplete="test"  placeholder="Quelle est la couleur de cheval blanc de Napoleon ?">
+                                    @error('test')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-10">
+                                    <textarea  id="message" class="form-control @error('message') is-invalid @enderror" name="message" required autocomplete="message"  placeholder="Message" rows="7">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    </div>
+                                </div>
+
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                            Enregistrer
+                                            Envoyer
                                         </button>
                                     </div>
                                 </div>

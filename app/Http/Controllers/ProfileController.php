@@ -39,8 +39,26 @@ class ProfileController extends Controller
             return redirect('/')->with('error', 'Unauthorized Page');
         }
 
+        // Check which surname is used for the forum
+        if($user->surnom_forum == $user->name)
+        {
+            $surnom_forum = 2;
+        }elseif($user->surnom_forum == $user->prenom)
+        {
+            $surnom_forum = 2;
+        }elseif($user->surnom_forum == $user->surnom)
+        {
+            $surnom_forum = 4;
+        }elseif($user->surnom_forum == $user->prenom.' '.$user->name)
+        {
+            $surnom_forum = 1;
+        }else
+        {
+            $surnom_forum = 0;
+        }
+
         $options = ['Ingénieur civil des constructions', 'Ingénieur civil des mines et géologue', 'Ingénieur civil en chimie et sciences des matériaux', 'Ingénieur civil électromécanicien', 'Ingénieur civil en aérospatiale', 'Ingénieur civil électricien', 'Ingénieur civil en informatique', 'Ingénieur civil en sciences des données', 'Ingénieur civil physicien', 'Ingénieur civil mécanicien', 'Ingénieur civil biomédical'];
-        return view('profile.edit', compact('user', 'options'));
+        return view('profile.edit', compact('user', 'options', 'surnom_forum'));
     }
 
     /**
@@ -81,6 +99,22 @@ class ProfileController extends Controller
         }
 
 
+        // Check which surname is used for the forum
+
+        if($request->input('surnom_forum') == "2")
+        {
+            $surnom_forum = $request->input('name');
+        }elseif($request->input('surnom_forum') == "3")
+        {
+            $surnom_forum = $request->input('prenom');
+        }elseif($request->input('surnom_forum') == "4")
+        {
+            $surnom_forum = $request->input('surnom');
+        }elseif($request->input('surnom_forum') == "1")
+        {
+            $surnom_forum = $request->input('prenom').' '.$request->input('name');
+        }
+
 
         // Update information
         $user->name = $request->input('name');
@@ -102,6 +136,7 @@ class ProfileController extends Controller
         $user->guindaille = $request->input('guindaille');
         $user->titre_guindaille = $request->input('titre_guindaille');
         $user->description = $request->input('description');
+        $user->surnom_forum = $surnom_forum;
         $user->save();
         return redirect('/profile/show/'.$user->id)->with('success', 'Page mise à jour');
     }

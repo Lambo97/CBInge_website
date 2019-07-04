@@ -101,7 +101,8 @@ class RegisterController extends Controller
             'probleme_sante' => $data['probleme_sante'],
             'description' => $data['description'],
             'droit' => 8,
-            'photo' => 'noimage.jpg'
+            'photo' => 'noimage.jpg',
+            'surnom_forum' => $data['surnom']
         ]);
 
         $admins = User::where('droit', 1)->get();
