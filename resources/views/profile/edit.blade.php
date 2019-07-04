@@ -246,6 +246,22 @@
                         </div>
 
                         <div class="form-group row">
+                            <div class="col-md-4 col-form-label text-md-right"></div>
+
+                            <div class="col-md-6">
+                                <a class="btn btn-primary" href="/profile/editParrain">Editer les parrains</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label text-md-right"></div>
+
+                            <div class="col-md-6">
+                                <a class="btn btn-primary" href="/profile/editBleu">Editer les bleus</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="probleme_sante" class="col-md-4 col-form-label text-md-right">Probleme(s) de santé</label>
 
                             <div class="col-md-6">

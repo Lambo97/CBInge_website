@@ -36,7 +36,7 @@ class ProfileController extends Controller
         }
         // Check for correct user
         if(auth()->user()->id !== $user->id and auth()->user()->droit > 1){
-            return redirect('/')->with('error', 'Unauthorized Page');
+            return redirect('/')->with('error', 'Page non autorisée');
         }
 
         // Check which surname is used for the forum
@@ -176,7 +176,7 @@ class ProfileController extends Controller
         $user->update(['droit' => 7]);
         $user->notify(new UserApproved($user));
 
-        return redirect('/profile/newusers')->with('success', 'Utilisateur supprimé');
+        return redirect('/profile/newusers')->with('success', 'Utilisateur apprové');
 
     }
 
@@ -192,4 +192,85 @@ class ProfileController extends Controller
 
         return view('profile.newusers', compact('users'));
     }
+
+    /**
+     * List the parrains of the user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editParrain()
+    {
+        $parrains = auth()->user()->parrains()->get();
+
+        return view('profile.editParrain', compact('parrains'));
+    }
+
+    /**
+     * Add the parrain to the user
+     *
+     * @param  User  $parrain
+     * @return \Illuminate\Http\Response
+     */
+    public function addParrain(User $parrain)
+    {
+        auth()->user()->parrains()->sync([$parrain->id]);
+        $parrains = auth()->user()->parrains()->get();
+
+        return view('profile.editParrain', compact('parrains'))->with('success', 'Parrain ajouté');
+    }
+
+    /**
+     * Remove the parrain from the user
+     *
+     * @param  User  $parrain
+     * @return \Illuminate\Http\Response
+     */
+    public function removeParrain(User $parrain)
+    {
+        auth()->user()->parrains()->detach([$parrain->id]);
+        $parrains = auth()->user()->parrains()->get();
+
+        return view('profile.editParrain', compact('parrains'))->with('success', 'Parrain retiré');
+    }
+
+    /** ----------------------------------------------------------------------------
+     * List the bleus of the user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editBleu()
+    {
+        $bleus = auth()->user()->bleus()->get();
+
+        return view('profile.editBleu', compact('bleus'));
+    }
+
+    /**
+     * Add the bleu to the user
+     *
+     * @param  User  $bleu
+     * @return \Illuminate\Http\Response
+     */
+    public function addBleu(User $bleu)
+    {
+        auth()->user()->bleus()->sync([$bleu->id]);
+        $bleus = auth()->user()->bleus()->get();
+
+        return view('profile.editBleu', compact('bleus'))->with('success', 'Bleu ajouté');
+    }
+
+    /** 
+     * Remove the bleu from the user
+     *
+     * @param  User  $bleu
+     * @return \Illuminate\Http\Response
+     */
+    public function removeBleu(User $bleu)
+    {
+        auth()->user()->bleus()->detach([$bleu->id]);
+        $bleus = auth()->user()->bleus()->get();
+
+        return view('profile.editBleu', compact('bleus'))->with('success', 'Bleu retiré');
+    }
+
 }

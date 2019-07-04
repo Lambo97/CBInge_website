@@ -22,7 +22,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->prenom }}</td>
                             <td>{{ $user->surnom }}</td>
-                            <td>{{ $user->created_at }}</td>
+                            <td>{{ date("d-m-Y H:i:s", strtotime($user->created_at)) }}</td>
                             <td><a href="{{ '/profile/approve/'.$user->id }}"
                                    class="btn btn-primary btn-sm">Approver</a></td>
                             <td><a href="{{ '/profile/destroy/'.$user->id }}"

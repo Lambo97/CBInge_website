@@ -51,4 +51,14 @@ class User extends Authenticatable
 
         return User::where([['last_login_at', '>=', $dateYesterday], ['droit', '<', 7]])->get();
     }
+
+    public function parrains()
+    {
+        return $this->belongsToMany('App\User', 'bleu_parrain', 'bleu_id', 'parrain_id');
+    }
+
+    public function bleus()
+    {
+        return $this->belongsToMany('App\User', 'bleu_parrain', 'parrain_id', 'bleu_id');
+    }
 }
