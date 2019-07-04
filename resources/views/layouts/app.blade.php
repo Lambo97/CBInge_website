@@ -94,9 +94,11 @@
         <div>
             @include('layouts.navbar')
         </div>
+        <div class="container">
         <main class="py-4">
             @include('layouts.messages')
             @yield('content')
         </main>
+        </div>
     </div>
 </body>

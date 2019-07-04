@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Notification;
 use App\Notifications\NewUser;
 
 class RegisterController extends Controller
@@ -103,9 +104,9 @@ class RegisterController extends Controller
             'photo' => 'noimage.jpg'
         ]);
 
-        $admins = User::where('droit', 1);
+        $admins = User::where('droit', 1)->get();
         if($admins){
-            Notification::send($users, new InvoicePaid($invoice));
+            Notification::send($admins, new NewUser($user));
         }
         
 
