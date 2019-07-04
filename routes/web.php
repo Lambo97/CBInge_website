@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::post('/contact', 'HomeController@contact');
 
 Route::get('/profile/show/{user}', ('ProfileController@show'));
 Route::get('/profile/edit/{user}', ('ProfileController@edit'))->middleware(['auth', 'approved']);
