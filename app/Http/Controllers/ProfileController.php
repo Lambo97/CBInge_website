@@ -213,7 +213,7 @@ class ProfileController extends Controller
      */
     public function addParrain(User $parrain)
     {
-        auth()->user()->parrains()->sync([$parrain->id]);
+        auth()->user()->parrains()->syncWithoutDetaching([$parrain->id]);
         $parrains = auth()->user()->parrains()->get();
 
         return view('profile.editParrain', compact('parrains'))->with('success', 'Parrain ajouté');
@@ -253,7 +253,7 @@ class ProfileController extends Controller
      */
     public function addBleu(User $bleu)
     {
-        auth()->user()->bleus()->sync([$bleu->id]);
+        auth()->user()->bleus()->syncWithoutDetaching ([$bleu->id]);
         $bleus = auth()->user()->bleus()->get();
 
         return view('profile.editBleu', compact('bleus'))->with('success', 'Bleu ajouté');

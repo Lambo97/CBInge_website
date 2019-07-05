@@ -382,6 +382,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Fonction' => __DIR__ . '/../..' . '/app/Fonction.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -394,6 +395,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAdmin.php',
         'App\\Http\\Middleware\\CheckApproved' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckApproved.php',
+        'App\\Http\\Middleware\\CheckComite' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckComite.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

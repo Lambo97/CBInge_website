@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\User', 'bleu_parrain', 'parrain_id', 'bleu_id');
     }
+
+    public function fonctions()
+    {
+        return $this->belongsToMany('App\Fonction')->withPivot('annee');
+    }
 }
