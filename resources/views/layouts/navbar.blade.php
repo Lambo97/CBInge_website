@@ -8,7 +8,7 @@
         @endif
         @else
             <p class="font-weight-bold">Bonjour {{ Auth::user()->name }} <span class="caret"></span></p>
-            <a href="/profile/show/{{$user->id}}" class="text-white ">Votre Fiche</a>
+            <a href="{{ route('logout') }}" class="text-white ">Modifier ma fiche</a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-light" href="{{ route('logout') }}"
