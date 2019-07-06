@@ -1,5 +1,5 @@
-<div id="close_nav" class="hamburger-menu position-absolute top-0 right-0 pt-3 pr-3">
-    <img src="img/close.svg" alt="close">
+<div id="close_nav" class="hamburger-menu position-absolute top-0 right-0 pt-3 pr-4 cursor">
+    <img src="../../img/close.svg" alt="close">
 </div>
 <div class="nav-content pt-5 pb-5 pl-3">
     @guest
@@ -8,7 +8,7 @@
         @endif
         @else
             <p class="font-weight-bold">Bonjour {{ Auth::user()->name }} <span class="caret"></span></p>
-            <a href="{{ route('logout') }}" class="text-white ">Modifier ma fiche</a>
+            <a href="/profile/show/{{$user->id}}" class="text-white ">Votre Fiche</a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-light" href="{{ route('logout') }}"
@@ -30,7 +30,7 @@
                 <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Repertoire</a>
             </li>
             <li>
-                <p class="p-nav nav-link navigation-link pb-0 mb-0">Folklore</p>
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Folklore</p>
                 <ul class="d-none list-unstyled ml-5">
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Chants</a>
@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li>
-                <p class="p-nav nav-link navigation-link pb-0 mb-0">Comité</p>
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Comité</p>
                 <ul class="d-none list-unstyled ml-5">
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Comité actuel</a>
@@ -55,7 +55,7 @@
                 </ul>
             </li>
             <li>
-                <p class="p-nav nav-link navigation-link pb-0 mb-0">Multimédia</p>
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Multimédia</p>
                 <ul class="d-none list-unstyled ml-5">
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Photos</a>
@@ -69,7 +69,7 @@
                 </ul>
             </li>
             <li>
-                <p class="p-nav nav-link navigation-link pb-0 mb-0">Discussion</p>
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Discussion</p>
                 <ul class="d-none list-unstyled ml-5">
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Insultes</a>
@@ -101,7 +101,7 @@
                 <a href="{{route('logout')}}" class="text-white nav-link navigation-link pb-0 mb-0">Sponsors</a>
             </li>
             <li>
-                <p class="p-nav nav-link navigation-link pb-0 mb-0">Messe</p>
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Messe</p>
                 <ul class="d-none list-unstyled ml-5">
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Délations</a>

@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm">
+        <nav class="navbar navbar-expand navbar-light bg-black shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-light text-hide logo" href="{{ url('/') }}">
                     <div>
@@ -41,7 +41,7 @@
     
                     </ul>
                     
-                    <div>
+                    <div class= "mx-auto">
                         <p class="text-center margin-null">
                             Comité de baptême
                         </p>
@@ -52,19 +52,19 @@
                     </div>
     
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-sm-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item d-none d-lg-block">
                                 <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item d-none d-lg-block">
                                     <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown d-none d-lg-block">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -76,15 +76,15 @@
                                         {{ __('Logout') }}
                                     </a>
     
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form d-none d-lg-block" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
                         @endguest
                             <li>
-                                <div class="hamburger-menu" id="open_nav">
-                                    <img src="img/menu.svg" alt="menu">
+                                <div class="hamburger-menu cursor" id="open_nav">
+                                    <img src="../../img/menu.svg" alt="menu">
                                 </div>
                                 
                             </li>
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </nav>
-        <div id="navigation" class="d-none position-absolute col-xs-12 col-sm-12 col-md-6 col-lg-6 bg-black top-0 right-0">
+        <div id="navigation" class="zindex-tooltip d-none position-absolute col-xs-12 col-sm-12 col-md-6 col-lg-6 bg-black top-0 right-0" style="z-index: 2000">
             @include('layouts.navbar')
         </div>
         <div class="container">
@@ -100,7 +100,8 @@
             @include('layouts.messages')
             @yield('content')
         </main>
+        @include('layouts.footer')
         </div>
     </div>
-    @include('layouts.footer')
+    
 </body>

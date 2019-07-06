@@ -42,6 +42,15 @@ html, body {
     background-size: contain;
     background-position: center;
 }
+@media only screen and (max-width: 400px) {
+  .logo {
+    
+    top: 20px;
+    width: 70px;
+    height: 70px;
+  
+  }
+}
 .navigation-link{
     position: relative;
     padding-top: 2px;
@@ -68,7 +77,8 @@ html, body {
     background-color: #fff;
     transition: all 0.4s ease;
 }
-.p-nav{
+
+.cursor{
     cursor: pointer;
 }
 .pt-6{
