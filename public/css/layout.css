@@ -2,9 +2,23 @@ html, body {
     background-color: #353131; 
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
     height: 100vh;
     margin: 0;
+}
+.buttons-green{
+    background-color: #168E33;
+    border-radius: 30px;
+    border: none;
+    font-family: "Montserrat";
+    outline: none !important;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    
+}
+.buttons-green:hover{
+    color:white;
+    text-decoration: none;
 }
 .bg-black{
     background-color: black;
@@ -85,7 +99,23 @@ html, body {
     margin-top: 120px;
 }
 
-
+.nav_welcome_action p{
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+}
+.nav_welcome_action p:hover, .nav_welcome_action .welcome_active{
+    border-bottom: 1px solid white;
+}
+.form-content{
+    background-color: grey;
+    width: 100%;
+    border: none;
+    color: white !important;
+    border-radius: 0%;
+}
+.box-none{
+    box-sizing: none !important;
+}
 
 
 /*.flex-center {

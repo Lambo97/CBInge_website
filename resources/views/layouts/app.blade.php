@@ -98,7 +98,9 @@
         <div class="container">
         <main class="pt-6 pb-5">
             @include('layouts.messages')
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 mx-auto">
             @yield('content')
+            </div>
         </main>
         @include('layouts.footer')
         </div>
