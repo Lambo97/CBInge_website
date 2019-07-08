@@ -55,16 +55,16 @@
                     <ul class="navbar-nav ml-sm-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item d-none d-lg-block">
+                            <li class="nav-item d-none d-sm-block">
                                 <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item d-none d-lg-block">
+                                <li class="nav-item d-none d-sm-block">
                                     <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown d-none d-lg-block">
+                            <li class="nav-item dropdown d-none d-sm-block">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

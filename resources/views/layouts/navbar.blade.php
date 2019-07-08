@@ -3,24 +3,28 @@
 </div>
 <div class="nav-content pt-5 pb-5 pl-3">
     @guest
+    <li class="nav-item d-block d-sm-none">
+                                <button class="buttons-green" action="{{ route('login') }}">{{ __('Se connecter') }}</button>
+                            </li>
         @if (Route::has('register'))
-                              
+        <li class="nav-item d-block d-sm-none my-2 pl-2">
+               <a class="green-link" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
+                                </li>             
         @endif
         @else
-            <p class="font-weight-bold">Bonjour {{ Auth::user()->name }} <span class="caret"></span></p>
-            <a href="{{ route('logout') }}" class="text-white ">Modifier ma fiche</a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-light" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
+                    <li class=" d-block d-sm-none">
+                                <div class="font-weight-bold">
+                                  Bonjour  {{ Auth::user()->name }} <span class="caret"></span>
+                                </div>
+    
+                                
+    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
+                                        @csrf
+                                        <button type="submit" class="buttons-green">Se déconnecter</button>
+                                    </form>
+                                
+                            </li>
         @endguest
         <ul class="list-unstyled">
             <li>
