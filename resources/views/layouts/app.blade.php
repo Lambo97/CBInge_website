@@ -106,7 +106,7 @@
             
             
         </div>
-        <div class="container-fluid mx-0 px-0">
+        <div class="container-fluid mx-0 px-0 mt-3">
         @include('layouts.footer')
         </div>
         

@@ -14,10 +14,11 @@ html, body {
     padding: 5px 20px;
     color: white;
     cursor: pointer;
-    
+    transition: all 0.4s ease-in-out;
 }
 .buttons-green:hover{
-    color:white;
+    background-color: rgba(22, 142, 51, 0.7);
+    
     text-decoration: none;
 }
 .buttons-green-dark{
