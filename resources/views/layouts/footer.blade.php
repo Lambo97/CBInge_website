@@ -1,11 +1,11 @@
 <!-- Footer -->
-<footer class="page-footer font-small">
+<footer class="page-footer font-small bg-black">
 
-    <div class="row text-center">
+    <div class="row text-center mx-0">
         <div class="mx-auto">
-            <p class="my-0">Utilisateurs en ligne :</p>
+            <p class="my-0 pt-3">Utilisateurs en ligne :</p>
             @foreach ($connectedNow as $user)
-                <a href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
+                <a class= "green-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
             @endforeach
         </div>
     </div>

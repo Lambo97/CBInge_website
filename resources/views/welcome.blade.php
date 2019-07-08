@@ -44,10 +44,7 @@
 
     <h2 class="mt-5"><strong>Nous contacter</strong></h2>
         <p> Si vous voulez contacter le comité de baptême ingénieur civil de liège, vous pouvez laisser un email sur comite@cbinge.com ou compléter le formulaire ci dessous :</p>
-        <div class="row justify-content-center w-100">
-                <div class="col-12">
-                    <div class= "col-12">
-                        <div class="card-body box-none">
+        
                         <form method="POST" action="/contact" enctype="multipart/form-data">
                                 @csrf
         
@@ -98,7 +95,7 @@
 
                                 <div class="form-group row">
                                     <div class="col-12">
-                                    <textarea  id="message" class="form-control form-content @error('message') is-invalid @enderror" name="message" required autocomplete="message"  placeholder="Message" rows="7">{{ old('message') }}</textarea>
+                                    <textarea  id="message" class="form-control form-content @error('message') is-invalid @enderror" name="message" required autocomplete="message"  placeholder="Message" rows="5">{{ old('message') }}</textarea>
                                     @error('message')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -107,18 +104,18 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                <div class="d-flex flex-row-reverse mb-2">
+                                    
+                                        <button type="submit" class="buttons-green font-weight-bold">
                                             Envoyer
                                         </button>
-                                    </div>
+                                        <button type="reset" class="buttons-green buttons-green-dark font-weight-bold mr-2">
+                                            Reset
+                                        </button>
+                                    
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                         </form>
+                   
 
 
 

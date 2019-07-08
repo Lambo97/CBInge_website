@@ -20,6 +20,10 @@ html, body {
     color:white;
     text-decoration: none;
 }
+.buttons-green-dark{
+    background-color: #4D6052;    
+}
+
 .bg-black{
     background-color: black;
 }
@@ -107,16 +111,29 @@ html, body {
     border-bottom: 1px solid white;
 }
 .form-content{
-    background-color: grey;
+    background-color:#484747 !important;
     width: 100%;
     border: none;
-    color: white !important;
     border-radius: 0%;
+    color: white;
 }
-.box-none{
-    box-sizing: none !important;
+.form-control:focus{
+    color:white;
 }
+.green-link{
+    color: #168E33;
+    transition: all 0.4s ease-in-out;
 
+}
+.green-link:hover{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+.form-control::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Microsoft Edge */
 
 /*.flex-center {
     align-items: center;

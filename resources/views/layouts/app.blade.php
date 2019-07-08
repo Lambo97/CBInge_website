@@ -102,8 +102,14 @@
             @yield('content')
             </div>
         </main>
+            
+            
+            
+        </div>
+        <div class="container-fluid mx-0 px-0">
         @include('layouts.footer')
         </div>
+        
     </div>
     
 </body>
