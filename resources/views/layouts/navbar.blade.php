@@ -28,7 +28,7 @@
         @endguest
         <ul class="list-unstyled">
             <li>
-                <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Agenda</a>
+                <a href="{{route('events.index')}}" class="text-white nav-link navigation-link">Agenda</a>
             </li>
             <li>
                 <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Repertoire</a>

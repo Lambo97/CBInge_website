@@ -26,6 +26,7 @@ Route::get('/profile/removeParrain/{parrain}', ('ProfileController@removeParrain
 Route::get('/profile/editBleu', ('ProfileController@editBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/addBleu/{bleu}', ('ProfileController@addBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/removeBleu/{bleu}', ('ProfileController@removeBleu'))->middleware(['auth', 'approved']);
-
+Route::get('events', 'EventController@index')->name('events.index');
+Route::post('events', 'EventController@addEvent')->name('events.add');
 Auth::routes();
 
