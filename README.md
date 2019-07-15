@@ -1,4 +1,4 @@
-# CBInge_website
+# New website of the CB ingé
 
 Faire juste un pull du repository pour accéder au projet.
 
