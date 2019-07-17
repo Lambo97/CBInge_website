@@ -22,4 +22,4 @@ Pour utiliser le site il faudra utiliser plusieur package.
 composer require maddhatter/laravel-fullcalendar
 ```
 
-test 
+test
