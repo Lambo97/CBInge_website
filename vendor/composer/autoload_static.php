@@ -424,6 +424,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Notifications\\NewContactMessage' => __DIR__ . '/../..' . '/app/Notifications/NewContactMessage.php',
         'App\\Notifications\\NewUser' => __DIR__ . '/../..' . '/app/Notifications/NewUser.php',
         'App\\Notifications\\UserApproved' => __DIR__ . '/../..' . '/app/Notifications/UserApproved.php',
+        'App\\PostForum' => __DIR__ . '/../..' . '/app/PostForum.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

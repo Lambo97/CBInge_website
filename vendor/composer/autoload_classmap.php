@@ -33,6 +33,7 @@ return array(
     'App\\Notifications\\NewContactMessage' => $baseDir . '/app/Notifications/NewContactMessage.php',
     'App\\Notifications\\NewUser' => $baseDir . '/app/Notifications/NewUser.php',
     'App\\Notifications\\UserApproved' => $baseDir . '/app/Notifications/UserApproved.php',
+    'App\\PostForum' => $baseDir . '/app/PostForum.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

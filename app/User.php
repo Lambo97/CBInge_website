@@ -41,7 +41,8 @@ class User extends Authenticatable
     public static function connectedNow()
     {
         $timenow = time() - (15*60); // 15 min
-        return User::where('last_login_at', '>=', $timenow)->get();
+        $dateNow = date("Y-m-d H:i:s",$timenow);
+        return User::where([['last_login_at', '>=', $dateNow],['droit', '<', 7]])->get();
     }
 
     public static function connectedToday()

@@ -13,7 +13,7 @@
         <div class="mx-auto">
             <p class="my-0">Utilisateurs connectés aujourd'hui :</p>
             @foreach ($connectedToday as $user)
-                <a href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
+                <a class= "green-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
             @endforeach
         </div>
     </div>
