@@ -82,7 +82,7 @@
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">PV du comité</a>
                     </li>
                     <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">FORUUUUM</a>
+                        <a href="/forum" class="text-white nav-link navigation-link">FORUUUUM</a>
                     </li>
                     <li>
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Citations</a>
