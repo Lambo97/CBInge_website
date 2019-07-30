@@ -9,7 +9,7 @@ html, body {
     background-color: #168E33;
     border-radius: 30px;
     border: none;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     outline: none !important;
     padding: 5px 20px;
     color: white;
