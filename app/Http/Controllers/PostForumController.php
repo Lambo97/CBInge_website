@@ -15,7 +15,7 @@ class PostForumController extends Controller
      */
     public function index()
     {
-        $posts = PostForum::orderBy('ancre','desc')->orderBy('created_at','desc')->paginate(10);
+        $posts = PostForum::orderBy('ancre','desc')->orderBy('updated_at','desc')->paginate(10);
         return view('forum.index', compact('posts'));
     }
 

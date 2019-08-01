@@ -21,6 +21,8 @@ class CommentForumController extends Controller
         $comment->id_auteur = auth()->user()->id;
         $comment->post_id = $post->id;
         $comment->save();
+        $post->updated_at = date('Y-m-d H:i:s');
+        $post->save();
         return redirect('/forum')->with('success', 'Commentaire envoyé');
     }
 
