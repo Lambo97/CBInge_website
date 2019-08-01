@@ -13,4 +13,8 @@ class PostForum extends Model
     public function comment(){
         return $this->hasMany('App\CommentForum', 'post_id');
     }
+
+    public function like(){
+        return $this->hasMany('App\PostLike', 'post_id');
+    }
 }

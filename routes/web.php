@@ -57,3 +57,7 @@ Route::post('/forum/comment/add/{post}', 'CommentForumController@add')->middlewa
 Route::get('/forum/comment/edit/{comment}', 'CommentForumController@edit')->middleware(['auth', 'comite']);
 Route::post('/forum/comment/update/{comment}', 'CommentForumController@update')->middleware(['auth', 'comite']);
 Route::get('/forum/comment/destroy/{comment}', 'CommentForumController@destroy')->middleware(['auth', 'comite']);
+Route::get('/forum/like/{post}', 'PostForumController@like')->middleware(['auth', 'comite']);
+Route::get('/forum/dislike/{post}', 'PostForumController@dislike')->middleware(['auth', 'comite']);
+Route::get('/forum/comment/like/{comment}', 'CommentForumController@like')->middleware(['auth', 'comite']);
+Route::get('/forum/comment/dislike/{comment}', 'CommentForumController@dislike')->middleware(['auth', 'comite']);

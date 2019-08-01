@@ -33,7 +33,7 @@
 
 @foreach($posts as $post)
     <div class="bg-dark mt-4 border border-light rounded">
-        <div class="row mx-0 @if($post->ancre == 1) bg-secondary @endif">
+        <div class="row mx-0" @if($post->ancre == 1) style="background-color: #353131;" @endif>
             <div class="col-md-2 d-none d-md-block">
                 <img class="mx-auto d-block img-fluid" src="/storage/profile/{{$post->auteur->annee_bapteme}}/{{$post->auteur->photo}}" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
@@ -62,10 +62,18 @@
                 </div>
                 <div class="row">
                     <div class="col-6 d-flex justify-content-center">
-                        <small><i>j'aime (7)</i></small>
+                        @if($post->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
+                            <b><a href="/forum/like/{{$post->id}}" class="green-link"><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b>
+                        @else
+                            <small><a href="/forum/like/{{$post->id}}" class="green-link"><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
+                        @endif
                     </div>
                     <div class="col-6 d-flex justify-content-center">
-                        <small><i>je n'aime pas (3)</i></small>
+                        @if($post->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
+                            <b><a href="/forum/dislike/{{$post->id}}" class="green-link"><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
+                        @else
+                            <small><a href="/forum/dislike/{{$post->id}}" class="green-link"><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
+                        @endif
                     </div>
                 </div>
                 <hr>
@@ -79,7 +87,17 @@
                                 <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {{$comment->message}}</p>
                             </div>
                             <div class="row align-self-end">
-                                <small>j'aime (1) - je n'aime pas (2) - commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small>
+                                @if($comment->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
+                                    <b><a href="/forum/comment/like/{{$comment->id}}" class="green-link mx-1">j'aime ({{$comment->like->where('value', 1)->count()}})</a></b>
+                                @else
+                                    <small><a href="/forum/comment/like/{{$comment->id}}" class="green-link mx-1"><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
+                                @endif - 
+                                @if($comment->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
+                                    <b><a href="/forum/comment/dislike/{{$comment->id}}" class="green-link mx-1">je n'aime pas ({{$comment->like->where('value', -1)->count()}})</a></b>
+                                @else
+                                    <small><a href="/forum/comment/dislike/{{$comment->id}}" class="green-link mx-1"><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
+                                @endif - 
+                                commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small>
                             </div>
                             @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="row align-self-end">

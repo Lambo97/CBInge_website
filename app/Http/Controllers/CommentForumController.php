@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PostForum;
 use App\CommentForum;
+use App\CommentLike;
 
 class CommentForumController extends Controller
 {
@@ -69,5 +70,60 @@ class CommentForumController extends Controller
 
         $comment->delete();
         return redirect('/forum')->with('success', 'Commentaire supprimé');
+    }
+
+    public function like(CommentForum $comment)
+    {
+        $likes = CommentLike::where([['comment_id', $comment->id], ['user_id', auth()->user()->id]])->get();
+        if($likes->count() > 0)
+        {
+            $like = $likes[0];
+            if($like->value == 1)
+            {
+                $like->delete();
+                return redirect('/forum')->with('success', 'Commentaire pas liké');
+            }
+            else
+            {
+                $like->value = 1;
+                $like->save();
+                return redirect('/forum')->with('success', 'Commentaire liké');
+            }
+        }
+        else
+        {
+        $like = new CommentLike;
+        $like->comment_id = $comment->id;
+        $like->user_id = auth()->user()->id;
+        $like->value = 1;
+        $like->save();
+        }
+        return redirect('/forum')->with('success', 'Commentaire liké');
+    }
+
+    public function dislike(CommentForum $comment)
+    {
+        $likes = CommentLike::where([['comment_id', $comment->id], ['user_id', auth()->user()->id]])->get();
+        if($likes->count() > 0)
+        {
+            $like = $likes[0];
+            if($like->value == -1)
+            {
+                $like->delete();
+                return redirect('/forum')->with('success', 'Commentaire pas disliké');
+            }
+            else
+            {
+                $like->value = -1;
+                $like->save();
+                return redirect('/forum')->with('success', 'Commentaire disliké');
+            }
+        }
+        $like = new CommentLike;
+        $like->comment_id = $comment->id;
+        $like->user_id = auth()->user()->id;
+        $like->value = -1;
+        $like->save();
+        return redirect('/forum')->with('success', 'Commentaire disliké');
     }
 }
