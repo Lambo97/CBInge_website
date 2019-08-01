@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostForum extends Model
+class CommentForum extends Model
 {
     public function auteur(){
         return $this->belongsTo('App\User', 'id_auteur');
     }
 
-    public function comment(){
-        return $this->hasMany('App\CommentForum', 'post_id');
+    public function post(){
+        return $this->belongsTo('App\PostForum', 'post_id');
     }
 }

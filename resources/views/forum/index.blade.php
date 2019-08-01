@@ -16,13 +16,7 @@
             <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/storage/profile/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
 
             <div class="col-lg-6 col-md-10 col-xs-12">
-                <textarea id="message" rows="5" class="form-control @error('message') is-invalid @enderror bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message">{{ old('message') }}</textarea>
-
-                @error('message')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                <textarea id="message" rows="5" class="form-control bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
             </div>
         </div>
         <div class="form-group row mb-0">
@@ -36,22 +30,20 @@
     </div>
 </div>
 
-@if(count($posts) > 0)
-    @foreach($posts as $post)
-        <div class="row mt-4 border border-light @if($post->ancre == 1) bg-dark @endif">
+
+@foreach($posts as $post)
+    <div class="bg-dark mt-4 border border-light rounded">
+        <div class="row mx-0 @if($post->ancre == 1) bg-secondary @endif">
             <div class="col-md-2 d-none d-md-block">
                 <img class="mx-auto d-block img-fluid" src="/storage/profile/{{$post->auteur->annee_bapteme}}/{{$post->auteur->photo}}" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
             <div class="col-md-10 col-xs-12">
-                <div class="row mb-2 mt-2">
+                <div class="row mb-2 mt-2 justify-content-between">
                     <div class="col-6">
                         <h4 style='display:inline' class="mr-3"><a href="/profile/show/{{$post->auteur->id}}" class="green-link">{{$post->auteur->surnom_forum}}</a></h4>  @if($post->ancre == 1) <small><i>Message encré</i></small> @endif
                     </div>
-                    <div class="col-4 col-xs-3 text-right">
-                        <small>Posté le : {{date("d-m-Y H:i:s", strtotime($post->created_at))}}</small>
-                    </div>
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
-                    <div class="col-2 col-xs-3">
+                    <div class="col-2 col-xs-3 d-flex justify-content-end">
                         <a href="/forum/destroy/{{$post->id}}" class="green-link mr-2"><i class="far fa-trash-alt"></i></a>
                         <a href="/forum/edit/{{$post->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                         @if(Auth::user()->droit < 3)
@@ -59,18 +51,65 @@
                         @endif
                     </div>
                     @endif
+                    <div class="col-4 col-xs-3 text-right">
+                        <small>Posté le : {{date("d-m-Y H:i:s", strtotime($post->created_at))}}</small>
+                    </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col-12 ">
                         {{$post->message}}
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-center">
+                        <small><i>j'aime (7)</i></small>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <small><i>je n'aime pas (3)</i></small>
+                    </div>
+                </div>
+                <hr>
+                @foreach($post->comment as $comment)
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <img class="mx-auto d-block img-fluid" src="/storage/profile/{{$comment->auteur->annee_bapteme}}/{{$comment->auteur->photo}}" alt="{{$post->auteur->surnom_forum}}"> 
+                        </div>
+                        <div class="col-10">
+                            <div class="row">
+                                <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {{$comment->message}}</p>
+                            </div>
+                            <div class="row align-self-end">
+                                <small>j'aime (1) - je n'aime pas (2) - commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small>
+                            </div>
+                            @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
+                            <div class="row align-self-end">
+                                <a href="/forum/comment/destroy/{{$comment->id}}" class="green-link mr-2"><i class="far fa-trash-alt"></i></a>
+                                <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+                <div class="row mb-3 mt-3">
+                    <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
+                        @csrf  
+                        <div class="form-row">
+                            <div class="col-md-8 col-sm-10">
+                                <textarea id="comment" rows="2" class="form-control bg-dark" name="comment" autocomplete="message" placeholder="Ecris ton commentaire"></textarea>
+                            </div>
+
+                            <div class="col-md-3 form-group d-flex justify-content-end">
+                                <button type="submit" class="buttons-green font-weight-bold btn-sm">
+                                    Commenter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
-    @endforeach
-    {{$posts->links()}}
-@else
-    <p>Pas de message sur le forum</p>
-@endif
+    </div>
+@endforeach
 
 @endsection

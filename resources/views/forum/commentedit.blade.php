@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
 @section('title')
-<title> CB Ingé - Forum - Edition message </title>
+<title> CB Ingé - Forum - Edition commentaire </title>
 @endsection
 
 @section('content')
-<h1 class="mb-5">Forum - Editer message</h1>
+<h1 class="mb-5">Forum - Editer commentaire</h1>
 
 <div class="row">
     <div class="col-12">
-    <form method="POST" action="/forum/update/{{$post->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/forum/comment/update/{{$comment->id}}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">
-            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/storage/profile/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
+            <label for="comment" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/storage/profile/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
 
             <div class="col-lg-10">
-                <textarea id="message" rows="10" class="form-control @error('message') is-invalid @enderror bg-dark" name="message" autocomplete="message">{{ old('message') ?? $post->message }}</textarea>
+                <textarea id="comment" rows="10" class="form-control @error('comment') is-invalid @enderror bg-dark" name="comment" autocomplete="comment">{{ old('comment') ?? $comment->message }}</textarea>
 
-                @error('message')
+                @error('comment')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>{{ $comment }}</strong>
                     </span>
                 @enderror
             </div>

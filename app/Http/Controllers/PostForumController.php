@@ -39,8 +39,9 @@ class PostForumController extends Controller
             return redirect('/forum')->with('error', 'Pas de post à éditer');
         }
         // Check for correct user
-        if(auth()->user()->id !== $post->id_auteur and auth()->user()->droit > 1){
-            return redirect('/forum')->with('error', 'Page non autorisée');
+        if(auth()->user()->id !== $post->id_auteur and auth()->user()->droit > 1)
+        {
+            return redirect('/forum')->with('error', "Vous n'avez pas l'autorisation de modifier ce message");
         }
         return view('forum.edit', compact('post'));
     }
@@ -51,9 +52,9 @@ class PostForumController extends Controller
             'message' => 'required',
         ]);
 
-        if(auth()->user()->droit != 1 || auth()->user()->id != $post->id_auteur)
+        if(auth()->user()->id !== $post->id_auteur and auth()->user()->droit > 1)
         {
-            return redirect('/forum')->with('error', "Vous n'avez pas l'autorisation de modifié ce message");
+            return redirect('/forum')->with('error', "Vous n'avez pas l'autorisation de modifier ce message");
         }
 
         $post->message = $request->input('message');
@@ -70,11 +71,15 @@ class PostForumController extends Controller
             return redirect('/forum')->with('error', "Pas de message trouvé");
         }
 
-        if(auth()->user()->droit != 1 && auth()->user()->id != $post->id_auteur)
+        if(auth()->user()->id !== $post->id_auteur and auth()->user()->droit > 1)
         {
-            return redirect('/forum')->with('error', "Vous n'avez pas l'autorisation de supprimé ce message");
+            return redirect('/forum')->with('error', "Vous n'avez pas l'autorisation de supprimer ce message");
         }
 
+        foreach($post->comment as $comment)
+        {
+            $comment->delete();
+        }
         $post->delete();
         return redirect('/forum')->with('success', 'Message supprimé');
     }

@@ -397,6 +397,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
     );
 
     public static $classMap = array (
+        'App\\CommentForum' => __DIR__ . '/../..' . '/app/CommentForum.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -406,14 +407,17 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CommentForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentForumController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PostForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostForumController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAdmin.php',
         'App\\Http\\Middleware\\CheckApproved' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckApproved.php',
+        'App\\Http\\Middleware\\CheckBureau' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckBureau.php',
         'App\\Http\\Middleware\\CheckComite' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckComite.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -425,6 +429,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Notifications\\NewUser' => __DIR__ . '/../..' . '/app/Notifications/NewUser.php',
         'App\\Notifications\\UserApproved' => __DIR__ . '/../..' . '/app/Notifications/UserApproved.php',
         'App\\PostForum' => __DIR__ . '/../..' . '/app/PostForum.php',
+        'App\\PostLike' => __DIR__ . '/../..' . '/app/PostLike.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

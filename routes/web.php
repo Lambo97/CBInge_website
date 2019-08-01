@@ -53,3 +53,7 @@ Route::get('/forum/edit/{post}', 'PostForumController@edit')->middleware(['auth'
 Route::post('/forum/update/{post}', 'PostForumController@update')->middleware(['auth', 'comite']);
 Route::get('/forum/destroy/{post}', 'PostForumController@destroy')->middleware(['auth', 'comite']);
 Route::get('/forum/ancre/{post}', 'PostForumController@ancre')->middleware(['auth', 'bureau']);
+Route::post('/forum/comment/add/{post}', 'CommentForumController@add')->middleware(['auth', 'comite']);
+Route::get('/forum/comment/edit/{comment}', 'CommentForumController@edit')->middleware(['auth', 'comite']);
+Route::post('/forum/comment/update/{comment}', 'CommentForumController@update')->middleware(['auth', 'comite']);
+Route::get('/forum/comment/destroy/{comment}', 'CommentForumController@destroy')->middleware(['auth', 'comite']);
