@@ -32,7 +32,7 @@ composer require mews/purifier
 composer require berkayk/onesignal-laravel
 ```
 
-### OneSignal Notification
+### Remarque
 Attention ne pas oublier de faire 
 ```bash
 composer update
