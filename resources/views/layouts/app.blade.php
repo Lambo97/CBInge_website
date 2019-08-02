@@ -24,6 +24,26 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/nav.js') }}" defer></script>
 
+    <!-- One signal -->
+    @if(Auth::check())
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+        appId: "3895938b-5552-4d3d-a9d7-3ce2a0b0c6f1",
+        });
+        OneSignal.sendTags({
+            userId: '{{Auth::user()->id}}',
+            droit: '{{Auth::user()->droit}}'
+        }).then(function(tagsSent) {
+            // Callback called when tags have finished sending
+            console.log(tagsSent);   
+        });
+    });
+    </script>
+    @endif
 
 </head>
 <body>

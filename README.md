@@ -21,3 +21,20 @@ Pour utiliser le site il faudra utiliser plusieurs package.
 ```bash
 composer require maddhatter/laravel-fullcalendar
 ```
+
+### Purifier
+```bash
+composer require mews/purifier
+```
+
+### OneSignal Notification
+```bash
+composer require berkayk/onesignal-laravel
+```
+
+### Remarque
+Attention ne pas oublier de faire 
+```bash
+composer update
+```
+pour updater les packages

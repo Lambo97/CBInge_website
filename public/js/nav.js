@@ -112,4 +112,3 @@ for (var i = 0; i < parent.length; i++) {
         trottis.classList.add('welcome_active');
         bleus.classList.remove('welcome_active');
     }
-
