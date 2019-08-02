@@ -57,7 +57,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col-12 ">
-                        {{$post->message}}
+                        {!!Purifier::clean($post->message);!!}
                     </div>
                 </div>
                 <div class="row">
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-10">
                             <div class="row">
-                                <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {{$comment->message}}</p>
+                                <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {!!Purifier::clean($comment->message);!!}</p>
                             </div>
                             <div class="row align-self-end">
                                 @if($comment->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
@@ -113,7 +113,7 @@
                         @csrf  
                         <div class="form-row">
                             <div class="col-md-8 col-sm-10">
-                                <textarea id="comment" rows="2" class="form-control bg-dark" name="comment" autocomplete="message" placeholder="Ecris ton commentaire"></textarea>
+                            <textarea id="comment" rows="2" class="form-control bg-dark" name="comment" autocomplete="comment" placeholder="Ecris ton commentaire"></textarea>
                             </div>
 
                             <div class="col-md-3 form-group d-flex justify-content-end">

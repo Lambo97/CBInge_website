@@ -182,6 +182,10 @@ return [
          */
         
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        /*
+         * HTML Purifier
+         */
+        Mews\Purifier\PurifierServiceProvider::class,
 
     ],
 
@@ -236,6 +240,7 @@ return [
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
     ],
 
 ];

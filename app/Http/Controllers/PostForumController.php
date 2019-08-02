@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\PostForum;
 use App\PostLike;
 
+
+
 class PostForumController extends Controller
 {
     /**
@@ -30,6 +32,7 @@ class PostForumController extends Controller
         $post->message = $request->input('message');
         $post->id_auteur = auth()->user()->id;
         $post->save();
+
         return redirect('/forum')->with('success', 'Message envoyé');
     }
 

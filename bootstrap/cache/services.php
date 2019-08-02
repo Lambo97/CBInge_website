@@ -29,14 +29,16 @@
     25 => 'Laravel\\Tinker\\TinkerServiceProvider',
     26 => 'Collective\\Html\\HtmlServiceProvider',
     27 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
-    28 => 'Carbon\\Laravel\\ServiceProvider',
-    29 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    30 => 'App\\Providers\\AppServiceProvider',
-    31 => 'App\\Providers\\AuthServiceProvider',
-    32 => 'App\\Providers\\EventServiceProvider',
-    33 => 'App\\Providers\\RouteServiceProvider',
-    34 => 'Collective\\Html\\HtmlServiceProvider',
-    35 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
+    28 => 'Mews\\Purifier\\PurifierServiceProvider',
+    29 => 'Carbon\\Laravel\\ServiceProvider',
+    30 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    31 => 'App\\Providers\\AppServiceProvider',
+    32 => 'App\\Providers\\AuthServiceProvider',
+    33 => 'App\\Providers\\EventServiceProvider',
+    34 => 'App\\Providers\\RouteServiceProvider',
+    35 => 'Collective\\Html\\HtmlServiceProvider',
+    36 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
+    37 => 'Mews\\Purifier\\PurifierServiceProvider',
   ),
   'eager' => 
   array (
@@ -172,6 +174,7 @@
     'form' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
+    'purifier' => 'Mews\\Purifier\\PurifierServiceProvider',
     'NunoMaduro\\Collision\\Contracts\\Provider' => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
   ),
   'when' => 
@@ -216,6 +219,9 @@
     array (
     ),
     'Collective\\Html\\HtmlServiceProvider' => 
+    array (
+    ),
+    'Mews\\Purifier\\PurifierServiceProvider' => 
     array (
     ),
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => 
