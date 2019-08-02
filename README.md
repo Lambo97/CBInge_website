@@ -26,3 +26,15 @@ composer require maddhatter/laravel-fullcalendar
 ```bash
 composer require mews/purifier
 ```
+
+### OneSignal Notification
+```bash
+composer require berkayk/onesignal-laravel
+```
+
+### OneSignal Notification
+Attention ne pas oublier de faire 
+```bash
+composer update
+```
+pour updater les packages
