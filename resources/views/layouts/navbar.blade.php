@@ -1,27 +1,31 @@
 <div id="close_nav" class="hamburger-menu position-absolute top-0 right-0 pt-3 pr-4 cursor">
     <img src="../../img/close.svg" alt="close">
 </div>
-<div class="nav-content pt-5 pb-5 pl-3">
+<div id = "all_nav" class="nav-content pt-5 pb-5 pl-3">
     @guest
-    <li class="nav-item d-block d-sm-none">
-                                <button class="buttons-green" action="{{ route('login') }}">{{ __('Se connecter') }}</button>
-                            </li>
+         <li class="nav-item d-block">
+                <form id="login-form" action="{{ route('login') }}" method="POST">
+                    
+                    <button type="submit" class="buttons-green">{{ __('Connection') }}</button>
+                </form>
+         </li>
         @if (Route::has('register'))
-        <li class="nav-item d-block d-sm-none my-2 pl-2">
+        <li class="nav-item d-block my-2 pl-2">
                <a class="green-link" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
                                 </li>             
         @endif
         @else
-                    <li class=" d-block d-sm-none">
+                    <li class=" d-block">
                                 <div class="font-weight-bold">
                                   Bonjour  {{ Auth::user()->name }} <span class="caret"></span>
                                 </div>
-    
+            
+                                <a class="green-link" href="/profile/show/Auth::user()->id">{{ __("Votre fiche") }}</a>
                                 
     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
                                         @csrf
-                                        <button type="submit" class="buttons-green">Se déconnecter</button>
+                                        <button type="submit" class="buttons-green">Déconnection</button>
                                     </form>
                                 
                             </li>

@@ -39,13 +39,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
     
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse position-relative" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
     
                     </ul>
-                    
-                    <div class= "mx-auto">
+                   
+                    <div class= "div-center position-absolute">
                         <p class="text-center margin-null">
                             Comité de baptême
                         </p>
@@ -59,16 +59,16 @@
                     <ul class="navbar-nav ml-sm-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item d-none d-sm-block">
+                            <li class="nav-item d-none d-sm-block" style="z-index:2000;">
                                 <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item d-none d-sm-block">
+                                <li class="nav-item d-none d-sm-block" style="z-index:2000;">
                                     <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown d-none d-sm-block">
+                            <li class="nav-item dropdown d-none d-sm-block" style="z-index:2000;">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -86,8 +86,8 @@
                                 </div>
                             </li>
                         @endguest
-                            <li>
-                                <div class="hamburger-menu cursor" id="open_nav">
+                            <li style="z-index:2000;">
+                                <div class="hamburger-menu cursor" id="open_nav" style="z-index:2000;">
                                     <img src="../../img/menu.svg" alt="menu">
                                 </div>
                                 
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </nav>
-        <div id="navigation" class="zindex-tooltip d-none position-absolute col-xs-12 col-sm-12 col-md-6 col-lg-6 bg-black top-0 right-0" style="z-index: 2000">
+        <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-6 col-sm-6 col-md-2 col-lg-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;">
             @include('layouts.navbar')
         </div>
         <div class="container">

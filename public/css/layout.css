@@ -28,6 +28,7 @@ html, body {
 .bg-black{
     background-color: black;
 }
+
 .hamburger-menu img{
     width: 30px;
     height: 30px;
@@ -130,6 +131,36 @@ html, body {
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
 }
+.div-center{
+   
+    margin: 0 auto;
+    width: 100%;
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+    .container{
+        max-width: 550px;
+    }
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .container{
+        max-width: 850px;
+    }
+ }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+     .container{
+    max-width: 1000px;
+    } 
+ }
 .form-control::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 4 to 18 */
 .form-control::-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 19+ */
