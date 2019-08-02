@@ -21,3 +21,8 @@ Pour utiliser le site il faudra utiliser plusieurs package.
 ```bash
 composer require maddhatter/laravel-fullcalendar
 ```
+
+### Purifier
+```bash
+composer require mews/purifier
+```
