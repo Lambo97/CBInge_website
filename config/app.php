@@ -186,7 +186,10 @@ return [
          * HTML Purifier
          */
         Mews\Purifier\PurifierServiceProvider::class,
-
+        /*
+         * OneSignal Notification
+         */
+        Berkayk\OneSignal\OneSignalServiceProvider::class,
     ],
 
     /*
@@ -241,6 +244,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
     ],
 
 ];

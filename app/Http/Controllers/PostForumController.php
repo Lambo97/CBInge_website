@@ -7,7 +7,6 @@ use App\PostForum;
 use App\PostLike;
 
 
-
 class PostForumController extends Controller
 {
     /**
@@ -33,6 +32,12 @@ class PostForumController extends Controller
         $post->id_auteur = auth()->user()->id;
         $post->save();
 
+        // Send notification
+        \OneSignal::sendNotificationToSegment(
+            auth()->user()->surnom_forum." a envoyé un message !",
+            $segment = "Comite",
+            $url = "/forum"
+        );
         return redirect('/forum')->with('success', 'Message envoyé');
     }
 
