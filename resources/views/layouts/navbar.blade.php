@@ -4,7 +4,7 @@
 <div id = "all_nav" class="nav-content pt-5 pb-5 pl-3">
     @guest
          <li class="nav-item d-block">
-                <form id="login-form" action="{{ route('login') }}" method="POST">
+                <form id="login-form" action="{{ route('login') }}" method="GET">
                     
                     <button type="submit" class="buttons-green">{{ __('Connection') }}</button>
                 </form>
@@ -20,7 +20,7 @@
                                   Bonjour  {{ Auth::user()->name }} <span class="caret"></span>
                                 </div>
             
-                                <a class="green-link" href="/profile/show/Auth::user()->id">{{ __("Votre fiche") }}</a>
+                                <a class="green-link" href="/profile/show/{{Auth::user()->id}}">{{ __("Votre fiche") }}</a>
                                 
     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">

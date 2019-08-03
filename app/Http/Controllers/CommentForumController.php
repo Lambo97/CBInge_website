@@ -23,6 +23,14 @@ class CommentForumController extends Controller
         $comment->save();
         $post->updated_at = date('Y-m-d H:i:s');
         $post->save();
+
+        // Send notification
+        \OneSignal::sendNotificationToSegment(
+            auth()->user()->surnom_forum." a commenté un post !",
+            $segment = "Comite",
+            $url = "/forum"
+        );
+
         return redirect('/forum')->with('success', 'Commentaire envoyé');
     }
 
