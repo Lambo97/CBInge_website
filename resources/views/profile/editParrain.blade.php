@@ -11,12 +11,14 @@
                     <tr>
                         <th>Prénom</th>
                         <th>Nom</th>
+                        <th>Annee Bapteme</th>
                         <th></th>
                     </tr>
                     @forelse ($parrains as $parrain)
                         <tr>
                             <td>{{ $parrain->prenom }}</td>
                             <td>{{ $parrain->name }}</td>
+                            <td>{{ $parrain->annee_bapteme }}</td>
                             <td><a href="{{ '/profile/removeParrain/'.$parrain->id }}"
                                     class="btn btn-primary btn-sm">Supprimer</a></td>
                         </tr>

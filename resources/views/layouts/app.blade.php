@@ -81,41 +81,12 @@
     
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-sm-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item d-none d-sm-block" style="z-index:2000;">
-                                <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item d-none d-sm-block" style="z-index:2000;">
-                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown d-none d-sm-block" style="z-index:2000;">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-    
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-    
-                                    <form id="logout-form d-none d-lg-block" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                            <li style="z-index:2000;">
-                                <div class="hamburger-menu cursor" id="open_nav" style="z-index:2000;">
-                                    <img src="../../img/menu.svg" alt="menu">
-                                </div>
-                                
-                            </li>
+                        <li style="z-index:2000;">
+                            <div class="hamburger-menu cursor" id="open_nav" style="z-index:2000;">
+                                <img src="../../img/menu.svg" alt="menu">
+                            </div>
+                            
+                        </li>
                     </ul>
                 </div>
             </div>

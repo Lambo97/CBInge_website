@@ -6,7 +6,7 @@
          <li class="nav-item d-block">
                 <form id="login-form" action="{{ route('login') }}" method="GET">
                     
-                    <button type="submit" class="buttons-green">{{ __('Connection') }}</button>
+                    <button type="submit" class="buttons-green">{{ __('Connexion') }}</button>
                 </form>
          </li>
         @if (Route::has('register'))
@@ -25,7 +25,7 @@
     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
                                         @csrf
-                                        <button type="submit" class="buttons-green">Déconnection</button>
+                                        <button type="submit" class="buttons-green">Déconnexion</button>
                                     </form>
                                 
                             </li>
