@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\ComitePv' => $baseDir . '/app/ComitePv.php',
     'App\\CommentForum' => $baseDir . '/app/CommentForum.php',
     'App\\CommentLike' => $baseDir . '/app/CommentLike.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -23,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\PostForumController' => $baseDir . '/app/Http/Controllers/PostForumController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
+    'App\\Http\\Controllers\\PvComiteController' => $baseDir . '/app/Http/Controllers/PvComiteController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckAdmin' => $baseDir . '/app/Http/Middleware/CheckAdmin.php',
@@ -46,7 +48,6 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
-    'App\\comite_pv' => $baseDir . '/app/comite_pv.php',
     'Berkayk\\OneSignal\\OneSignalClient' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalClient.php',
     'Berkayk\\OneSignal\\OneSignalFacade' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalFacade.php',
     'Berkayk\\OneSignal\\OneSignalServiceProvider' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalServiceProvider.php',

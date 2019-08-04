@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="page-footer font-small bg-black">
-
+    @if(Auth::check())
     <div class="row text-center mx-0">
         <div class="mx-auto">
             <p class="my-0 pt-3">Utilisateurs en ligne :</p>
@@ -17,6 +17,7 @@
             @endforeach
         </div>
     </div>
+    @endif
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright: CB Ingé
     </div>

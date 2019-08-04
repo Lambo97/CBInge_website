@@ -24,6 +24,7 @@ class PostForumController extends Controller
     {
         $this->validate($request, [
             'message' => 'required',
+            'photo' => ['image','nullable', 'max:1999']
         ]);
         
         // Handle File Upload

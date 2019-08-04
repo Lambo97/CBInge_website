@@ -63,3 +63,14 @@ Route::get('/forum/dislike/{post}', 'PostForumController@dislike')->middleware([
 Route::get('/forum/comment/like/{comment}', 'CommentForumController@like')->middleware(['auth', 'comite']);
 Route::get('/forum/comment/dislike/{comment}', 'CommentForumController@dislike')->middleware(['auth', 'comite']);
 Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
+
+/*
+| Route concernant les pv's du comité
+*/
+Route::get('/pvcomite', ('PvComiteController@index'))->middleware(['auth', 'comite']);
+Route::get('/pvcomite/show/{pv}', ('PvComiteController@show'))->middleware(['auth', 'comite']);
+Route::get('/pvcomite/add', 'PvComiteController@add')->middleware(['auth', 'comite']);
+Route::post('/pvcomite/add', 'PvComiteController@store')->middleware(['auth', 'comite']);
+Route::get('/pvcomite/edit/{pv}', 'PvComiteController@edit')->middleware(['auth', 'comite']);
+Route::post('/pvcomite/update/{pv}', 'PvComiteController@update')->middleware(['auth', 'comite']);
+Route::get('/pvcomite/destroy/{pv}', 'PvComiteController@destroy')->middleware(['auth', 'comite']);

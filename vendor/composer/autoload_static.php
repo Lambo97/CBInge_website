@@ -448,6 +448,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
     );
 
     public static $classMap = array (
+        'App\\ComitePv' => __DIR__ . '/../..' . '/app/ComitePv.php',
         'App\\CommentForum' => __DIR__ . '/../..' . '/app/CommentForum.php',
         'App\\CommentLike' => __DIR__ . '/../..' . '/app/CommentLike.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -465,6 +466,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PostForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostForumController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\PvComiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/PvComiteController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAdmin.php',
@@ -488,7 +490,6 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\comite_pv' => __DIR__ . '/../..' . '/app/comite_pv.php',
         'Berkayk\\OneSignal\\OneSignalClient' => __DIR__ . '/..' . '/berkayk/onesignal-laravel/src/OneSignalClient.php',
         'Berkayk\\OneSignal\\OneSignalFacade' => __DIR__ . '/..' . '/berkayk/onesignal-laravel/src/OneSignalFacade.php',
         'Berkayk\\OneSignal\\OneSignalServiceProvider' => __DIR__ . '/..' . '/berkayk/onesignal-laravel/src/OneSignalServiceProvider.php',

@@ -190,6 +190,7 @@ return [
          * OneSignal Notification
          */
         Berkayk\OneSignal\OneSignalServiceProvider::class,
+        
     ],
 
     /*

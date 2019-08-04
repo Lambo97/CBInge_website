@@ -11,22 +11,22 @@
     @yield('title')
 
     <!-- Icon -->
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/layout.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/v4-shims.css">
     
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/nav.js') }}" defer></script>
+    <script src="{{ asset('/js/app.js') }}" defer></script>
+    <script src="{{ asset('/js/nav.js') }}" defer></script>
 
     <!-- One signal -->
     @if(Auth::check())
@@ -110,6 +110,21 @@
         </div>
         
     </div>
+    <script src="https://cdn.tiny.cloud/1/jsp5xx9rfjgnpg9sblclrw75cf7bzbj0bfessb0vkba9q0zm/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#editor',
+            height: 400,
+            skins: "dark",
+            plugins: [
+            'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality emoticons template paste textcolor'
+            ],
+            toolbar: 'undo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | forecolor backcolor emoticons',
+            menubar: false,
+        });
+    </script>
     
 </body>
 </html>

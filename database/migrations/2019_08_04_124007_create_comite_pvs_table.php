@@ -15,6 +15,9 @@ class CreateComitePvsTable extends Migration
     {
         Schema::create('comite_pvs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('titre');
+            $table->text('message');
             $table->timestamps();
         });
     }

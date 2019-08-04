@@ -83,7 +83,7 @@
                         <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Insultes</a>
                     </li>
                     <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">PV du comité</a>
+                        <a href="/pvcomite" class="text-white nav-link navigation-link">PV du comité</a>
                     </li>
                     <li>
                         <a href="/forum" class="text-white nav-link navigation-link">FORUUUUM</a>
