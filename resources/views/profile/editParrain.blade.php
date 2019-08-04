@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card bg-dark">
-        <div class="card-header">Liste des parrains de {{Auth::user()->surnom_forum}}</div>
-            <div class="card-body text-center">
 
-                <table class="table">
+        <h2><strong>Liste des parrains de {{Auth::user()->surnom_forum}}</strong></h2>
+           
+
+                <table class="table table-dark">
+                    <thead>
                     <tr>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Annee Bapteme</th>
                         <th></th>
+                     
                     </tr>
+                    </thead>   
                     @forelse ($parrains as $parrain)
                         <tr>
                             <td>{{ $parrain->prenom }}</td>
@@ -28,9 +29,6 @@
                         </tr>
                     @endforelse
                 </table>
-            <a class="btn btn-primary" href="/profile/edit/{{Auth::user()->id}}">Retour</a>
-            </div>
-        </div>
-    </div>
-</div>
+            <a class="buttons-green" href="/profile/edit/{{Auth::user()->id}}">Retour</a>
+        
 @endsection

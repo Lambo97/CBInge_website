@@ -91,7 +91,7 @@
                 </div>
             </div>
         </nav>
-        <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-6 col-sm-6 col-md-2 col-lg-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;">
+        <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-6 col-sm-6 col-md-3 col-lg-3 col-xl-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;">
             @include('layouts.navbar')
         </div>
         <div class="container">
