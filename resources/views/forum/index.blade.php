@@ -53,7 +53,7 @@
                     </div>
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
                     <div class="col-2 col-xs-3 d-flex justify-content-end">
-                        <a href="/forum/destroy/{{$post->id}}" class="green-link mr-2"><i class="far fa-trash-alt"></i></a>
+                        <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deletePost{{$post->id}}"></i></a>
                         <a href="/forum/edit/{{$post->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                         @if(Auth::user()->droit < 3)
                         <a href="/forum/ancre/{{$post->id}}" class="green-link"><i class="fas fa-anchor"></i></a>
@@ -117,10 +117,31 @@
                             </div>
                             @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="row align-self-end">
-                                <a href="/forum/comment/destroy/{{$comment->id}}" class="green-link mr-2"><i class="far fa-trash-alt"></i></a>
+                                <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></a>
                                 <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                             </div>
                             @endif
+                        </div>
+                    </div>
+
+                    <!-- Modal Comment -->
+                    <div class="modal fade" id="deleteComment{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="#deleteComment{{$comment->id}}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-dark" id="exampleModalLongTitle">Supprimer</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                    Voulez-vous vraiment supprimer ce commentaire ?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                                    <a href="/forum/comment/destroy/{{$comment->id}}" class="btn btn-danger">Supprimer</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -142,6 +163,26 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+    <!-- Modal Post -->
+    <div class="modal fade" id="deletePost{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="#deletePost{{$post->id}}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLongTitle">Supprimer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">
+                    Voulez-vous vraiment supprimer ce post ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                    <a href="/forum/destroy/{{$post->id}}" class="btn btn-danger">Supprimer</a>
+                </div>
+            </div>
         </div>
     </div>
 @endforeach
