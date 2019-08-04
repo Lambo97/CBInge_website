@@ -9,7 +9,8 @@
     <h2><strong>Le comité de baptême</strong></h2>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae. Aliquet lectus proin nibh nisl condimentum id venenatis. Ullamcorper malesuada proin libero nunc consequat. Viverra nam libero justo laoreet sit amet cursus sit amet. Suscipit adipiscing bibendum est ultricies integer. Sit amet justo donec enim diam vulputate. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Enim ut sem viverra aliquet. Diam vel quam elementum pulvinar etiam non quam. Tempor commodo ullamcorper a lacus vestibulum. At erat pellentesque adipiscing commodo elit at. Nisi est sit amet facilisis magna etiam tempor orci eu.</p>
         <button type="button" class=" buttons-green font-weight-bold" id="bouton_dons">Nous faire un don</button>
-        <p class="d-none" id="compte_dons">
+        <p class="d-none mt-4" id="compte_dons">
+           Dess fera un beau texte pour nous donner envie de faire un don au :
             BE39 0682 1469 9019
         </p>
         <div class="nav_welcome_action d-flex">
