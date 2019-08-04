@@ -50,10 +50,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="surnom_forum" class=" col-form-label text-md-right">Pseudo du forum</label>
+                            <label for="surnom_forum" class=" col-form-label text-md-right">Pseudo du forum:</label>
 
                             
-                                <div class="radio pt-2">
+                                <div class="radio ml-4 pt-2">
                                     <label><input type="radio" value="1" name="surnom_forum" @if($surnom_forum == 1) checked @endif>  Prénom et nom  </label>
                                     <label><input type="radio" value="2" name="surnom_forum" @if($surnom_forum == 2) checked @endif>  Nom  </label>
                                     <label><input type="radio" value="3" name="surnom_forum" @if($surnom_forum == 3) checked @endif>  Prénom  </label>
