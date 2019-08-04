@@ -13,7 +13,7 @@
         @csrf
 
         <div class="form-group row">
-            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/storage/profile/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
+            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/profile/image/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
 
             <div class="col-lg-10">
                 <textarea id="message" rows="10" class="form-control @error('message') is-invalid @enderror bg-dark" name="message" autocomplete="message">{{ old('message') ?? $post->message }}</textarea>

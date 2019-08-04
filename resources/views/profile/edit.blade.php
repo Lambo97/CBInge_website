@@ -226,7 +226,7 @@
                                 @if($user->photo == "noimage.jpg")
                                     <p class="pt-2 pl-1"> Il n'y a pas encore d'image </p>
                                 @else
-                                    <img src="/storage/profile/{{$user->annee_bapteme}}/{{$user->photo}}" class="w-100">
+                                    <img src="/profile/image/{{$user->annee_bapteme}}/{{$user->photo}}" class="w-100">
                                 @endif
                                 
                             </div>

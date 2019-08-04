@@ -273,4 +273,15 @@ class ProfileController extends Controller
         return view('profile.editBleu', compact('bleus'))->with('success', 'Bleu retiré');
     }
 
+    /** 
+     * Return the profile image
+     *
+     * @param  User  $bleu
+     * @return \Illuminate\Http\Response
+     */
+    public function image($annee_bapteme, $url)
+    {
+        return response()->file(storage_path('app/public/profile/'. $annee_bapteme .'/'. $url));
+    }
+
 }
