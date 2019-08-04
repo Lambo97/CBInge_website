@@ -30,6 +30,9 @@
     </div>
 </div>
 
+<div class="row mt-3 justify-content-center">
+    {{$posts->links()}}
+</div>
 
 @foreach($posts as $post)
     <div class="bg-dark mt-4 border border-light rounded">
@@ -129,6 +132,8 @@
         </div>
     </div>
 @endforeach
-{{$posts->links()}}
+<div class="row mt-5 justify-content-center">
+    {{$posts->links()}}
+</div>
 
 @endsection

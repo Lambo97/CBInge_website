@@ -167,6 +167,9 @@ html, body {
 .form-control:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Microsoft Edge */
 
+
+
+
 /*.flex-center {
     align-items: center;
     display: flex;

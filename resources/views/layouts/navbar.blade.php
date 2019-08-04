@@ -17,7 +17,7 @@
         @else
                     <li class=" d-block">
                                 <div class="font-weight-bold">
-                                  Bonjour  {{ Auth::user()->name }} <span class="caret"></span>
+                                  Bonjour  {{ Auth::user()->surnom_forum }} <span class="caret"></span>
                                 </div>
             
                                 <a class="green-link" href="/profile/show/{{Auth::user()->id}}">{{ __("Votre fiche") }}</a>
