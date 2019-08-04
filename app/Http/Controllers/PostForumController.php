@@ -26,10 +26,28 @@ class PostForumController extends Controller
             'message' => 'required',
         ]);
         
+        // Handle File Upload
+        if($request->hasFile('photo')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('photo')->storeAs('public/forum', $fileNameToStore);
+        } else {
+            $fileNameToStore = NULL;
+        }
+
+
         // Create Post
         $post = new PostForum;
         $post->message = $request->input('message');
         $post->id_auteur = auth()->user()->id;
+        $post->photo = $fileNameToStore;
         $post->save();
 
         // Send notification
@@ -38,6 +56,7 @@ class PostForumController extends Controller
             $segment = "Comite",
             $url = "/forum"
         );
+
         return redirect('/forum')->with('success', 'Message envoyé');
     }
 
@@ -163,5 +182,16 @@ class PostForumController extends Controller
         $like->value = -1;
         $like->save();
         return redirect('/forum')->with('success', 'Message disliké');
+    }
+
+    /** 
+     * Return the image
+     *
+     * @param  url
+     * @return \Illuminate\Http\Response
+     */
+    public function image($url)
+    {
+        return response()->file(storage_path('app/public/forum/' . $url));
     }
 }

@@ -46,6 +46,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\comite_pv' => $baseDir . '/app/comite_pv.php',
     'Berkayk\\OneSignal\\OneSignalClient' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalClient.php',
     'Berkayk\\OneSignal\\OneSignalFacade' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalFacade.php',
     'Berkayk\\OneSignal\\OneSignalServiceProvider' => $vendorDir . '/berkayk/onesignal-laravel/src/OneSignalServiceProvider.php',

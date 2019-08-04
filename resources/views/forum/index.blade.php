@@ -19,6 +19,12 @@
                 <textarea id="message" rows="5" class="form-control bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
             </div>
         </div>
+        <div class="form-group row mb-3">
+            <div class="col-md-6 offset-2">
+                <input type="file" class="custom-file-input" id="photo" name="photo">
+                <label class="custom-file-label" for="photo">Choisi une image (optionnel)</label>
+            </div>
+        </div>
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-2">
                 <button type="submit" class="buttons-green font-weight-bold">
@@ -63,6 +69,13 @@
                         {!!Purifier::clean($post->message);!!}
                     </div>
                 </div>
+                @if($post->photo)
+                <div class="row mb-5">
+                    <div class="col-10">
+                        <img class="mx-auto d-block img-fluid" src="/forum/image/{{$post->photo}}"> 
+                    </div>
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-6 d-flex justify-content-center">
                         @if($post->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)

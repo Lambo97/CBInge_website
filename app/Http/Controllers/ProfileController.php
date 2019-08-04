@@ -276,7 +276,8 @@ class ProfileController extends Controller
     /** 
      * Return the profile image
      *
-     * @param  User  $bleu
+     * @param  annee_bepteme
+     * @param  url
      * @return \Illuminate\Http\Response
      */
     public function image($annee_bapteme, $url)

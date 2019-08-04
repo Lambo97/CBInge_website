@@ -62,3 +62,4 @@ Route::get('/forum/like/{post}', 'PostForumController@like')->middleware(['auth'
 Route::get('/forum/dislike/{post}', 'PostForumController@dislike')->middleware(['auth', 'comite']);
 Route::get('/forum/comment/like/{comment}', 'CommentForumController@like')->middleware(['auth', 'comite']);
 Route::get('/forum/comment/dislike/{comment}', 'CommentForumController@dislike')->middleware(['auth', 'comite']);
+Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
