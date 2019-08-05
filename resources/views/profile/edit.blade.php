@@ -276,6 +276,19 @@
                                 @enderror
                             
                         </div>
+                        <div class="form-group row">
+                            <label for="citation" class="d-none col-md-4 col-form-label text-md-right">Citation(s) favorite(s)</label>
+
+                            
+                                <textarea id="citation" rows="5" class="form-control form-content @error('citation') is-invalid @enderror" name="citation" placeholder="Citation(s) favorite(s)"autocomplete="citation">{{ old('citation') ?? $user->citation}}</textarea>
+    
+                                @error('citation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            
+                        </div>
 
                         <div class="form-group row">
                             <label for="boisson" class="d-none col-md-4 col-form-label text-md-right">Boisson(s) favorite(s)</label>
