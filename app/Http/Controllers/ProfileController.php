@@ -141,6 +141,7 @@ class ProfileController extends Controller
         $user->section = $request->input('section');
         $user->photo = $filename;
         $user->probleme_sante = $request->input('probleme_sante');
+        $user->citation=$request->input('citation');
         $user->boisson = $request->input('boisson');
         $user->guindaille = $request->input('guindaille');
         $user->titre_guindaille = $request->input('titre_guindaille');

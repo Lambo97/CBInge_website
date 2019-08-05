@@ -8,18 +8,19 @@
                 <table class="table table-dark">
                     <thead>
                     <tr>
-                        <th>Prénom</th>
-                        <th>Nom</th>
-                        <th>Annee Bapteme</th>
+                        <th class="text-center">Prénom</th>
+                        <th class="text-center">Nom</th>
+                        <th class="text-center">Annee Bapteme</th>
                         <th></th>
+                        
                      
                     </tr>
                     </thead>   
                     @forelse ($parrains as $parrain)
                         <tr>
-                            <td>{{ $parrain->prenom }}</td>
-                            <td>{{ $parrain->name }}</td>
-                            <td>{{ $parrain->annee_bapteme }}</td>
+                            <td class="text-center">{{ $parrain->prenom }}</td>
+                            <td class="text-center">{{ $parrain->name }}</td>
+                            <td class="text-center">{{ $parrain->annee_bapteme }}</td>
                             <td><a href="{{ '/profile/removeParrain/'.$parrain->id }}"
                                     class="btn btn-primary btn-sm">Supprimer</a></td>
                         </tr>
