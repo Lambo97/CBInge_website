@@ -3,125 +3,53 @@
 </div>
 <div id = "all_nav" class="nav-content pt-5 pb-5 pl-3">
     @guest
-         <li class="nav-item d-block">
-                <form id="login-form" action="{{ route('login') }}" method="GET">
-                    
-                    <button type="submit" class="buttons-green">{{ __('Connexion') }}</button>
-                </form>
-         </li>
-        @if (Route::has('register'))
-        <li class="nav-item d-block my-2 pl-2">
-               <a class="green-link" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
-                                </li>             
-        @endif
-        @else
-                    <li class=" d-block">
-                                <div class="font-weight-bold">
-                                  Bonjour  {{ Auth::user()->surnom_forum }} <span class="caret"></span>
-                                </div>
-            
-                                <a class="green-link" href="/profile/show/{{Auth::user()->id}}">{{ __("Votre fiche") }}</a>
-                                
-    
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
-                                        @csrf
-                                        <button type="submit" class="buttons-green">Déconnexion</button>
-                                    </form>
-                                
-                            </li>
-        @endguest
-        <ul class="list-unstyled">
-            <li>
-                <a href="{{route('events.index')}}" class="text-white nav-link navigation-link">Agenda</a>
-            </li>
-            <li>
-                <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Repertoire</a>
-            </li>
-            <li>
-                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Folklore</p>
-                <ul class="d-none list-unstyled ml-5">
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Chants</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Oripaux</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Comité</p>
-                <ul class="d-none list-unstyled ml-5">
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Comité actuel</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Anciens comités</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Anciens webmasters</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Multimédia</p>
-                <ul class="d-none list-unstyled ml-5">
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Photos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Vidéos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Archives</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Discussion</p>
-                <ul class="d-none list-unstyled ml-5">
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Insultes</a>
-                    </li>
-                    <li>
-                        <a href="/pvcomite" class="text-white nav-link navigation-link">PV du comité</a>
-                    </li>
-                    <li>
-                        <a href="/forum" class="text-white nav-link navigation-link">FORUUUUM</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Citations</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Tu préfères</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Pense-bête</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Sondages</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Top 50 messages</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="{{route('logout')}}" class="text-white nav-link navigation-link pb-0 mb-0">Sponsors</a>
-            </li>
-            <li>
-                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">Messe</p>
-                <ul class="d-none list-unstyled ml-5">
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Délations</a>
-                    </li>
-                    <li>
-                        <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Invités Messe</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="{{route('logout')}}" class="text-white nav-link navigation-link">Les tuyaux</a>
-            </li>
+        <li class="nav-item d-block">
+            <form id="login-form" action="{{ route('login') }}" method="GET">
+                
+                <button type="submit" class="buttons-green">{{ __('Connexion') }}</button>
+            </form>
+        </li>
+    @if (Route::has('register'))
+    <li class="nav-item d-block my-2 pl-2">
+            <a class="green-link" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
+                            </li>             
+    @endif
+    @else
+                <li class=" d-block">
+                            <div class="font-weight-bold">
+                                Bonjour  {{ Auth::user()->surnom_forum }} <span class="caret"></span>
+                            </div>
+        
+                            <a class="green-link" href="/profile/show/{{Auth::user()->id}}">{{ __("Votre fiche") }}</a>
+                            
 
-        </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
+                                    @csrf
+                                    <button type="submit" class="buttons-green">Déconnexion</button>
+                                </form>
+                            
+                        </li>
+    @endguest
+    <ul class="list-unstyled">
+        @foreach($menus as $menu)
+        @if($menu->lien)
+        <li>
+            <a href="{{$menu->lien}}" class="text-white nav-link navigation-link">{{$menu->nom}}</a>
+        </li>
+        @else
+        <li>
+            <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">{{$menu->nom}}</p>
+            <ul class="d-none list-unstyled ml-5">
+                @foreach($menu->sousMenus as $sousMenu)
+                    @if(((Auth::check() and $sousMenu->droit >= Auth::user()->droit) or $sousMenu->droit == 0) and $sousMenu->afficher == 1)
+                    <li>
+                        <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}}</a>
+                    </li>
+                    @endif
+                @endforeach
+            </ul>
+        </li>
+        @endif
+        @endforeach
+    </ul>
 </div>
