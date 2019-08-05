@@ -135,6 +135,16 @@ html, body {
    
     margin: 0 auto;
     width: 100%;
+
+}
+@media(max-width:576px){
+    .img-big{
+        max-width:250px;
+        ;
+    }
+    .mb-xs-only{
+        margin-bottom: 15px;
+    }
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
@@ -144,7 +154,7 @@ html, body {
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
     .container{
-        max-width: 550px;
+        max-width: 650px;
     }
  }
 
