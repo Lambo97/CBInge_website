@@ -225,7 +225,7 @@
                                     <p class="pt-2 pl-1"> Il n'y a pas encore d'image </p>
                                 @else 
                                     <p>
-                                    <img src="/profile/image/{{$user->annee_bapteme}}/{{$user->photo}}" class="w-25">
+                                        <img src="/profile/{{$user->id}}/image" class="w-25">
                                     </p>
                                 @endif
                                 

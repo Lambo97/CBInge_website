@@ -37,7 +37,7 @@ Route::get('/profile/removeParrain/{parrain}', ('ProfileController@removeParrain
 Route::get('/profile/editBleu', ('ProfileController@editBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/addBleu/{bleu}', ('ProfileController@addBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/removeBleu/{bleu}', ('ProfileController@removeBleu'))->middleware(['auth', 'approved']);
-Route::get('/profile/image/{annee_bapteme}/{url}', ('ProfileController@image'));
+Route::get('/profile/{user}/image', ('ProfileController@image'));
 
 /*
 | Route concernant l'agenda
@@ -74,3 +74,8 @@ Route::post('/pvcomite/add', 'PvComiteController@store')->middleware(['auth', 'c
 Route::get('/pvcomite/edit/{pv}', 'PvComiteController@edit')->middleware(['auth', 'comite']);
 Route::post('/pvcomite/update/{pv}', 'PvComiteController@update')->middleware(['auth', 'comite']);
 Route::get('/pvcomite/destroy/{pv}', 'PvComiteController@destroy')->middleware(['auth', 'comite']);
+
+/*
+| Route concernant l'affichage du comite
+*/
+Route::get('/comite/actuel', ('ComiteController@actuel'));

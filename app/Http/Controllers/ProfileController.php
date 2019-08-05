@@ -19,7 +19,16 @@ class ProfileController extends Controller
      */
     public function show(User $user)
     {
-        return view('profile.show', compact('user'));
+        $year = date('Y');
+        if(date('m')<9)
+        {
+            $year = $year-1;
+        }
+
+        $fonctionCourante = $user->fonctions()->first();
+        $fonctionsPrecedantes = $user->fonctions()->get();
+
+        return view('profile.show', compact('user', 'fonctionCourante', 'fonctionsPrecedantes'));
     }
 
     /**
@@ -280,9 +289,9 @@ class ProfileController extends Controller
      * @param  url
      * @return \Illuminate\Http\Response
      */
-    public function image($annee_bapteme, $url)
+    public function image(User $user)
     {
-        return response()->file(storage_path('app/public/profile/'. $annee_bapteme .'/'. $url));
+        return response()->file(storage_path('app/public/profile/'. $user->annee_bapteme .'/'. $user->photo));
     }
 
 }

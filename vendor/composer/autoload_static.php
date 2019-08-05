@@ -460,6 +460,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\ComiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/ComiteController.php',
         'App\\Http\\Controllers\\CommentForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentForumController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',

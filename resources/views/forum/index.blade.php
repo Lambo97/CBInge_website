@@ -13,7 +13,7 @@
         @csrf
 
         <div class="form-group row">
-            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/profile/image/{{Auth::user()->annee_bapteme}}/{{Auth::user()->photo}}" alt="{{Auth::user()->surnom_forum}}"></label>
+            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/profile/{{Auth::user()->id}}/image" alt="{{Auth::user()->surnom_forum}}"></label>
 
             <div class="col-lg-6 col-md-10 col-xs-12">
                 <textarea id="message" rows="5" class="form-control bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
@@ -44,7 +44,7 @@
     <div class="bg-dark mt-4 border border-light rounded">
         <div class="row mx-0" @if($post->ancre == 1) style="background-color: #353131;" @endif>
             <div class="col-md-2 d-none d-md-block">
-                <img class="mx-auto d-block img-fluid" src="/profile/image/{{$post->auteur->annee_bapteme}}/{{$post->auteur->photo}}" alt="{{$post->auteur->surnom_forum}}"> 
+                <img class="mx-auto d-block img-fluid" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
             <div class="col-md-10 col-xs-12">
                 <div class="row mb-2 mt-2 justify-content-between">
@@ -96,7 +96,7 @@
                 @foreach($post->comment as $comment)
                     <div class="row mb-3">
                         <div class="col-2">
-                            <img class="mx-auto d-block img-fluid" src="/profile/image/{{$comment->auteur->annee_bapteme}}/{{$comment->auteur->photo}}" alt="{{$post->auteur->surnom_forum}}"> 
+                            <img class="mx-auto d-block img-fluid" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
                         </div>
                         <div class="col-10">
                             <div class="row">
