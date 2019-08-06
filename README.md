@@ -13,6 +13,8 @@ php artisan migrate
 ```
 pour importer toutes les tables et leurs structures. Les tables seront vides.
 
+Il est important d'importer la table `menu` depuis le fichier `menu.sql` et la table `sous_menu` depuis le fichier `sous_menu.sql`
+
 ## Package
 
 Pour utiliser le site il faudra utiliser plusieurs package.
