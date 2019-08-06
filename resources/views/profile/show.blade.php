@@ -17,7 +17,9 @@
 
         <h4 class="d-inline"><strong>{{$user->prenom}} {{$user->name}}</strong></h4>
             <p class="d-inline ml-1">({{$user->surnom_forum}})</p>
-            <p>{{$fonctionCourante->nom}}</p>
+            @if($fonctionCourante)
+                <p>{{$fonctionCourante->nom}}</p>
+            @endif
             <p class="mt-4 mb-0">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
             @if(Auth::check() and Auth::user()->droit < 8)
             <p class="m-0">{{$user->email}}</p>
