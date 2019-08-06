@@ -16,7 +16,9 @@
     <div class=" col-sm-9">
 
         <h4 class="d-inline"><strong>{{$user->prenom}} {{$user->name}}</strong></h4>
-            <p class="d-inline ml-1">({{$user->surnom_forum}})</p>
+            @if($user->surnom)
+            <p class="d-inline ml-1">({{$user->surnom}})</p>
+            @endif
             @if($fonctionCourante)
                 <p>{{$fonctionCourante->nom}}</p>
             @endif

@@ -79,3 +79,4 @@ Route::get('/pvcomite/destroy/{pv}', 'PvComiteController@destroy')->middleware([
 | Route concernant l'affichage du comite
 */
 Route::get('/comite/actuel', ('ComiteController@actuel'));
+Route::get('/comite/anciens', ('ComiteController@anciens'));

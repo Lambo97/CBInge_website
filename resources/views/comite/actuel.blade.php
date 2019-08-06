@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-<title> CB Ingé - Comite Actuel </title>
+<title> CB Ingé - Comité Actuel </title>
 @endsection
 
 @section('content')
-<h1 class="mb-3">Comite Actuel ({{$year}} - {{$year+1}})</h1>
+<h1 class="mb-3">Comité Actuel ({{$year}} - {{$year+1}})</h1>
 
 <h3 class="mb-2">Bureau</h3>
 <div class="row">
@@ -14,7 +14,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$president->id}}/image">
         <b>Président</b><br>
         {{$president->prenom}} {{$president->name}} <br>
-        ({{$president->surnom_forum}})
+        @if($president->surnom)
+        ({{$president->surnom}})
+        @endif
     </div>
 
     <!--Vice-Président-->
@@ -23,7 +25,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$vp->id}}/image">
         <b>Vice-président</b><br>
         {{$vp->prenom}} {{$vp->name}} <br>
-        ({{$vp->surnom_forum}})
+        @if($vp->surnom)
+        ({{$vp->surnom}})
+        @endif
     </div>
     @endif
 
@@ -32,7 +36,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$tresorier->id}}/image">
         <b>Trésorier</b><br>
         {{$tresorier->prenom}} {{$tresorier->name}} <br>
-        ({{$tresorier->surnom_forum}})
+        @if($tresorier->surnom)
+        ({{$tresorier->surnom}})
+        @endif
     </div>
 
     <!--Secrétaire-->
@@ -40,7 +46,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$secretaire->id}}/image">
         <b>Secrétaire</b><br>
         {{$secretaire->prenom}} {{$secretaire->name}} <br>
-        ({{$secretaire->surnom_forum}})
+        @if($secretaire->surnom)
+        ({{$secretaire->surnom}})
+        @endif
     </div>
 
     <!--Présidente-->
@@ -49,7 +57,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$presidente->id}}/image">
         <b>Présidente</b><br>
         {{$presidente->prenom}} {{$presidente->name}} <br>
-        ({{$presidente->surnom_forum}})
+        @if($presidente->surnom)
+        ({{$presidente->surnom}})
+        @endif
     </div>
     @endif
 </div>
@@ -62,7 +72,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$toge->id}}/image">
         <b>Togé sans fonction</b><br>
         {{$toge->prenom}} {{$toge->name}} <br>
-        ({{$toge->surnom_forum}})
+        @if($toge->surnom)
+        ({{$toge->surnom}})
+        @endif
     </div>
     @endforeach
 </div>
@@ -75,7 +87,9 @@
         <img style="width:100%" class="mb-2" src="/profile/{{$assistant->id}}/image">
         <b>Assistants</b><br>
         {{$assistant->prenom}} {{$assistant->name}} <br>
-        ({{$assistant->surnom_forum}})
+        @if($assistant->surnom)
+        ({{$assistant->surnom}})
+        @endif
     </div>
     @endforeach
 </div>
