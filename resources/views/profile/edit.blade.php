@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé -  Modifier sa fiche</title>
+@endsection
+
+
 @section('content')
     
             <h2 style="margin-left: -15px"><strong>Modifier sa fiche</strong></h2>
@@ -195,8 +200,6 @@
 
                         <div class="form-group row">
                                 <label for="autre_etudes" class="d-none col-md-4 col-form-label text-md-right">Section</label>
-    
-                               
                                     
                                     <select id="section" type="text" class="form-control form-content @error('section') is-invalid @enderror" name="section" value="{{ old('section') ?? $user->section}}" autocomplete="autre_etudes"placeholder="Section">
                                     @foreach($options as $value)

@@ -25,8 +25,8 @@ class ProfileController extends Controller
             $year = $year-1;
         }
 
-        $fonctionCourante = $user->fonctions()->first();
-        $fonctionsPrecedantes = $user->fonctions()->get();
+        $fonctionCourante = $user->fonctions()->wherePivot('annee', $year)->first();
+        $fonctionsPrecedantes = $user->fonctions()->wherePivot('annee', '<', $year)->get();
 
         return view('profile.show', compact('user', 'fonctionCourante', 'fonctionsPrecedantes'));
     }
@@ -66,7 +66,7 @@ class ProfileController extends Controller
             $surnom_forum = 0;
         }
 
-        $options = ['Ingénieur civil des constructions', 'Ingénieur civil des mines et géologue', 'Ingénieur civil en chimie et sciences des matériaux', 'Ingénieur civil électromécanicien', 'Ingénieur civil en aérospatiale', 'Ingénieur civil électricien', 'Ingénieur civil en informatique', 'Ingénieur civil en sciences des données', 'Ingénieur civil physicien', 'Ingénieur civil mécanicien', 'Ingénieur civil biomédical'];
+        $options = ['------', 'Ingénieur civil des constructions', 'Ingénieur civil des mines et géologue', 'Ingénieur civil en chimie et sciences des matériaux', 'Ingénieur civil électromécanicien', 'Ingénieur civil en aérospatiale', 'Ingénieur civil électricien', 'Ingénieur civil en informatique', 'Ingénieur civil en sciences des données', 'Ingénieur civil physicien', 'Ingénieur civil mécanicien', 'Ingénieur civil biomédical'];
         return view('profile.edit', compact('user', 'options', 'surnom_forum'));
     }
 
@@ -138,7 +138,14 @@ class ProfileController extends Controller
         $user->entree_inge = $request->input('entree_inge');
         $user->annee_bapteme = $request->input('annee_bapteme');
         $user->autre_etudes = $request->input('autre_etudes');
-        $user->section = $request->input('section');
+        if($request->input('section') == '------')
+        {
+            $user->section = null;
+        }
+        else
+        {
+            $user->section = $request->input('section');
+        }
         $user->photo = $filename;
         $user->probleme_sante = $request->input('probleme_sante');
         $user->citation=$request->input('citation');

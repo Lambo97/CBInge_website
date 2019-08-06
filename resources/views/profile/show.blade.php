@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - {{$user->prenom}} {{$user->name}}</title>
+@endsection
+
 @section('content')
     
 <div class="d-sm-flex">
@@ -11,7 +15,7 @@
     </div>
     <div class=" col-sm-9">
 
-        <h4 class="d-inline"><strong>{{$user->name}} {{$user->prenom}}</strong></h4>
+        <h4 class="d-inline"><strong>{{$user->prenom}} {{$user->name}}</strong></h4>
             <p class="d-inline ml-1">({{$user->surnom_forum}})</p>
             <p>{{$fonctionCourante->nom}}</p>
             <p class="mt-4 mb-0">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
@@ -35,14 +39,17 @@
         <p class="mb-0">{{$user->autre_etudes}}</p>
     @endif
 
-    <h6 class="mb-0 mt-2 font-weight-bold">Section</h6>
-    <p class="mb-0">{{$user->section}}</p>
+    @if($user->section != null)
+        <h6 class="mb-0 mt-2 font-weight-bold">Section</h6>
+        <p class="mb-0">{{$user->section}}</p>
+    @endif
 
-
-    <h6 class="mb-0 mt-2 font-weight-bold">Fonction(s) au sein des comités précédents</h6>
-    @foreach ($fonctionsPrecedantes as $fonction)
-        <p class="mb-0">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
-    @endforeach
+    @if(empty($fonctionsPrecedantes))
+        <h6 class="mb-0 mt-2 font-weight-bold">Fonction(s) au sein des comités précédents</h6>
+        @foreach ($fonctionsPrecedantes as $fonction)
+            <p class="mb-0">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
+        @endforeach
+    @endif
 
     @if($user->parrains()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Parrain(s)</h6>
@@ -65,17 +72,17 @@
 
     @if($user->boisson != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Boissons(s) favorite(s)</h6>
-        <p class="mb-0">{{$user->boisson}}</p>
+        <p class="mb-0">{!!Purifier::clean($user->boisson);!!}</p>
     @endif
 
     @if($user->guindaille != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Guindaille(s) favorite(s)</h6>
-        <p class="mb-0">{{$user->guindaille}}</p>
+        <p class="mb-0">{!!Purifier::clean($user->guindaille);!!}</p>
     @endif
             
     @if($user->titre_guindaille != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Titre(s) de guindaille</h6>
-        <p class="mb-0">{{$user->titre_guindaille}}</p>
+        <p class="mb-0">{!!Purifier::clean($user->titre_guindaille);!!}</p>
     @endif
 
     @if($user->probleme_sante != null)
