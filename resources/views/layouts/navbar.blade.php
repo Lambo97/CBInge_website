@@ -17,7 +17,11 @@
         <li class=" d-block">
             <div class="font-weight-bold">
                 Demande en attente de confirmation <span class="caret"></span>
-            </div>     
+            </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:block;">
+                @csrf
+                <button type="submit" class="buttons-green">Déconnexion</button>
+            </form> 
         </li>
     @else
         <li class="nav-item d-block">
