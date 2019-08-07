@@ -80,3 +80,4 @@ Route::get('/pvcomite/destroy/{pv}', 'PvComiteController@destroy')->middleware([
 */
 Route::get('/comite/actuel', ('ComiteController@actuel'));
 Route::get('/comite/anciens', ('ComiteController@anciens'));
+Route::get('/comite/webmaster', ('ComiteController@webmaster'));

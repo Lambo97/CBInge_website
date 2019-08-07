@@ -141,6 +141,23 @@ class ComiteController extends Controller
 
     public function webmaster()
     {
-        
+        $year = date('Y');
+        if(date('m')<9)
+        {
+            $year = $year-1;
+        }
+
+        $webmasters = User::whereHas('fonctions', function($query){
+            $query->where('nom', 'Webmaster');
+        })->distinct()->orderBy('annee_bapteme', 'desc')->get();
+
+        foreach($webmasters as $webmaster)
+        {
+            $fonctions_annees = $webmaster->fonctions()->where('nom', 'Webmaster')->orderBy('pivot_annee')->get();
+            $webmaster->annee_debut = $fonctions_annees->first()->pivot['annee'];
+            $webmaster->annee_fin = $fonctions_annees->last()->pivot['annee'];;
+        }
+
+        return view('comite.webmaster', compact('webmasters', 'year'));
     }
 }
