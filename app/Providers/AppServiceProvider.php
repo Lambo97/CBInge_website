@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         view()->composer('layouts.footer', function($view){
-            $view->with(['connectedNow' => User::connectedNow(), 'connectedToday' => User::connectedToday()]);
+            $view->with(['connectedNow' => User::connectedNow(), 'connectedToday' => User::connectedToday(), 'anniversaires' => User::anniversaire()]);
         });
 
         view()->composer('layouts.navbar', function($view){
