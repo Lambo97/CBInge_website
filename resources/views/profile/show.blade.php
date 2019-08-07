@@ -48,7 +48,7 @@
         <p class="mb-0">{{$user->section}}</p>
     @endif
 
-    @if(empty($fonctionsPrecedantes))
+    @if(true)
         <h6 class="mb-0 mt-2 font-weight-bold">Fonction(s) au sein des comités précédents</h6>
         @foreach ($fonctionsPrecedantes as $fonction)
             <p class="mb-0">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
