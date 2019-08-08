@@ -190,7 +190,10 @@ return [
          * OneSignal Notification
          */
         Berkayk\OneSignal\OneSignalServiceProvider::class,
-        
+        /*
+         * Intervention Image
+         */
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -246,6 +249,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
         'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

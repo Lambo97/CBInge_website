@@ -65,7 +65,7 @@
     @if($user->bleus()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Bleus(s)</h6>
         @foreach ($user->bleus as $bleu)
-            <p class="mb-0"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}<p>
+            <p class="mb-0"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}</p>
         @endforeach
     @endif
 

@@ -81,3 +81,17 @@ Route::get('/pvcomite/destroy/{pv}', 'PvComiteController@destroy')->middleware([
 Route::get('/comite/actuel', ('ComiteController@actuel'));
 Route::get('/comite/anciens', ('ComiteController@anciens'));
 Route::get('/comite/webmaster', ('ComiteController@webmaster'));
+
+/*
+| Route concernant les photos
+*/
+Route::get('/photos', ('PhotoController@index'))->middleware(['auth', 'baptise']);
+Route::get('/photos/admin', ('PhotoController@admin'))->middleware(['auth', 'admin']);
+Route::post('/photos/create_album', ('PhotoController@createAlbum'))->middleware(['auth', 'admin']);
+Route::post('/photos/add_photos', ('PhotoController@storePhotos'))->middleware(['auth', 'admin']);
+Route::get('/photos/add_photos/{album}', ('PhotoController@addPhotos'))->middleware(['auth', 'admin']);
+Route::get('/photos/cover/{album}', ('PhotoController@cover'))->middleware(['auth', 'baptise']);
+Route::get('/photos/{annee}', ('PhotoController@annee'))->middleware(['auth', 'baptise']);
+Route::get('/photos/{annee}/{album}', ('PhotoController@album'))->middleware(['auth', 'baptise']);
+Route::get('/photos/{annee}/{album}/{photo}', ('PhotoController@photo'))->middleware(['auth', 'baptise']);
+
