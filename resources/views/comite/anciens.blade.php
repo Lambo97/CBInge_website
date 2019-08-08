@@ -44,6 +44,7 @@
         </p>
     </div>
 </div>
+<hr size=10>
 @endforeach
 
 
