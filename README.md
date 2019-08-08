@@ -36,6 +36,11 @@ composer require mews/purifier
 composer require berkayk/onesignal-laravel
 ```
 
+### Intervention image
+```bash
+composer require intervention/image
+```
+
 ### Remarque
 Attention ne pas oublier de faire 
 ```bash
