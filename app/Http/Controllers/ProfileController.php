@@ -119,7 +119,7 @@ class ProfileController extends Controller
         }elseif($request->input('surnom_forum') == "4")
         {
             $surnom_forum = $request->input('surnom');
-        }elseif($request->input('surnom_forum') == "1")
+        }else
         {
             $surnom_forum = $request->input('prenom').' '.$request->input('name');
         }

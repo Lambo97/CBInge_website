@@ -32,6 +32,13 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         view()->composer('layouts.footer', function($view){
+            if(\Auth::check() and \Auth::user()->droit < 7)
+            {
+                \Auth::user()->update([
+                    'last_login_at' => date("Y-m-d H:i:s")
+                ]);
+            }
+            
             $view->with(['connectedNow' => User::connectedNow(), 'connectedToday' => User::connectedToday(), 'anniversaires' => User::anniversaire()]);
         });
 

@@ -57,8 +57,6 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        $user->update([
-            'last_login_at' => date("Y-m-d H:i:s")
-        ]);
+        
     }
 }
