@@ -39,7 +39,7 @@ class PhotoController extends Controller
     public function annee($annee)
     {
         $albums = PhotoAlbum::where('annee', $annee)->get();
-        return view('photo.annee', compact('albums'));
+        return view('photo.annee', compact('albums', 'annee'));
     }
 
     public function album($annee, PhotoAlbum $album)

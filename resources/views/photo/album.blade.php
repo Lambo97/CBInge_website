@@ -7,7 +7,7 @@
 @section('content')
 <div class="row mb-3">
     <div class="col-md-4 col-sm-12">
-        <h1>Photos</h1>
+        <h1>{{$album->nom}} - {{$album->annee}}</h1>
     </div>
     @if(Auth::check() and Auth::user()->droit == 1)
     <div class="col-md-6 d-flex justify-content-end align-items-center">
