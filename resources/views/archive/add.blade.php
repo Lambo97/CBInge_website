@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-<title> CB Ingé - Creer un album</title>
+<title> CB Ingé - Ajouter une archive</title>
 @endsection
 
 

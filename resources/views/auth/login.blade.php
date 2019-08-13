@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Login</title>
+@endsection
+
 @section('content')
 <h2 style="margin-left: -15px"><strong>Se connecter</strong></h2>
                     <form method="POST" action="{{ route('login') }}">

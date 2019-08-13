@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Reset mot de passe </title>
+@endsection
+
 @section('content')
                 <h2 style="margin-left: -15px"><strong>Reset du mot de passe</strong></h2>
 

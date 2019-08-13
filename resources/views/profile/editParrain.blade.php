@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Parrains</title>
+@endsection
+
 @section('content')
 
         <h2><strong>Liste des parrains de {{Auth::user()->surnom_forum}}</strong></h2>
