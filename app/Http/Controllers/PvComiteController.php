@@ -14,6 +14,7 @@ class PvComiteController extends Controller
      */
     public function index()
     {
+        \Auth::user()->pv_comite_check = ComitePv::orderBy('created_at', 'desc')->first()->id;
         $pvs = ComitePv::orderBy('created_at', 'desc')->paginate(10);
         return view('pvcomite.index', compact('pvs'));
     }
