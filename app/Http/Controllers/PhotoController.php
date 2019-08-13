@@ -77,7 +77,7 @@ class PhotoController extends Controller
     public function createAlbum(Request $request)
     {
         $this->validate($request, [
-            'nom' => 'required',
+            'nom' => 'required', 
             'annee' => 'required',
             'cover' => ['image','nullable', 'max:1999', 'required']
         ]);

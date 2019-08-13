@@ -453,6 +453,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
     );
 
     public static $classMap = array (
+        'App\\Archive' => __DIR__ . '/../..' . '/app/Archive.php',
         'App\\ComitePv' => __DIR__ . '/../..' . '/app/ComitePv.php',
         'App\\CommentForum' => __DIR__ . '/../..' . '/app/CommentForum.php',
         'App\\CommentLike' => __DIR__ . '/../..' . '/app/CommentLike.php',

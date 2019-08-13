@@ -95,3 +95,11 @@ Route::get('/photos/{annee}', ('PhotoController@annee'))->middleware(['auth', 'b
 Route::get('/photos/{annee}/{album}', ('PhotoController@album'))->middleware(['auth', 'baptise']);
 Route::get('/photos/{annee}/{album}/{photo}', ('PhotoController@photo'))->middleware(['auth', 'baptise']);
 
+/*
+| Route concernant les archives
+*/
+Route::get('/archives', ('ArchiveController@index'))->middleware(['auth', 'baptise']);
+Route::get('/archives/add', ('ArchiveController@add'))->middleware(['auth', 'bureau']);
+Route::post('/archives/add', ('ArchiveController@store'))->middleware(['auth', 'bureau']);
+Route::get('/archives/file/{url}', ('ArchiveController@file'))->middleware(['auth', 'baptise']);
+Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['auth', 'comite']);
