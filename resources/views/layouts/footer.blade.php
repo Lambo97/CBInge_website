@@ -1,6 +1,15 @@
 <!-- Footer -->
 <footer class="page-footer font-small bg-black">
-    @if(Auth::check())
+    @if(Auth::check() and Auth::user()->droit < 8)
+    <div class="row text-center mx-0">
+        <div class="mx-auto">
+            <p class="my-0 pt-3">Anniversaires : <a href="#" class="green-link">Thomas Jeanmoye</a>
+            @foreach ($anniversaires as $user)
+                <a class= "green-link" href="/profile/show/{{$user->id}}" > , {{$user->prenom}} {{$user->name}} @if($user->surnom) ({{$user->surnom}})@endif</a> - {{$user->age}} ans
+            @endforeach
+            </p>
+        </div>
+    </div>
     <div class="row text-center mx-0">
         <div class="mx-auto">
             <p class="my-0 pt-3">Utilisateurs en ligne :</p>

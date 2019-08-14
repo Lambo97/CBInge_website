@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Reset mot de passe </title>
+@endsection
+
 @section('content')
-                <h2 style="margin-left: -15px"><strong>Reset mot de passe</strong></h2>
+                <h2 style="margin-left: -15px"><strong>Reset du mot de passe</strong></h2>
 
                 
                     @if (session('status'))
@@ -30,7 +34,7 @@
                         <div class="d-flex flex-row-reverse mb-2">
                             
                                 <button type="submit" class="buttons-green font-weight-bold">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Envoyer lien de reset par email') }}
                                 </button>
                             
                         </div>

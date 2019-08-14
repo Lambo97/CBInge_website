@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Bleus </title>
+@endsection
+
 @section('content')
 
         <h2>Liste des bleus de {{Auth::user()->surnom_forum}}</h2>

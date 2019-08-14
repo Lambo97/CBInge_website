@@ -17,19 +17,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sous_menus`
---
-
-CREATE TABLE `sous_menus` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `id_menu` bigint(20) UNSIGNED NOT NULL,
-  `nom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `droit` int(11) NOT NULL,
-  `afficher` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
 -- Dumping data for table `sous_menus`
 --
 
@@ -37,8 +24,8 @@ INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) V
 (1, 3, 'Chants', '#', 0, 1),
 (2, 3, 'Oripaux', '#', 0, 1),
 (3, 4, 'Comité actuel', '/comite/actuel', 0, 1),
-(4, 4, 'Anciens comités', '#', 0, 1),
-(5, 4, 'Anciens webmasters', '#', 0, 1),
+(4, 4, 'Anciens comités', '/comite/anciens', 0, 1),
+(5, 4, 'Anciens webmasters', '/comite/webmaster', 0, 1),
 (6, 5, 'Photos', '#', 6, 1),
 (7, 5, 'Videos', '#', 6, 1),
 (8, 5, 'Archives', '#', 6, 1),
@@ -57,19 +44,3 @@ INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) V
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `sous_menus`
---
-ALTER TABLE `sous_menus`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `sous_menus`
---
-ALTER TABLE `sous_menus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;

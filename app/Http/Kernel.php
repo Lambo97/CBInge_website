@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\CheckAdmin::class,
         'comite' => \App\Http\Middleware\CheckComite::class,
         'bureau' => \App\Http\Middleware\CheckBureau::class,
+        'baptise' => \App\Http\Middleware\CheckBaptise::class,
     ];
 
     /**

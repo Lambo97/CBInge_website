@@ -53,6 +53,18 @@ class User extends Authenticatable
         return User::where([['last_login_at', '>=', $dateYesterday], ['droit', '<', 7]])->get();
     }
 
+    public static function anniversaire()
+    {
+
+        $anniversaires = User::whereDay('date_de_naissance', date('d'))->whereMonth('date_de_naissance', date('m'))->get();
+
+        foreach($anniversaires as $user)
+        {
+            $user->age = date('Y') - date('Y' ,strtotime($user->date_de_naissance));
+        }
+        return $anniversaires;
+    }
+
     public function parrains()
     {
         return $this->belongsToMany('App\User', 'bleu_parrain', 'bleu_id', 'parrain_id');
@@ -67,4 +79,5 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Fonction')->withPivot('annee');
     }
+
 }

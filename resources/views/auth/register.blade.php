@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Inscription au baptême</title>
+@endsection
+
 @section('content')
     <h2><strong>S'inscrire</strong></h2>
     

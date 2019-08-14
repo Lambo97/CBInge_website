@@ -13,7 +13,9 @@ php artisan migrate
 ```
 pour importer toutes les tables et leurs structures. Les tables seront vides.
 
-Il est important d'importer la table `menu` depuis le fichier `menu.sql` et la table `sous_menu` depuis le fichier `sous_menu.sql`
+Il est important d'importer la table `menu` depuis le fichier `menu.sql` et la table `sous_menu` depuis le fichier `sous_menu.sql`.
+
+Vous pouvez également importer les tables `users`, `bleu_parrain` et `fonction_user` depuis les fichier SQL. Vous pourrez alors vous connecter grâce à vos identifiant normaux (il faudra reset votre mot de passe). Vous n'aurez pas les photos de profil, si vous les voulez, demandez les moi.
 
 ## Package
 
@@ -32,6 +34,11 @@ composer require mews/purifier
 ### OneSignal Notification
 ```bash
 composer require berkayk/onesignal-laravel
+```
+
+### Intervention image
+```bash
+composer require intervention/image
 ```
 
 ### Remarque

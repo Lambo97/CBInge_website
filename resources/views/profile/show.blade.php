@@ -25,7 +25,7 @@
             <p class="mt-4 mb-0">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
             @if(Auth::check() and Auth::user()->droit < 8)
             <p class="m-0">{{$user->email}}</p>
-            <p class="m-0">{{$user->gsm}}</p>
+            <p class="m-0"><a class="green-link" href="tel:{{$user->gsm}}" >{{$user->gsm}}</a></p>
             @endif
             <p class="m-0">{{date('d-m-Y', strtotime($user->date_de_naissance))}}</p>
             
@@ -48,7 +48,7 @@
         <p class="mb-0">{{$user->section}}</p>
     @endif
 
-    @if(empty($fonctionsPrecedantes))
+    @if($user->fonctions()->count() > 1)
         <h6 class="mb-0 mt-2 font-weight-bold">Fonction(s) au sein des comités précédents</h6>
         @foreach ($fonctionsPrecedantes as $fonction)
             <p class="mb-0">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
@@ -65,7 +65,7 @@
     @if($user->bleus()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Bleus(s)</h6>
         @foreach ($user->bleus as $bleu)
-            <p class="mb-0"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}<p>
+            <p class="mb-0"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}</p>
         @endforeach
     @endif
 

@@ -25,8 +25,8 @@ class ProfileController extends Controller
             $year = $year-1;
         }
 
-        $fonctionCourante = $user->fonctions()->wherePivot('annee', $year)->first();
-        $fonctionsPrecedantes = $user->fonctions()->wherePivot('annee', '<', $year)->get();
+        $fonctionCourante = $user->fonctions()->where('nom' ,'!=', 'Webmaster')->wherePivot('annee', $year)->first();
+        $fonctionsPrecedantes = $user->fonctions()->wherePivot('annee', '<', $year)->orderBy('pivot_annee')->get();
 
         return view('profile.show', compact('user', 'fonctionCourante', 'fonctionsPrecedantes'));
     }
@@ -119,7 +119,7 @@ class ProfileController extends Controller
         }elseif($request->input('surnom_forum') == "4")
         {
             $surnom_forum = $request->input('surnom');
-        }elseif($request->input('surnom_forum') == "1")
+        }else
         {
             $surnom_forum = $request->input('prenom').' '.$request->input('name');
         }
@@ -299,7 +299,8 @@ class ProfileController extends Controller
      */
     public function image(User $user)
     {
-        return response()->file(storage_path('app/public/profile/'. $user->annee_bapteme .'/'. $user->photo));
+        $img = \Image::make(storage_path('app/public/profile/'. $user->annee_bapteme .'/'. $user->photo))->fit(600, 600);
+        return $img->response();
     }
 
 }

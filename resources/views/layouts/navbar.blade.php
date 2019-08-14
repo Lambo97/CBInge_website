@@ -49,9 +49,19 @@
             <ul class="d-none list-unstyled ml-5">
                 @foreach($menu->sousMenus as $sousMenu)
                     @if(((Auth::check() and $sousMenu->droit >= Auth::user()->droit) or $sousMenu->droit == 0) and $sousMenu->afficher == 1)
-                    <li>
-                        <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}}</a>
-                    </li>
+                        @if($sousMenu->lien == '/forum')
+                            <li>
+                                <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}} @if($check_forum > 0)<span class="badge badge-light">{{$check_forum}}</span>@endif</a>
+                            </li>
+                        @elseif($sousMenu->lien == '/pvcomite')
+                            <li>
+                                <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}} @if($check_pv_comite > 0)<span class="badge badge-light">{{$check_pv_comite}}</span>@endif</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}}</a>
+                            </li>
+                        @endif
                     @endif
                 @endforeach
             </ul>

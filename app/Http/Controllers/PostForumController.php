@@ -16,6 +16,7 @@ class PostForumController extends Controller
      */
     public function index()
     {
+        \Auth::user()->forum_check = PostForum::orderBy('created_at', 'desc')->first()->id;
         $posts = PostForum::orderBy('ancre','desc')->orderBy('updated_at','desc')->paginate(10);
         return view('forum.index', compact('posts'));
     }

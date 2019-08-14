@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title> CB Ingé - Login</title>
+@endsection
+
 @section('content')
 <h2 style="margin-left: -15px"><strong>Se connecter</strong></h2>
                     <form method="POST" action="{{ route('login') }}">
@@ -39,7 +43,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Se souvenir de moi') }}
                                     </label>
                                 </div>
                             
