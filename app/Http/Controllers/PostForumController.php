@@ -140,13 +140,13 @@ class PostForumController extends Controller
             if($like->value == 1)
             {
                 $like->delete();
-                return redirect('/forum')->with('success', 'Message pas liké');
+                return redirect('/forum');
             }
             else
             {
                 $like->value = 1;
                 $like->save();
-                return redirect('/forum')->with('success', 'Message liké');
+                return redirect('/forum');
             }
         }
         else
@@ -157,7 +157,7 @@ class PostForumController extends Controller
         $like->value = 1;
         $like->save();
         }
-        return redirect('/forum')->with('success', 'Message liké');
+        return redirect('/forum');
     }
 
     public function dislike(PostForum $post)
@@ -169,13 +169,13 @@ class PostForumController extends Controller
             if($like->value == -1)
             {
                 $like->delete();
-                return redirect('/forum')->with('success', 'Message pas disliké');
+                return redirect('/forum');
             }
             else
             {
                 $like->value = -1;
                 $like->save();
-                return redirect('/forum')->with('success', 'Message disliké');
+                return redirect('/forum');
             }
         }
         $like = new PostLike;
@@ -183,7 +183,7 @@ class PostForumController extends Controller
         $like->user_id = auth()->user()->id;
         $like->value = -1;
         $like->save();
-        return redirect('/forum')->with('success', 'Message disliké');
+        return redirect('/forum');
     }
 
     /** 

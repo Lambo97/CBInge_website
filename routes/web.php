@@ -48,6 +48,7 @@ Route::post('events', 'EventController@addEvent')->name('events.add');
 /*
 | Route concernant le forum
 */ 
+Route::get('/forum/Like')->middleware(['auth', 'comite']);
 Route::get('/forum', ('PostForumController@index'))->middleware(['auth', 'comite']);
 Route::post('/forum/add', 'PostForumController@add')->middleware(['auth', 'comite']);
 Route::get('/forum/edit/{post}', 'PostForumController@edit')->middleware(['auth', 'comite']);
@@ -63,6 +64,7 @@ Route::get('/forum/dislike/{post}', 'PostForumController@dislike')->middleware([
 Route::get('/forum/comment/like/{comment}', 'CommentForumController@like')->middleware(['auth', 'comite']);
 Route::get('/forum/comment/dislike/{comment}', 'CommentForumController@dislike')->middleware(['auth', 'comite']);
 Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
+
 
 /*
 | Route concernant les pv's du comité

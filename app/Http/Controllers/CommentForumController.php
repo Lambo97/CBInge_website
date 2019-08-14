@@ -91,13 +91,13 @@ class CommentForumController extends Controller
             if($like->value == 1)
             {
                 $like->delete();
-                return redirect('/forum')->with('success', 'Commentaire pas liké');
+                return redirect('/forum');
             }
             else
             {
                 $like->value = 1;
                 $like->save();
-                return redirect('/forum')->with('success', 'Commentaire liké');
+                return redirect('/forum');
             }
         }
         else
@@ -108,7 +108,7 @@ class CommentForumController extends Controller
         $like->value = 1;
         $like->save();
         }
-        return redirect('/forum')->with('success', 'Commentaire liké');
+        return redirect('/forum');
     }
 
     public function dislike(CommentForum $comment)
@@ -120,13 +120,13 @@ class CommentForumController extends Controller
             if($like->value == -1)
             {
                 $like->delete();
-                return redirect('/forum')->with('success', 'Commentaire pas disliké');
+                return redirect('/forum');
             }
             else
             {
                 $like->value = -1;
                 $like->save();
-                return redirect('/forum')->with('success', 'Commentaire disliké');
+                return redirect('/forum');
             }
         }
         $like = new CommentLike;
@@ -134,6 +134,6 @@ class CommentForumController extends Controller
         $like->user_id = auth()->user()->id;
         $like->value = -1;
         $like->save();
-        return redirect('/forum')->with('success', 'Commentaire disliké');
+        return redirect('/forum');
     }
 }

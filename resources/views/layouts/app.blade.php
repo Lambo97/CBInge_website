@@ -27,6 +27,7 @@
     <!-- Scripts -->
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <script src="{{ asset('/js/nav.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <!-- One signal -->
     @if(Auth::check())
