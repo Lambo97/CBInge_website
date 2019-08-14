@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2><strong>Se connecter</strong></h2>
+    <h2><strong>S'inscrire</strong></h2>
     
                 <p class="m-3">Les données que vous entrez ici doivent-être correctes. Ces informations ne seront visibles que par les membres du comité et servent à garantir votre sécurité lors de nos événements.
                 Le comité ne peut être tenu responsable des déclarations fausses ou incomplètes des bleus concernant leur état de santé (Charte des Baptêmes de l'ULg, article 5).</p>
