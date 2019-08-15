@@ -81,6 +81,15 @@
         
     </div>
 
+    @if(Auth::user()->droit < 5)
+    <div class="form-group row">
+        <label for="newsletter" class="d-none col-md-4 col-form-label text-md-right">Newsletter</label>
+
+        <p style="margin-bottom: -5px;"><label for="newsletter" class="mr-2">Newsletter</label> <input id="newsletter" type="checkbox" @if($user->newsletter) checked @endif name="newsletter" value="1"></p>
+
+    </div>
+    @endif
+
     <div class="form-group row">
         <label for="date_de_naissance" class="d-none col-md-4 col-form-label text-md-right">Date de naissance</label>
 

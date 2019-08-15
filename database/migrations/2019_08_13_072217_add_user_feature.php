@@ -19,7 +19,7 @@ class AddUserFeature extends Migration
             $table->integer('forum_bleu_check')->default(0);
             $table->integer('pv_comite_check')->default(0);
             $table->integer('pv_repet_chant_check')->default(0);
-            $table->boolean('newsletter')->default(0);
+            $table->boolean('newsletter')->default(1);
         });
     }
 

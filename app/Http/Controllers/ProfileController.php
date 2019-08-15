@@ -124,6 +124,15 @@ class ProfileController extends Controller
             $surnom_forum = $request->input('prenom').' '.$request->input('name');
         }
 
+        if($request->input('newsletter'))
+        {
+            $newsletter = 1;
+        }
+        else
+        {
+            $newsletter = 0;
+        }
+
 
         // Update information
         $user->name = $request->input('name');
@@ -138,6 +147,7 @@ class ProfileController extends Controller
         $user->entree_inge = $request->input('entree_inge');
         $user->annee_bapteme = $request->input('annee_bapteme');
         $user->autre_etudes = $request->input('autre_etudes');
+        $user->newsletter = $newsletter;
         if($request->input('section') == '------')
         {
             $user->section = null;
