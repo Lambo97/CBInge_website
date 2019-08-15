@@ -91,13 +91,13 @@ class CommentForumController extends Controller
             if($like->value == 1)
             {
                 $like->delete();
-                return redirect('/forum');
+                return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => FALSE, 'is_dislike' => FALSE]);
             }
             else
             {
                 $like->value = 1;
                 $like->save();
-                return redirect('/forum');
+                return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => TRUE, 'is_dislike' => FALSE]);
             }
         }
         else
@@ -108,7 +108,7 @@ class CommentForumController extends Controller
         $like->value = 1;
         $like->save();
         }
-        return redirect('/forum');
+        return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => TRUE, 'is_dislike' => FALSE]);
     }
 
     public function dislike(CommentForum $comment)
@@ -120,13 +120,13 @@ class CommentForumController extends Controller
             if($like->value == -1)
             {
                 $like->delete();
-                return redirect('/forum');
+                return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => FALSE, 'is_dislike' => FALSE]);
             }
             else
             {
                 $like->value = -1;
                 $like->save();
-                return redirect('/forum');
+                return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => FALSE, 'is_dislike' => TRUE]);
             }
         }
         $like = new CommentLike;
@@ -134,6 +134,6 @@ class CommentForumController extends Controller
         $like->user_id = auth()->user()->id;
         $like->value = -1;
         $like->save();
-        return redirect('/forum');
+        return response()->json(['nb_like' => $comment->like->where('value', 1)->count(), 'nb_dislike' => $comment->like->where('value', -1)->count(), 'is_like' => FALSE, 'is_dislike' => TRUE]);
     }
 }
