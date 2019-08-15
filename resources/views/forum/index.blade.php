@@ -6,18 +6,22 @@
 @endsection
 
 @section('content')
+
 <h1>Forum</h1>
-<smiley></smiley>
+
 <div class="row">
     <div class="col-12">
     <form method="POST" action="/forum/add" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">
-            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/profile/{{Auth::user()->id}}/image" alt="{{Auth::user()->surnom_forum}}"></label>
+        
+            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid rounded-circle" src="/profile/{{Auth::user()->id}}/image" alt="{{Auth::user()->surnom_forum}}"></label>
 
-            <div class="col-lg-6 col-md-10 col-xs-12">
-                <textarea id="message" rows="5" class="form-control bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
+            <div class="col-lg-6 col-md-10 col-xs-12 textarea">
+            
+                <textarea id="message" rows="5" class="form-control form-content mb-2" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
+                <smiley></smiley>
             </div>
         </div>
         <div class="form-group row mb-3">
@@ -45,10 +49,10 @@
 
 
 
-    <div class="bg-dark mt-4 border border-light rounded">
+    <div class="form-content mt-4">
         <div class="row mx-0" @if($post->ancre == 1) style="background-color: #353131;" @endif>
             <div class="col-md-2 d-none d-md-block">
-                <img class="mx-auto d-block img-fluid" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
+                <img class="mx-auto d-block img-fluid rounded-circle mt-2" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
             <div class="col-md-10 col-xs-12">
                 <div class="row mb-2 mt-2 justify-content-between">
@@ -76,7 +80,7 @@
                 @if($post->photo)
                 <div class="row mb-5">
                     <div class="col-10">
-                        <img class="mx-auto d-block img-fluid" src="/forum/image/{{$post->photo}}"> 
+                        <img class="mx-auto d-block img-fluid mt-2 rounded-circle" src="/forum/image/{{$post->photo}}"> 
                     </div>
                 </div>
                 @endif
@@ -100,7 +104,7 @@
                 @foreach($post->comment as $comment)
                     <div class="row mb-3">
                         <div class="col-2">
-                            <img class="mx-auto d-block img-fluid" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
+                            <img class="mx-auto d-block img-fluid rounded-circle mt-2" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
                         </div>
                         <div class="col-10">
                             <div class="row">

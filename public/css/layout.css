@@ -137,6 +137,9 @@ html, body {
     width: 100%;
 
 }
+.textarea{
+    position:relative;
+  }
 @media(max-width:576px){
     .img-big{
         max-width:250px;

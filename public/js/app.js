@@ -1896,6 +1896,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
@@ -1942,17 +1997,29 @@ __webpack_require__.r(__webpack_exports__);
       window.scrollTo(0, 99999);
     },
     onInput: function onInput(e) {
+      var textarea = document.getElementById('message');
+      var value = textarea.value;
+
       if (!e) {
         return false;
       }
 
-      if (!this.message) {
-        this.message = e["native"];
-      } else {
-        this.message = this.message + e["native"];
-      }
+      this.message = this.message + e["native"];
+      textarea.value = value + e["native"];
     },
     toggleEmo: function toggleEmo() {
+      var ouvrir = document.getElementById('insertion');
+      var fermer = document.getElementById('fermeture');
+
+      if (!this.emoStatus) {
+        ouvrir.classList.add('d-none');
+        fermer.classList.remove('d-none');
+      } else {
+        fermer.classList.add('d-none');
+        ouvrir.classList.remove('d-none');
+      }
+
+      console.log(this.emoStatus);
       this.emoStatus = !this.emoStatus;
     }
   },
@@ -6428,7 +6495,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.chat-card[data-v-0f7087c8]{\r\n  margin-bottom:140px;\n}\n.floating-div[data-v-0f7087c8]{\r\n    position: fixed;\n}\n.chat-card img[data-v-0f7087c8] {\r\n    max-width: 300px;\r\n    max-height: 200px;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-card[data-v-0f7087c8]{\r\n  margin-bottom:140px;\n}\n.floating-div[data-v-0f7087c8]{\r\n    z-index: 2000;\r\n    position: absolute;\r\n    bottom: -420px;\n}\n.chat-card img[data-v-0f7087c8] {\r\n    max-width: 300px;\r\n    max-height: 200px;\n}\r\n", ""]);
 
 // exports
 
@@ -43777,16 +43844,36 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-flex",
-        { staticClass: "ml-2 text-right", attrs: { xs1: "" } },
+        "v-layout",
+        { attrs: { row: "" } },
         [
           _c(
-            "v-btn",
+            "v-flex",
             {
-              attrs: { fab: "", dark: "", small: "", color: "pink" },
-              on: { click: _vm.toggleEmo }
+              staticClass: "ml-2 text-right buttons-green",
+              attrs: { xs1: "" }
             },
-            [_c("v-icon", [_vm._v("insert_emoticon ")])],
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { fab: "", dark: "", small: "", color: "pink" },
+                  on: { click: _vm.toggleEmo }
+                },
+                [
+                  _c("v-icon", { attrs: { id: "insertion" } }, [
+                    _vm._v("Inserér une émoticone ")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-icon",
+                    { staticClass: "d-none", attrs: { id: "fermeture" } },
+                    [_vm._v("Fermer")]
+                  )
+                ],
+                1
+              )
+            ],
             1
           )
         ],
