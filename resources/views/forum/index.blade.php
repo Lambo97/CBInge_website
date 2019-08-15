@@ -84,20 +84,23 @@
                     </div>
                 </div>
                 @endif
-                <div class="row">
-                    <div class="col-6 d-flex justify-content-center">
+                <div class="row" id="post{{$post->id}}">
+                    <div class="col-4 d-flex justify-content-center">
                         @if($post->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
-                               <b><a href="/forum/like/{{$post->id}}" onclick="like(this); return false;" class="green-link"><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b> 
+                            <b><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b> 
                         @else
-                            <small><a href="/forum/like/{{$post->id}}" onclick="like(this); return false;" class="green-link"><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
+                            <small><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
                         @endif
                     </div>
-                    <div class="col-6 d-flex justify-content-center">
+                    <div class="col-4 d-flex justify-content-center">
                         @if($post->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
-                            <b><a href="/forum/dislike/{{$post->id}}"  onclick="like(this); return false;" class="green-link"><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
+                            <b><a href="/forum/dislike/{{$post->id}}"  onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
                         @else
-                            <small><a href="/forum/dislike/{{$post->id}}"   onclick="like(this); return false;" class="green-link"><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
+                            <small><a href="/forum/dislike/{{$post->id}}"   onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
                         @endif
+                    </div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <a href="#" class="green-link mr-2" data-toggle="modal" data-target="#viewlike{{$post->id}}"><i>Consulter</i></a>
                     </div>
                 </div>
                 <hr>
@@ -110,17 +113,21 @@
                             <div class="row">
                                 <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {!!Purifier::clean($comment->message);!!}</p>
                             </div>
-                            <div class="row align-self-end">
+                            <div class="row align-self-end" id="comment{{$comment->id}}">
+                                <div>
                                 @if($comment->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
-                                    <b><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this); return false;" class="green-link mx-1">j'aime ({{$comment->like->where('value', 1)->count()}})</a></b>
+                                    <b><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></b>
                                 @else
-                                    <small><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this); return false;" class="green-link mx-1"><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
-                                @endif - 
+                                    <small><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
+                                @endif
+                                </div> - <div>
                                 @if($comment->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
-                                    <b><a href="/forum/comment/dislike/{{$comment->id}}"  onclick="like(this); return false;"class="green-link mx-1">je n'aime pas ({{$comment->like->where('value', -1)->count()}})</a></b>
+                                    <b><a href="/forum/comment/dislike/{{$comment->id}}"  onclick="like(this, false); return false;"class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></b>
                                 @else
-                                    <small><a href="/forum/comment/dislike/{{$comment->id}}" onclick="like(this); return false;" class="green-link mx-1"><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
-                                @endif - 
+                                    <small><a href="/forum/comment/dislike/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
+                                @endif
+                                </div> - 
+                                <div><small><a href="#" class="green-link mx-2" data-toggle="modal" data-target="#viewlikeComment{{$comment->id}}"><i>Consulter</i></a></small></div>
                                 commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small>
                             </div>
                             @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
@@ -133,6 +140,7 @@
                     </div>
 
                     <!-- Modal Comment -->
+                    <!-- Delete Comment -->
                     <div class="modal fade" id="deleteComment{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="#deleteComment{{$comment->id}}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -152,6 +160,35 @@
                             </div>
                         </div>
                     </div>
+                    <!-- View like comment -->
+                    <div class="modal fade" id="viewlikeComment{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="#viewlikeComment{{$comment->id}}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content" style="background-color: #353131">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Like</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>J'aime</h6>
+                                    <div class="mb-3">
+                                    @foreach ($comment->like->where('value', 1) as $like)
+                                        <a href="/profile/show/{{$like->user->id}}" class="green-link">{{$like->user->surnom_forum}}</a> - 
+                                    @endforeach
+                                    </div>
+                                    <h6>Je n'aime pas</h6>
+                                    @foreach ($comment->like->where('value', -1) as $like)
+                                        <a href="/profile/show/{{$like->user->id}}" class="green-link">{{$like->user->surnom_forum}}</a> - 
+                                    @endforeach
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 @endforeach
                 <div class="row mb-3 mt-3">
                     <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
@@ -174,6 +211,7 @@
         </div>
     </div>
     <!-- Modal Post -->
+    <!-- Delete message -->
     <div class="modal fade" id="deletePost{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="#deletePost{{$post->id}}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -193,9 +231,99 @@
             </div>
         </div>
     </div>
+
+    <!-- View like -->
+    <div class="modal fade" id="viewlike{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="#viewlike{{$post->id}}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: #353131">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Like</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>J'aime</h6>
+                    <div class="mb-3">
+                    @foreach ($post->like->where('value', 1) as $like)
+                        <a href="/profile/show/{{$like->user->id}}" class="green-link">{{$like->user->surnom_forum}}</a> - 
+                    @endforeach
+                    </div>
+                    <h6>Je n'aime pas</h6>
+                    @foreach ($post->like->where('value', -1) as $like)
+                        <a href="/profile/show/{{$like->user->id}}" class="green-link">{{$like->user->surnom_forum}}</a> - 
+                    @endforeach
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endforeach
 <div class="row mt-5 justify-content-center">
     {{$posts->links()}}
 </div>
+
+@push('scripts')
+<script>
+function like(obj, post){
+    $.ajax({
+        url: obj.href
+    }).done(function(data){
+        if(post)
+            var id = 'post'+obj.id;
+        else
+            var id = 'comment'+obj.id;
+        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike);
+    });
+ };
+
+function dislike(obj, post){
+    $.ajax({
+        url: obj.href
+    }).done(function(data){
+        if(post)
+            var id = 'post'+obj.id;
+        else
+            var id = 'comment'+obj.id;
+        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike);
+    });
+};
+
+function update(id, nb_like, is_like, nb_dislike, is_dislike)
+{
+    var row = document.getElementById(id);
+    var like = row.childNodes[0].childNodes[0], dislike = row.childNodes[2].childNodes[0];
+    like.childNodes[0].childNodes[0].innerHTML = "j'aime ("+nb_like+")";
+    dislike.childNodes[0].childNodes[0].innerHTML = "je n'aime pas ("+nb_dislike+")";
+    if(is_like)
+    {
+        var d = document.createElement('b');
+        d.innerHTML = like.innerHTML;
+        like.parentNode.replaceChild(d, like);
+    }
+    else
+    {
+        var d = document.createElement('small');
+        d.innerHTML = like.innerHTML;
+        like.parentNode.replaceChild(d, like);
+    }
+
+    if(is_dislike)
+    {
+        var d = document.createElement('b');
+        d.innerHTML = dislike.innerHTML;
+        dislike.parentNode.replaceChild(d, dislike);
+    }
+    else
+    {
+        var d = document.createElement('small');
+        d.innerHTML = dislike.innerHTML;
+        dislike.parentNode.replaceChild(d, dislike);
+    }
+}
+</script>
+@endpush
 
 @endsection
