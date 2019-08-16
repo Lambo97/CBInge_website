@@ -18,9 +18,8 @@
 
     </v-flex>
  --> 
-      <div class="floating-div">
+      <div class="floating-div" @click="onInput">
           <picker v-if="emoStatus" set="emojione" @select="onInput" title="Pick your emoji…" />
-
       </div>
 
    <!---   <v-footer
@@ -32,8 +31,8 @@
       <v-layout row >
           <v-flex class=" text-right buttons-green" xs1>
               <v-btn @click="toggleEmo" fab dark small color="pink">
-                  <v-icon id="insertion" class="">Inserér une émoticone </v-icon>
-                  <v-icon id="fermeture" class="d-none">Fermer</v-icon>
+                  <v-icon class="insert">Inserér une émoticone </v-icon>
+                  <v-icon class="ferme d-none">Fermer</v-icon>
               </v-btn>
           </v-flex>
 
@@ -77,6 +76,8 @@
 </template>
 
 <script>
+      var icon;
+
   import { Picker } from 'emoji-mart-vue'
   export default {
     props:['user'],
@@ -114,20 +115,31 @@
       scrollToEnd(){
         window.scrollTo(0,99999);
       },
+
+  
       onInput(e){
-        var textarea = document.getElementById('message');
-        var value = textarea.value;
+        var this_icon = e.target;
         
-        if(!e){
-          return false;
+        if(this_icon == undefined){
+             icon = e.native;
         }
-          this.message=this.message + e.native;
-          textarea.value=value+e.native;
-        
+        else if(this_icon != undefined){
+            var this_form = this_icon.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+            var this_textarea = this_form.querySelector('#comment');
+            var value = this_textarea.value;
+            
+            if(!e){
+            return false;
+            }
+            this.message = this.message + icon;
+            this_textarea.value = value + icon;
+        }
       },
-      toggleEmo(){
-            var ouvrir= document.getElementById('insertion');
-            var fermer= document.getElementById('fermeture');
+      toggleEmo(e){
+            var this_btn = e.target;
+            var this_parent = this_btn.parentNode;
+            var ouvrir = this_parent.querySelector('.insert');
+            var fermer = this_parent.querySelector('.ferme');
             if(!this.emoStatus){
               ouvrir.classList.add('d-none');
               fermer.classList.remove('d-none');
@@ -135,7 +147,6 @@
               fermer.classList.add('d-none');
               ouvrir.classList.remove('d-none');
             }
-            console.log(this.emoStatus);
             this.emoStatus= !this.emoStatus;
       }
     },
@@ -161,7 +172,7 @@
 .floating-div{
     z-index: 2000;
     position: absolute;
-    bottom: -380px;
+    bottom: -410px;
 }
 .chat-card img {
     max-width: 300px;

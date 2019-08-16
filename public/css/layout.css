@@ -5,6 +5,9 @@ html, body {
     height: 100vh;
     margin: 0;
 }
+.adjust{
+    margin-top:11px !important;
+}
 .buttons-green{
     background-color: #168E33;
     border-radius: 30px;
@@ -22,7 +25,7 @@ html, body {
     text-decoration: none;
 }
 .buttons-green-dark{
-    background-color: #4D6052;    
+    background-color: #4D6052 !important;    
 }
 
 .bg-black{
@@ -97,7 +100,10 @@ html, body {
     background-color: #fff;
     transition: all 0.4s ease;
 }
-
+.bg-grey{
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    outline:none;
+}
 .cursor{
     cursor: pointer;
 }
@@ -112,6 +118,7 @@ html, body {
 .nav_welcome_action p:hover, .nav_welcome_action .welcome_active{
     border-bottom: 1px solid white;
 }
+
 .form-content{
     background-color:#484747 !important;
     width: 100%;
