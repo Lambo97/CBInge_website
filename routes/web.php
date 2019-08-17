@@ -105,3 +105,8 @@ Route::get('/archives/add', ('ArchiveController@add'))->middleware(['auth', 'bur
 Route::post('/archives/add', ('ArchiveController@store'))->middleware(['auth', 'bureau']);
 Route::get('/archives/file/{url}', ('ArchiveController@file'))->middleware(['auth', 'baptise']);
 Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['auth', 'comite']);
+
+/*
+| Route concernant le folklore
+*/
+Route::get('/folklore/chants',('FolkloreController@chants'));
