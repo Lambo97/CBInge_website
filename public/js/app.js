@@ -44168,9 +44168,7 @@ var render = function() {
                   on: { click: _vm.toggleEmo }
                 },
                 [
-                  _c("v-icon", { staticClass: "insert" }, [
-                    _vm._v("Inserér une émoticone ")
-                  ]),
+                  _c("v-icon", { staticClass: "insert" }, [_vm._v("Smiley")]),
                   _vm._v(" "),
                   _c("v-icon", { staticClass: "ferme d-none" }, [
                     _vm._v("Fermer")

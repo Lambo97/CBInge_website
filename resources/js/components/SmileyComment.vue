@@ -31,7 +31,7 @@
       <v-layout row >
           <v-flex class=" text-right buttons-green" xs1>
               <v-btn @click="toggleEmo" fab dark small color="pink">
-                  <v-icon class="insert">Inserér une émoticone </v-icon>
+                  <v-icon class="insert">Smiley</v-icon>
                   <v-icon class="ferme d-none">Fermer</v-icon>
               </v-btn>
           </v-flex>
