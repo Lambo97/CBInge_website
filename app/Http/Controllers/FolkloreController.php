@@ -15,6 +15,11 @@ class FolkloreController extends Controller
     public function chants()
     {
 
-        return view('folklore.chants', compact('year', 'president', 'tresorier', 'secretaire', 'vp', 'presidente', 'mdc', 'da', 'sansFonctions', 'assistants'));
+        return view('folklore.chants');
+    }
+    public function oripeaux()
+    {
+
+        return view('folklore.oripeaux');
     }
 }

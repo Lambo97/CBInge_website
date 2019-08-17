@@ -110,3 +110,4 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 | Route concernant le folklore
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
+Route::get('/folklore/oripeaux',('FolkloreController@oripeaux'));
