@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
 @section('title')
 <title> CB Ingé - Folklore </title>
 @endsection
 
 @section('content')
+<script src="{{ asset('/js/oripeaux.js') }}" defer></script>
 <h1 class="mb-3">Folklore - Oripeaux</h1>
 <div class="nav_welcome_action d-flex">
             <p class="w-50 pb-2 mt-5 text-center welcome_active font-weight-bold" id="10">

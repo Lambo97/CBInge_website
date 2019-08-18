@@ -30,6 +30,7 @@
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <script src="{{ asset('/js/nav.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
     @stack('scripts')
 
     <!-- One signal -->
@@ -94,7 +95,7 @@
                 </div>
             </div>
         </nav>
-        <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-8 col-sm-6 col-md-3 col-lg-3 col-xl-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;">
+        <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-8 col-sm-6 col-md-3 col-lg-3 col-xl-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;  overflow:scroll;">
             @include('layouts.navbar')
         </div>
         
