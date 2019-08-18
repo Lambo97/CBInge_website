@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) VALUES
-(1, 3, 'Chants', '#', 0, 1),
-(2, 3, 'Oripaux', '#', 0, 1),
+(1, 3, 'Chants', '/folklore/chants', 0, 1),
+(2, 3, 'Oripeaux', '/folklore/oripeaux', 0, 1),
 (3, 4, 'Comité actuel', '/comite/actuel', 0, 1),
 (4, 4, 'Anciens comités', '/comite/anciens', 0, 1),
 (5, 4, 'Anciens webmasters', '/comite/webmaster', 0, 1),
