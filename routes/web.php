@@ -42,8 +42,9 @@ Route::get('/profile/{user}/image', ('ProfileController@image'));
 /*
 | Route concernant l'agenda
 */ 
-Route::get('events', 'EventController@index')->name('events.index');
-Route::post('events', 'EventController@addEvent')->name('events.add');
+//Route::get('event/add','EventController@createEvent');
+Route::post('event','EventController@store');
+Route::get('event','EventController@calender');
 
 /*
 | Route concernant le forum

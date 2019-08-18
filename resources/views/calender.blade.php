@@ -1,4 +1,4 @@
-
+<!-- calendar.blade.php -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -9,7 +9,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('title')
-    @yield('head-agenda')
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    -->
 
 
     <!-- Icon -->
@@ -53,7 +61,66 @@
     </script>
     @endif
 </head>
-<body>
+<body style="min-width: 800px; font-size: 16px;">
+<div class="agenda-css">
+  <h1 class="mb-3 text-center">Agenda</h1>
+  @if (\Session::has('success'))
+        <div class="alert alert-success">
+          <p>{{ \Session::get('success') }}</p>
+        </div><br />
+       @endif
+       
+     <div class="panel panel-default agenda">
+           
+           <div class="panel-body" >
+              {!! $calendar->calendar() !!}
+          </div>
+      </div>
+      <form method="post" action="{{url('event')}}">
+          @csrf
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="Title">Title:</label>
+              <input type="text" class="form-control" name="title">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <strong> Start Date : </strong>  
+              <input class="date form-control"  type="text" id="startdate" name="startdate">   
+           </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <strong> End Date : </strong>  
+              <input class="date form-control"  type="text" id="enddate" name="enddate">   
+           </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <button type="submit" class="btn btn-success">Add Event</button>
+            </div>
+          </div>
+        </form>
+  </div>
+  <script type="text/javascript">  
+          $('#startdate').datepicker({ 
+              autoclose: true,   
+              format: 'yyyy-mm-dd'  
+           });
+           $('#enddate').datepicker({ 
+              autoclose: true,   
+              format: 'yyyy-mm-dd'
+           }); 
+      </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+  {!! $calendar->script() !!}
     <div id="app">
         <nav class="navbar navbar-expand navbar-light bg-black shadow-sm">
             <div class="container">
@@ -72,7 +139,7 @@
     
                     </ul>
                    
-                    <div class= "div-center position-absolute">
+                    <div class= "div-centercalender position-absolute">
                         <p class="text-center margin-null">
                             Comité de baptême
                         </p>
@@ -98,15 +165,7 @@
             @include('layouts.navbar')
         </div>
         
-        <div class="container">
-        <main class="pt-6 pb-5">
-            @include('layouts.messages')
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 mx-auto">
-            @yield('content')
-            </div>
-        </main>
-            
-            
+        <div id="container_agenda" class="container">
             
         </div>
 
@@ -131,5 +190,22 @@
         });
     </script>
      @yield('script-agenda')
+
+    <script>
+      var agenda = document.querySelector('.agenda-css');
+      var container = document.querySelector('#container_agenda');
+      var agenda_hauteur = agenda.offsetHeight + 100;
+      container.style.height = agenda_hauteur + "px";
+
+      window.onresize = function(){
+        var agenda = document.querySelector('.agenda-css');
+        var container = document.querySelector('#container_agenda');
+        var agenda_hauteur = agenda.offsetHeight + 100;
+        container.style.height = agenda_hauteur + "px";
+      };
+    </script>
 </body>
 </html>
+
+
+

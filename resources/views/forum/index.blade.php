@@ -55,7 +55,7 @@
 
 
     <div class="form-content mt-4">
-        <div class="row mx-0" @if($post->ancre == 1) style="background-color: #353131;" @endif>
+        <div class="row mx-0" @if($post->ancre == 1) style="border:2px white solid;" @endif>
             <div class="col-2">
                 <img class="mx-auto d-block img-fluid rounded-circle mt-2 img-small" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
