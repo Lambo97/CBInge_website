@@ -6,24 +6,34 @@
 @endsection
 
 @section('content')
-<h1>Forum</h1>
-<smiley></smiley>
+
+<h1 class="mb-3">Forum</h1>
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-12  form-content mb-5">
+      <p class="font-weight-bold mt-3 mb-3">Poster un nouveau message</p>  
     <form method="POST" action="/forum/add" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">
-            <label for="message" class="col-2 col-form-label text-md-right d-none d-md-block"><img class="mx-auto d-block img-fluid" src="/profile/{{Auth::user()->id}}/image" alt="{{Auth::user()->surnom_forum}}"></label>
+        
+            <label for="message" class="col-2 col-form-label text-md-right"><img class="mx-auto d-block img-fluid rounded-circle img-small" src="/profile/{{Auth::user()->id}}/image" alt="{{Auth::user()->surnom_forum}}"></label>
 
-            <div class="col-lg-6 col-md-10 col-xs-12">
-                <textarea id="message" rows="5" class="form-control bg-dark" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
-            </div>
-        </div>
-        <div class="form-group row mb-3">
-            <div class="col-md-6 offset-2">
-                <input type="file" class="custom-file-input" id="photo" name="photo">
-                <label class="custom-file-label" for="photo">Choisi une image (optionnel)</label>
+            <div class="textarea w-75 pl-3">
+            
+                <textarea id="message" rows="5" class="d-block  mb-3 w-100 bg-grey p-2" name="message" autocomplete="message" placeholder="Ecris ton message"></textarea>
+                <div>
+                    <smiley></smiley>
+                </div>
+                <div class="position-relative mt-3">
+                <input type="file" class="custom-file-input buttons-green-dark" id="photo" name="photo">
+                <label class="custom-file-label bg-grey rounded-0" style="border:1px solid #353131 !important; " for="photo">Choisis une image (optionnel)</label>
+                </div>
+                 
+            
+        
+                
+                
             </div>
         </div>
         <div class="form-group row mb-0">
@@ -36,24 +46,24 @@
     </form>
     </div>
 </div>
-
-<div class="row mt-3 justify-content-center">
+<!--<div class="row mt-3 justify-content-center">
     {{$posts->links()}}
 </div>
-
+-->
 @foreach($posts as $post)
 
 
 
-    <div class="bg-dark mt-4 border border-light rounded">
-        <div class="row mx-0" @if($post->ancre == 1) style="background-color: #353131;" @endif>
-            <div class="col-md-2 d-none d-md-block">
-                <img class="mx-auto d-block img-fluid" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
+    <div class="form-content mt-4">
+        <div class="row mx-0" @if($post->ancre == 1) style="border:2px white solid;" @endif>
+            <div class="col-2">
+                <img class="mx-auto d-block img-fluid rounded-circle mt-2 img-small" src="/profile/{{$post->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
             </div>
-            <div class="col-md-10 col-xs-12">
+            <div class="col-10">
                 <div class="row mb-2 mt-2 justify-content-between">
                     <div class="col-6">
                         <h4 style='display:inline' class="mr-3"><a href="/profile/show/{{$post->auteur->id}}" class="green-link">{{$post->auteur->surnom_forum}}</a></h4>  @if($post->ancre == 1) <small><i>Message encré</i></small> @endif
+                        <p><small class="font-weight-light">Posté le : {{date("d-m-Y H:i:s", strtotime($post->created_at))}}</small></p>
                     </div>
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
                     <div class="col-2 col-xs-3 d-flex justify-content-end">
@@ -64,9 +74,7 @@
                         @endif
                     </div>
                     @endif
-                    <div class="col-4 col-xs-3 text-right">
-                        <small>Posté le : {{date("d-m-Y H:i:s", strtotime($post->created_at))}}</small>
-                    </div>
+                    
                 </div>
                 <div class="row mb-2">
                     <div class="col-12 ">
@@ -76,62 +84,69 @@
                 @if($post->photo)
                 <div class="row mb-5">
                     <div class="col-10">
-                        <img class="mx-auto d-block img-fluid" src="/forum/image/{{$post->photo}}"> 
+                        <img class="mx-auto d-block img-fluid mt-2 rounded-circle img-small" src="/forum/image/{{$post->photo}}"> 
                     </div>
                 </div>
                 @endif
                 <div class="row" id="post{{$post->id}}">
-                    <div class="col-4 d-flex justify-content-center">
+                    <div class="col-4 col-sm-2 d-flex justify-content-center">
                         @if($post->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
                             <b><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b> 
                         @else
                             <small><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
                         @endif
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
+                    <div class="col-4 col-sm-3 d-flex justify-content-center">
                         @if($post->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
                             <b><a href="/forum/dislike/{{$post->id}}"  onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
                         @else
                             <small><a href="/forum/dislike/{{$post->id}}"   onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
                         @endif
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
+                    <div class="col-4 col-sm-2 d-flex justify-content-center">
                         <a href="#" class="green-link mr-2" data-toggle="modal" data-target="#viewlike{{$post->id}}"><i>Consulter</i></a>
                     </div>
                 </div>
                 <hr>
+                <div class="neg-margin">
                 @foreach($post->comment as $comment)
+                
                     <div class="row mb-3">
                         <div class="col-2">
-                            <img class="mx-auto d-block img-fluid" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
+                            <img class="mx-auto d-block img-fluid rounded-circle mt-2 img-small" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
                         </div>
-                        <div class="col-10">
-                            <div class="row">
-                                <p><a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a> {!!Purifier::clean($comment->message);!!}</p>
+                        <div class="col-10 position-relative">
+                        @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
+                            <div class="d-flex justify-content-end position-absolute right-0 mt-1">
+                                <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></a>
+                                <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                             </div>
+                            @endif
+                            
+                                <a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a>
+                                <p><small class="font-weight-light">commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small></p>
+                                 <p>{!!Purifier::clean($comment->message);!!}</p>
+                                
+                            
                             <div class="row align-self-end" id="comment{{$comment->id}}">
-                                <div>
+                                <div class="pl-3">
                                 @if($comment->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
                                     <b><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></b>
                                 @else
                                     <small><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
                                 @endif
-                                </div> - <div>
+                                </div> 
+                                 <div>
                                 @if($comment->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
-                                    <b><a href="/forum/comment/dislike/{{$comment->id}}"  onclick="like(this, false); return false;"class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></b>
+                                    <b class="mx-3"><a href="/forum/comment/dislike/{{$comment->id}}"  onclick="like(this, false); return false;"class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></b>
                                 @else
-                                    <small><a href="/forum/comment/dislike/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
+                                    <small class="mx-3"><a href="/forum/comment/dislike/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
                                 @endif
-                                </div> - 
+                                </div> 
                                 <div><small><a href="#" class="green-link mx-2" data-toggle="modal" data-target="#viewlikeComment{{$comment->id}}"><i>Consulter</i></a></small></div>
-                                commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small>
+                                
                             </div>
-                            @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
-                            <div class="row align-self-end">
-                                <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></div>
-                                <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
-                            </div>
-                            @endif
+                            
                         </div>
                     </div>
 
@@ -186,21 +201,24 @@
                     </div>
 
                 @endforeach
-                <div class="row mb-3 mt-3">
+                <div class=" mb-3 mt-3">
                     <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
                         @csrf  
-                        <div class="form-row">
-                            <div class="col-md-8 col-sm-10">
-                            <textarea id="comment" rows="2" class="form-control bg-dark" name="comment" autocomplete="comment" placeholder="Ecris ton commentaire"></textarea>
+                        <div class="">
+                            <div class="">
+                            <textarea id="comment" rows="2" class="bg-grey w-100 p-2" name="comment" autocomplete="comment" placeholder="Ecris ton commentaire"></textarea>
                             </div>
 
-                            <div class="col-md-3 form-group d-flex justify-content-end">
-                                <button type="submit" class="buttons-green font-weight-bold btn-sm">
+                            <div class=" form-group d-flex justify-content-end right-0 w-100">
+                            <smileycomment class="adjust"></smileycomment>
+                                <button type="submit" class="buttons-green font-weight-bold btn-sm mt-2 ml-1">
                                     Commenter
                                 </button>
+                               
                             </div>
                         </div>
                     </form>
+                </div>
                 </div>
             </div>
 

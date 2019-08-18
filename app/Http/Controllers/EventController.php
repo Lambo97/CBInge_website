@@ -1,56 +1,51 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\Controller;
-use Auth;
-use Validator;
 use App\Event;
- 
-use Calendar;
- 
+use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 class EventController extends Controller
 {
-    public function index(){
-    	$events = Event::get();
-    	$event_list = [];
-    	foreach ($events as $key => $event) {
-    		$event_list[] = Calendar::event(
-                $event->event_name,
-                true,
-                new \DateTime($event->start_date),
-                new \DateTime($event->end_date.' +1 day')
-            );
-    	}
-    	$calendar_details = Calendar::addEvents($event_list); 
- 
-        return view('events', compact('calendar_details') );
-    }
- 
-    public function addEvent(Request $request)
+    
+    
+
+    public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'event_name' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required'
-        ]);
- 
-        if ($validator->fails()) {
-        	\Session::flash('warnning','Please enter the valid details');
-            return Redirect::to('/events')->withInput()->withErrors($validator);
-        }
- 
-        $event = new Event;
-        $event->event_name = $request['event_name'];
-        $event->start_date = $request['start_date'];
-        $event->end_date = $request['end_date'];
+        $event= new Event();
+        $event->title=$request->get('title');
+        $event->start_date=$request->get('startdate');
+        $event->end_date=$request->get('enddate');
         $event->save();
- 
-        \Session::flash('success','Event added successfully.');
-        return Redirect::to('/events');
+        return redirect('event')->with('success', 'Event has been added');
     }
- 
- 
+
+
+
+public function calender()
+            {
+                $events = [];
+                $data = Event::all();
+                if($data->count())
+                 {
+                    foreach ($data as $key => $value) 
+                    {
+                        $events[] = Calendar::event(
+                            $value->title,
+                            true,
+                            new \DateTime($value->start_date),
+                            new \DateTime($value->end_date.'+1 day'),
+                            null,
+                            // Add color
+                         [
+                             'color' => '#000000',
+                             'textColor' => '#008000',
+                         ]
+                        );
+                    }
+                }
+                $calendar = Calendar::addEvents($events);
+                return view('calender', compact('calendar'));
+            }
 }

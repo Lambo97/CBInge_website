@@ -16,7 +16,7 @@
             <a href="/pvcomite/edit/{{$pv->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
         @endif
         <a class="buttons-green font-weight-bold mr-3" href="/pvcomite/add">Ajouter un Pv</a>
-        <a class="buttons-green font-weight-bold" href="/pvcomite">Retour</a>
+      <!--  <a class="buttons-green font-weight-bold" href="/pvcomite">Retour</a>-->
     </div>
 
     <!-- Modal -->

@@ -5,6 +5,9 @@ html, body {
     height: 100vh;
     margin: 0;
 }
+.adjust{
+    margin-top:11px !important;
+}
 .buttons-green{
     background-color: #168E33;
     border-radius: 30px;
@@ -22,7 +25,7 @@ html, body {
     text-decoration: none;
 }
 .buttons-green-dark{
-    background-color: #4D6052;    
+    background-color: #4D6052 !important;    
 }
 
 .bg-black{
@@ -97,7 +100,56 @@ html, body {
     background-color: #fff;
     transition: all 0.4s ease;
 }
-
+.agenda{
+    background-color: #353131 !important;
+}
+.agenda thead{
+    background-color: #168E33;
+}
+.agenda td {
+    background-color: #484747!important;
+    margin:10px;
+    border: 10px #353131 solid !important;
+}
+.fc-day-number.fc-other-month {
+    opacity:1 !important;
+    filter: alpha(opacity=30);
+}
+.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td{
+    background: 0 0;
+    background-image: initial;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    border-color: #353131!important;
+    border-bottom-color: #484747!important;
+    
+}
+.fc th{
+    border: 10px #353131 solid !important;
+}
+.fc-content{
+    color:white !important;
+    padding: 3px 0px 3px 5px;
+}
+.fc-day-grid-event{
+    background-color: #168E33 !important;
+    border:none !important;
+}
+.bg-grey{
+    background-color: rgb(136, 136, 136) !important;
+    border: none;
+    outline: none;
+    color:white;
+}
+.bg-grey::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
 .cursor{
     cursor: pointer;
 }
@@ -112,6 +164,7 @@ html, body {
 .nav_welcome_action p:hover, .nav_welcome_action .welcome_active{
     border-bottom: 1px solid white;
 }
+
 .form-content{
     background-color:#484747 !important;
     width: 100%;
@@ -137,10 +190,23 @@ html, body {
     width: 100%;
 
 }
+.div-centercalender{
+    margin: 0 auto;
+    width:calc(100% - 30px);
+}
+.textarea{
+    position:relative;
+  }
 @media(max-width:576px){
     .img-big{
         max-width:250px;
         ;
+    }
+    .img-small{
+        min-width:40px;
+    }
+    .neg-margin{
+        margin-left:-50.22px;
     }
     .mb-xs-only{
         margin-bottom: 15px;
@@ -163,6 +229,7 @@ html, body {
     .container{
         max-width: 850px;
     }
+    
  }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -178,6 +245,25 @@ html, body {
 .form-control::-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Microsoft Edge */
 
 
+/* Agenda */
+.agenda-css{
+    position: absolute;
+    top: 120px;
+    left: 15%;
+    width: 70%;
+}
+@media (max-width: 800px) { 
+    .agenda-css{
+        left: 120px;
+        width: 560px;
+    }
+    
+}
+@media(max-width:1000px){
+    .fc-day-grid-event{
+        margin-top:-10px!important;
+    }
+}
 
 
 /*.flex-center {

@@ -43,8 +43,9 @@ Route::get('/profile/search', ('ProfileController@search'));
 /*
 | Route concernant l'agenda
 */ 
-Route::get('events', 'EventController@index')->name('events.index');
-Route::post('events', 'EventController@addEvent')->name('events.add');
+//Route::get('event/add','EventController@createEvent');
+Route::post('event','EventController@store');
+Route::get('event','EventController@calender');
 
 /*
 | Route concernant le forum
@@ -106,3 +107,9 @@ Route::get('/archives/add', ('ArchiveController@add'))->middleware(['auth', 'bur
 Route::post('/archives/add', ('ArchiveController@store'))->middleware(['auth', 'bureau']);
 Route::get('/archives/file/{url}', ('ArchiveController@file'))->middleware(['auth', 'baptise']);
 Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['auth', 'comite']);
+
+/*
+| Route concernant le folklore
+*/
+Route::get('/folklore/chants',('FolkloreController@chants'));
+Route::get('/folklore/oripeaux',('FolkloreController@oripeaux'));

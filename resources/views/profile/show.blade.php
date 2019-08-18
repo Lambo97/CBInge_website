@@ -20,83 +20,83 @@
             <p class="d-inline ml-1">({{$user->surnom}})</p>
             @endif
             @if($fonctionCourante)
-                <p>{{$fonctionCourante->nom}}</p>
+                <p class="font-weight-light">{{$fonctionCourante->nom}}</p>
             @endif
-            <p class="mt-4 mb-0">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
+            <p class="mt-4 mb-0  font-weight-light">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
             @if(Auth::check() and Auth::user()->droit < 8)
-            <p class="m-0">{{$user->email}}</p>
-            <p class="m-0"><a class="green-link" href="tel:{{$user->gsm}}" >{{$user->gsm}}</a></p>
+            <p class="m-0 font-weight-light">{{$user->email}}</p>
+            <p class="m-0 font-weight-light"><a class="green-link" href="tel:{{$user->gsm}}" >{{$user->gsm}}</a></p>
             @endif
-            <p class="m-0">{{date('d-m-Y', strtotime($user->date_de_naissance))}}</p>
+            <p class="m-0 font-weight-light">{{date('d-m-Y', strtotime($user->date_de_naissance))}}</p>
             
     </div>
 </div>
 <div class="pl-3">    
     <h6 class=" font-weight-bold mt-3 mb-0">Entrée en ingé</h6>
-    <p class="mb-0">{{$user->entree_inge}}</p>
+    <p class="mb-0 font-weight-light">{{$user->entree_inge}}</p>
         
     <h6 class="mb-0 mt-2 font-weight-bold">Année de baptême</h6>
-    <p class="">{{$user->annee_bapteme}}</p>
+    <p class=" font-weight-light">{{$user->annee_bapteme}}</p>
 
     @if($user->autre_etudes != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Autre(s) études</h6>
-        <p class="mb-0">{{$user->autre_etudes}}</p>
+        <p class="mb-0 font-weight-light">{{$user->autre_etudes}}</p>
     @endif
 
     @if($user->section != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Section</h6>
-        <p class="mb-0">{{$user->section}}</p>
+        <p class="mb-0 font-weight-light">{{$user->section}}</p>
     @endif
 
     @if($user->fonctions()->count() > 1)
         <h6 class="mb-0 mt-2 font-weight-bold">Fonction(s) au sein des comités précédents</h6>
         @foreach ($fonctionsPrecedantes as $fonction)
-            <p class="mb-0">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
+            <p class="mb-0 font-weight-light">{{$fonction->nom}} en {{$fonction->pivot['annee']}}</p>
         @endforeach
     @endif
 
     @if($user->parrains()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Parrain(s)</h6>
         @foreach ($user->parrains as $parrain)
-            <p class="mb-0"><a href="/profile/show/{{$parrain->id}}" class="green-link">{{ $parrain->prenom }} {{ $parrain->name }}</a> baptisé en {{ $parrain->annee_bapteme }}</p>
+            <p class="mb-0 font-weight-light"><a href="/profile/show/{{$parrain->id}}" class="green-link">{{ $parrain->prenom }} {{ $parrain->name }}</a> baptisé en {{ $parrain->annee_bapteme }}</p>
         @endforeach
     @endif
 
     @if($user->bleus()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Bleus(s)</h6>
         @foreach ($user->bleus as $bleu)
-            <p class="mb-0"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}</p>
+            <p class="mb-0 font-weight-light"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}</p>
         @endforeach
     @endif
 
     @if($user->citation != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Citation(s) favorite(s)</h6>
-        <p class="mb-0">{{$user->citation}}</p>
+        <p class="mb-0 font-weight-light">{{$user->citation}}</p>
     @endif
 
     @if($user->boisson != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Boissons(s) favorite(s)</h6>
-        <p class="mb-0">{!!Purifier::clean($user->boisson);!!}</p>
+        <p class="mb-0 font-weight-light">{!!Purifier::clean($user->boisson);!!}</p>
     @endif
 
     @if($user->guindaille != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Guindaille(s) favorite(s)</h6>
-        <p class="mb-0">{!!Purifier::clean($user->guindaille);!!}</p>
+        <p class="mb-0 font-weight-light">{!!Purifier::clean($user->guindaille);!!}</p>
     @endif
             
     @if($user->titre_guindaille != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Titre(s) de guindaille</h6>
-        <p class="mb-0">{!!Purifier::clean($user->titre_guindaille);!!}</p>
+        <p class="mb-0 font-weight-light">{!!Purifier::clean($user->titre_guindaille);!!}</p>
     @endif
 
     @if($user->probleme_sante != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Problême(s) de santé</h6>
-        <p class="mb-0">{{$user->probleme_sante}}</p>
+        <p class="mb-0 font-weight-light">{{$user->probleme_sante}}</p>
     @endif
 
     @if($user->description != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Description</h6>
-        <p class="mb-0">{{$user->description}}</p>
+        <p class="mb-0 font-weight-light">{{$user->description}}</p>
     @endif
 </div>
    
