@@ -57,7 +57,7 @@
                     </div>
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
                     <div class="col-2 col-xs-3 d-flex justify-content-end">
-                        <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deletePost{{$post->id}}"></i></a>
+                        <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deletePost{{$post->id}}"></i></div>
                         <a href="/forum/edit/{{$post->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                         @if(Auth::user()->droit < 3)
                         <a href="/forum/ancre/{{$post->id}}" class="green-link"><i class="fas fa-anchor"></i></a>
@@ -128,7 +128,7 @@
                             </div>
                             @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="row align-self-end">
-                                <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></a>
+                                <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></div>
                                 <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                             </div>
                             @endif

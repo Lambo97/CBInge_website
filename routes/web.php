@@ -38,6 +38,7 @@ Route::get('/profile/editBleu', ('ProfileController@editBleu'))->middleware(['au
 Route::get('/profile/addBleu/{bleu}', ('ProfileController@addBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/removeBleu/{bleu}', ('ProfileController@removeBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/{user}/image', ('ProfileController@image'));
+Route::get('/profile/search', ('ProfileController@search'));
 
 /*
 | Route concernant l'agenda

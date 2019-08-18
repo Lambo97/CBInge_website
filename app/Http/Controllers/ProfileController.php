@@ -313,4 +313,16 @@ class ProfileController extends Controller
         return $img->response();
     }
 
+    /** 
+     * Return the user matching the request
+     *
+     * @param  \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $users = User::where('name', 'like', '%'.$request->keywords.'%')->orWhere('prenom', 'like', '%'.$request->keywords.'%')->orWhere('annee_bapteme',$request->keywords)->orderBy('annee_bapteme','desc')->get();
+        return response()->json($users);
+    }
+
 }
