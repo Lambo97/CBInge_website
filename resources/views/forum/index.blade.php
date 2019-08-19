@@ -104,7 +104,7 @@
                         @endif
                     </div>
                     <div class="col-4 col-sm-2 d-flex justify-content-center">
-                        <a href="#" class="green-link mr-2" data-toggle="modal" data-target="#viewlike{{$post->id}}"><i>Consulter</i></a>
+                        <div class="green-link mr-2" data-toggle="modal" data-target="#viewlike{{$post->id}}"><i>Consulter</i></div>
                     </div>
                 </div>
                 <hr>
@@ -118,7 +118,7 @@
                         <div class="col-10 position-relative">
                         @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="d-flex justify-content-end position-absolute right-0 mt-1">
-                                <a href="#" class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></a>
+                                <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></div>
                                 <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                             </div>
                             @endif
