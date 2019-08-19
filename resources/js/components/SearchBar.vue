@@ -6,7 +6,7 @@
         </div>
         </form>
         <ul v-if="results.length > 0" class="list-unstyled mb-3" style="max-height: 300px; overflow:scroll">
-            <li class=" d-block pb-2" v-for="result in results" :key="result.id"><a href="/profile/show/{{results.id}}" class="green-link">results.prenom results.name</a></li>
+            <li class=" d-block pb-2" v-for="result in results" :key="result.id"><a v-bind:href="'/profile/show/'+result.id" class="green-link">{{result.prenom}} {{result.name}} <span v-if="result.surnom">({{result.surnom}})</span> </a> </li>
         </ul>
     </div>
 </template>
