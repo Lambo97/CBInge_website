@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Archive' => $baseDir . '/app/Archive.php',
+    'App\\BleusMenu' => $baseDir . '/app/BleusMenu.php',
     'App\\ComitePv' => $baseDir . '/app/ComitePv.php',
     'App\\CommentForum' => $baseDir . '/app/CommentForum.php',
     'App\\CommentLike' => $baseDir . '/app/CommentLike.php',
@@ -20,9 +21,11 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
+    'App\\Http\\Controllers\\BleusHomeController' => $baseDir . '/app/Http/Controllers/BleusHomeController.php',
     'App\\Http\\Controllers\\ComiteController' => $baseDir . '/app/Http/Controllers/ComiteController.php',
     'App\\Http\\Controllers\\CommentForumController' => $baseDir . '/app/Http/Controllers/CommentForumController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\EventController' => $baseDir . '/app/Http/Controllers/EventController.php',
     'App\\Http\\Controllers\\FolkloreController' => $baseDir . '/app/Http/Controllers/FolkloreController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\PhotoController' => $baseDir . '/app/Http/Controllers/PhotoController.php',

@@ -113,3 +113,10 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
 Route::get('/folklore/oripeaux',('FolkloreController@oripeaux'));
+/*
+| Route site des bleus
+*/
+Route::get('/bleus',('BleusHomeController@index'));
+Route::get('/bleus/informations',('BleusHomeController@informations'));
+Route::get('/bleus/folklore',('BleusHomeController@folklore'));
+Route::get('/bleus/faq',('BleusHomeController@faq'));

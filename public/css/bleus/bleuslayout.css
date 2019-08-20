@@ -9,7 +9,7 @@ html, body {
     margin-top:11px !important;
 }
 .buttons-green{
-    background-color: #168E33;
+    background-color: #0F4BED;
     border-radius: 30px;
     border: none;
     font-family: "Montserrat", sans-serif;
@@ -25,7 +25,7 @@ html, body {
     text-decoration: none;
 }
 .buttons-green-dark{
-    background-color: #4D6052 !important;    
+    background-color: rgb(11, 124, 145) !important;    
 }
 
 .bg-black{
@@ -61,7 +61,7 @@ html, body {
     width: 90%;
     height: 90%;
     margin: 5% 0 0 5%;
-    background: url("../img/logo.png") no-repeat;
+    background: url("../../img/logo.png") no-repeat;
     background-size: contain;
     background-position: center;
 }
@@ -83,11 +83,11 @@ html, body {
     pointer-events: true;
 }
 .navigation-link:hover{
-    color: #168E33 !important;
+    color: #0F4BED !important;
 }
 .navigation-link:hover::before{
     width: 25px;
-    background-color: #168E33;
+    background-color: #0F4BED;
 }
 .navigation-link::before{
     content: "";
@@ -104,7 +104,7 @@ html, body {
     background-color: #353131 !important;
 }
 .agenda thead{
-    background-color: #168E33;
+    background-color: #0F4BED;
 }
 .agenda td {
     background-color: #484747!important;
@@ -172,15 +172,15 @@ html, body {
     color:grey;
 }
 .nav_welcome_action .chosen{
-    color:#168E33;
-    border-bottom: 1px solid #168E33;
+    color: #0F4BED;
+    border-bottom: 1px solid  #0F4BED;
 }
 .nav_welcome_action .chants{
     padding-bottom: 18px ;
 }
 .nav_welcome_action .chosen:hover{
-    color:#168E33;
-    border-bottom: 1px solid #168E33;
+    color: #0F4BED;
+    border-bottom: 1px solid #0F4BED;
     cursor:default;
 }
 
@@ -195,7 +195,7 @@ html, body {
     color:white;
 }
 .green-link{
-    color: #168E33;
+    color: #0F4BED;
     transition: all 0.4s ease-in-out;
 
 }
@@ -217,6 +217,15 @@ html, body {
     position:relative;
   }
 @media(max-width:576px){
+    .font-size{
+        font-size: 12px;
+    }
+    .imgwidth{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
     .img-big{
         max-width:250px;
         ;
@@ -233,13 +242,22 @@ html, body {
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
-    
+    .imgwidth{
+        width:80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
     .container{
         max-width: 650px;
+    }
+    .imgwidth{
+        width:80%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
  }
 
@@ -248,7 +266,11 @@ html, body {
     .container{
         max-width: 850px;
     }
-    
+    .imgwidth{
+        width:70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
  }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -256,6 +278,11 @@ html, body {
      .container{
     max-width: 1000px;
     } 
+    .imgwidth{
+        width:60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
  }
 .form-control::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 4 to 18 */

@@ -6,6 +6,7 @@ use App\Events;
 use Calendar;
 use App\User;
 use App\Menu;
+use App\BleusMenu;
 use App\PostForum;
 use App\ComitePv;
 use Illuminate\Support\ServiceProvider;
@@ -54,6 +55,19 @@ class AppServiceProvider extends ServiceProvider
             else
             {
                 $view->with(['menus' => Menu::navMenu()]);
+            }
+            
+        });
+        view()->composer('bleus.layouts.bleusnavbar', function($view){
+            if(\Auth::check() and \Auth::user()->droit <= 7)
+            {
+                $check_forum = PostForum::orderBy('created_at', 'desc')->first()->id - \Auth::user()->forum_check;
+                $check_pv_comite = ComitePv::orderBy('created_at', 'desc')->first()->id - \Auth::user()->pv_comite_check;
+                $view->with(['bleusmenus' => BleusMenu::navMenu(), 'check_forum' => $check_forum, 'check_pv_comite' => $check_pv_comite]);
+            }
+            else
+            {
+                $view->with(['bleusmenus' => BleusMenu::navMenu()]);
             }
             
         });

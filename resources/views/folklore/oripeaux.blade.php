@@ -33,7 +33,7 @@
 <li>Si quelqu’un fait deux années en une, il met les étoiles correspondantes l’une au-dessus de l’autre (c’est en général une dorée au-dessus d’une argentée). </li>
 </ul>
 <div class="d-flex flex-wrap justify-content-center big-container">
-    <div class="d-flex  m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex  m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Ingénieur Civil</p>
             <div class="rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -47,7 +47,7 @@
             <p class="font-weight-light my-0">Marteau-pic compas</p>
         </div>
     </div>
-    <div class="d-flex  m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex  m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Informaticien</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -61,7 +61,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Gramme</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -75,7 +75,7 @@
             <p class="font-weight-light my-0">Lettres IG</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISIL</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -89,7 +89,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width: 250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Archi St-Luc</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -103,7 +103,7 @@
             <p class="font-weight-light my-0">Compas, équerres</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Lambert-Lombard</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -117,7 +117,7 @@
             <p class="font-weight-light my-0">Lettres ISALL</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Chimie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -131,7 +131,7 @@
             <p class="font-weight-light my-0">Atôme benzene</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Bioch</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -145,7 +145,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Géologie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -159,7 +159,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Biologie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -173,7 +173,7 @@
             <p class="font-weight-light my-0">Mâle-femelle</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Physique</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -187,7 +187,7 @@
             <p class="font-weight-light my-0">Structure atomique</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Maths</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -201,7 +201,7 @@
             <p class="font-weight-light my-0">Compas</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Géographie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -215,7 +215,7 @@
             <p class="font-weight-light my-0">Mappemonde</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3" style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Philosophie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -229,7 +229,7 @@
             <p class="font-weight-light my-0">2 flambeaux</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Classiques</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -243,7 +243,7 @@
             <p class="font-weight-light my-0">Plume</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Histoire</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -257,7 +257,7 @@
             <p class="font-weight-light my-0">Minerve</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Romanes</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -271,7 +271,7 @@
             <p class="font-weight-light my-0">Plume, Flèche</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Germaniques</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -285,7 +285,7 @@
             <p class="font-weight-light my-0">Flambeau, Flèche, Serpent</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Archéo</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -299,7 +299,7 @@
             <p class="font-weight-light my-0">Pic, Plume</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Orientales</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -313,7 +313,7 @@
             <p class="font-weight-light my-0">Lettres HPO</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Commu</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -327,7 +327,7 @@
             <p class="font-weight-light my-0">Téléphone</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Psychologie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -341,7 +341,7 @@
             <p class="font-weight-light my-0">Serpent, Flèche, Eclair et PSY</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Droit</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -355,7 +355,7 @@
             <p class="font-weight-light my-0">Balance</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences-Po</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -369,7 +369,7 @@
             <p class="font-weight-light my-0">Lauriers, Flambeau</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC / Ingé Gestion</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -383,7 +383,7 @@
             <p class="font-weight-light my-0">Caducée Ailé, HEC</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC / Sciences Eco</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -397,7 +397,7 @@
             <p class="font-weight-light my-0">Caducée Ailé, HEC</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Médecine</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -411,7 +411,7 @@
             <p class="font-weight-light my-0">Caducée</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK / Educ. Phys.</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -425,7 +425,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK / Kiné</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -439,7 +439,7 @@
             <p class="font-weight-light my-0">Pas d'insigne</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Pharmacie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -453,7 +453,7 @@
             <p class="font-weight-light my-0">Caducée sur coupe</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Vétérinaires</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -489,7 +489,7 @@
 </div>
 <div class="d-none" id="couleurs">
     <div class="d-flex flex-wrap justify-content-center big-container">
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Ingénieur Civil</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -503,7 +503,7 @@
             <p class="font-weight-light my-0">Vert</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Informaticien</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -517,7 +517,7 @@
             <p class="font-weight-light my-0">Vert</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Gramme</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -531,7 +531,7 @@
             <p class="font-weight-light my-0">Noir</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISIL</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -545,7 +545,7 @@
             <p class="font-weight-light my-0">Blanc</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Archi</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -559,7 +559,7 @@
             <p class="font-weight-light my-0">Noir</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -573,7 +573,7 @@
             <p class="font-weight-light my-0">Noir</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -587,7 +587,7 @@
             <p class="font-weight-light my-0">Jaune</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Psychologie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -601,7 +601,7 @@
             <p class="font-weight-light my-0">Blanc-rouge</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Droit</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -615,7 +615,7 @@
             <p class="font-weight-light my-0">Noir</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -629,7 +629,7 @@
             <p class="font-weight-light my-0">Bordeaux-blanc</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Médecine</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -643,7 +643,7 @@
             <p class="font-weight-light my-0">Rouge</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Pharmacie</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -657,7 +657,7 @@
             <p class="font-weight-light my-0">Vert</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -671,7 +671,7 @@
             <p class="font-weight-light my-0">Blanc</p>
         </div>
     </div>
-    <div class="d-flex m-2 p-3" style="background-color:#484747;width:40%;">
+    <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Barbou</p>
             <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
@@ -687,5 +687,6 @@
     </div>
     </div>
 </div>
+
 
 @endsection

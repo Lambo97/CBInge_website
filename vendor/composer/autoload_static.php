@@ -454,6 +454,7 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
 
     public static $classMap = array (
         'App\\Archive' => __DIR__ . '/../..' . '/app/Archive.php',
+        'App\\BleusMenu' => __DIR__ . '/../..' . '/app/BleusMenu.php',
         'App\\ComitePv' => __DIR__ . '/../..' . '/app/ComitePv.php',
         'App\\CommentForum' => __DIR__ . '/../..' . '/app/CommentForum.php',
         'App\\CommentLike' => __DIR__ . '/../..' . '/app/CommentLike.php',
@@ -467,9 +468,11 @@ class ComposerStaticInite5d2ceddbe53f4550fb89d06bbbaade7
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BleusHomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/BleusHomeController.php',
         'App\\Http\\Controllers\\ComiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/ComiteController.php',
         'App\\Http\\Controllers\\CommentForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentForumController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\FolkloreController' => __DIR__ . '/../..' . '/app/Http/Controllers/FolkloreController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PhotoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PhotoController.php',
