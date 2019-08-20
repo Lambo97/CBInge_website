@@ -37,7 +37,7 @@
         @foreach($menus as $menu)
         @if($menu->lien)
         <li>
-            <a href="{{$menu->lien}}" class="text-white nav-link navigation-link">{{$menu->nom}}</a>
+            <a href="{{$menu->lien}}" class="d-inline text-white nav-link navigation-link">{{$menu->nom}}</a>
         </li>
         @else
         <li>
