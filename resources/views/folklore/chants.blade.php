@@ -1004,7 +1004,7 @@
         <br />
         Refrain:<br />
         <br />
-        Lève la hambe, voilà qu'ça entre, )<br />
+        Lève la jambe, voilà qu'ça entre, )<br />
         Lève la cuisse, cuisse, cuisse )<br />
         Voilà qu'ça glisse ) (bis)<br />
         Oh! hisse<br />
