@@ -1898,7 +1898,8 @@ __webpack_require__.r(__webpack_exports__);
         return _this.results = response.data;
       })["catch"](function (error) {});
     }
-  }
+  },
+  props: ['link']
 });
 
 /***/ }),
@@ -44129,7 +44130,7 @@ var render = function() {
                 "a",
                 {
                   staticClass: "green-link",
-                  attrs: { href: "/profile/show/" + result.id }
+                  attrs: { href: _vm.link + result.id }
                 },
                 [
                   _vm._v(

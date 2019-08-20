@@ -6,7 +6,7 @@
 
 @section('content')
 
-        <h2><strong>Liste des parrains de {{Auth::user()->surnom_forum}}</strong></h2>
+        <h2 class="mb-4"><strong>Liste des parrains de {{Auth::user()->surnom_forum}}</strong></h2>
            
 
                 <table class="table table-dark">
@@ -34,6 +34,8 @@
                         </tr>
                     @endforelse
                 </table>
+            <h3>Ajouter des parrains:</h3>
+            <searchBar link="/profile/addParrain/"></searchBar>
             <a class="buttons-green" href="/profile/edit/{{Auth::user()->id}}">Retour</a>
         
 @endsection

@@ -6,7 +6,7 @@
 
 @section('content')
 
-        <h2>Liste des bleus de {{Auth::user()->surnom_forum}}</h2>
+        <h2 class="mb-4">Liste des bleus de {{Auth::user()->surnom_forum}}</h2>
             
 
                 <table class="table table-dark">
@@ -30,6 +30,8 @@
                         </tr>
                     @endforelse
                 </table>
-            <a class="buttons-green" href="/profile/edit/{{Auth::user()->id}}">Retour</a>
+            <h3 class="my-4">Ajouter des bleus:</h3>
+            <searchBar link="/profile/addBleu/"></searchBar>
+            <a class="buttons-green mt-5" href="/profile/edit/{{Auth::user()->id}}">Retour</a>
           
 @endsection

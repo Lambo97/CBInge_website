@@ -32,7 +32,7 @@
         @endif
 
         <li>
-            <searchbar></searchbar>
+            <searchbar link="/profile/show/"></searchbar>
         </li>
         @foreach($menus as $menu)
         @if($menu->lien)

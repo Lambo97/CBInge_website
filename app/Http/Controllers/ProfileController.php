@@ -321,8 +321,20 @@ class ProfileController extends Controller
      */
     public function search(Request $request)
     {
-        $users = User::where('name', 'like', '%'.$request->keywords.'%')->orWhere('prenom', 'like', '%'.$request->keywords.'%')->orWhere('annee_bapteme',$request->keywords)->orderBy('annee_bapteme','desc')->get();
-        return response()->json($users);
+        if($request->keywords == "")
+        {
+            return response()->json(array());
+        }
+            
+        $token = explode(' ', $request->keywords);
+        $users = User::where('name', 'like', '%'.$request->keywords.'%')->orWhere('prenom', 'like', '%'.$request->keywords.'%')->orWhere('annee_bapteme',$request->keywords);
+        $users->when($token, function($q, $token) {
+            if(count($token) > 1)
+                return $q->orWhere([['prenom', 'like', '%'.$token[0].'%'],['name', 'like', '%'.$token[1].'%']])->orWhere([['name', 'like', '%'.$token[0].'%'],['prenom', 'like', '%'.$token[1].'%']]);
+            else
+                return $q;
+        });
+        return response()->json($users->orderBy('annee_bapteme','desc')->get());
     }
 
 }
