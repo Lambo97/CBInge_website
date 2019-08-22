@@ -120,6 +120,11 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 | Route concernant le folklore
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
+Route::get('/folklore/chant/{chant}',('FolkloreController@chant'));
+Route::get('/folklore/chants/admin',('FolkloreController@admin'));
+Route::get('/folklore/chants/edit',('FolkloreController@edit'));
+Route::post('/folklore/chants/update/{chant}',('FolkloreController@update'));
+Route::post('/folklore/chants/add',('FolkloreController@add'));
 Route::get('/folklore/oripeaux',('FolkloreController@oripeaux'));
 /*
 | Route site des bleus

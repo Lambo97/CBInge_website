@@ -28,9 +28,6 @@ class InsultesController extends Controller
             'insulted' =>'required'
             
         ]);
-        
-       
-
 
         // Create Post
         $insulte = new PostInsulte;
@@ -38,13 +35,6 @@ class InsultesController extends Controller
         $insulte->insulted = $request->input('insulted');
         $insulte->id_auteur = auth()->user()->id;
         $insulte->save();
-
-        // Send notification
-        \OneSignal::sendNotificationToSegment(
-            auth()->user()->surnom_forum." a envoyé un message !",
-            $segment = "Comite",
-            $url = "/insulte"
-        );
 
         return redirect('/insultes')->with('success', 'Insulte envoyée');
     }

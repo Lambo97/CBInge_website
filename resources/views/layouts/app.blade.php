@@ -31,7 +31,6 @@
     <script src="{{ asset('/js/nav.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     
-    @stack('scripts')
 
     <!-- One signal -->
     @if(Auth::check())
@@ -116,6 +115,7 @@
         </div>
         
     </div>
+    @stack('scripts')
     <script src="https://cdn.tiny.cloud/1/jsp5xx9rfjgnpg9sblclrw75cf7bzbj0bfessb0vkba9q0zm/tinymce/5/tinymce.min.js"></script>
     <script>
         tinymce.init({
