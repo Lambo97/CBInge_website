@@ -8,6 +8,7 @@ use App\User;
 use App\Menu;
 use App\BleusMenu;
 use App\PostForum;
+use App\PostInsulte;
 use App\ComitePv;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
