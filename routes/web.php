@@ -69,13 +69,13 @@ Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth
 /*
 | Route concernant les insultes
 */ 
-Route::get('/insultes', ('InsultesController@index'))->middleware(['auth', 'comite']);
-Route::post('/insultes/add', ('InsultesController@add'))->middleware(['auth', 'comite']);
-Route::get('/insultes/edit/{post}', ('InsultesController@edit'))->middleware(['auth', 'comite']);
-Route::post('/insultes/update/{post}', ('InsultesController@update'))->middleware(['auth', 'comite']);
-Route::get('/insultes/destroy/{post}', ('InsultesController@destroy'))->middleware(['auth', 'comite']);
-Route::get('/insultes/like/{post}', ('InsultesController@like'))->middleware(['auth', 'comite']);
-Route::get('/insultes/dislike/{post}', ('InsultesController@dislike'))->middleware(['auth', 'comite']);
+Route::get('/insultes', ('InsultesController@index'))->middleware(['auth', 'baptise']);
+Route::post('/insultes/add', ('InsultesController@add'))->middleware(['auth', 'baptise']);
+Route::get('/insultes/edit/{post}', ('InsultesController@edit'))->middleware(['auth', 'baptise']);
+Route::post('/insultes/update/{post}', ('InsultesController@update'))->middleware(['auth', 'baptise']);
+Route::get('/insultes/destroy/{post}', ('InsultesController@destroy'))->middleware(['auth', 'baptise']);
+Route::get('/insultes/like/{post}', ('InsultesController@like'))->middleware(['auth', 'baptise']);
+Route::get('/insultes/dislike/{post}', ('InsultesController@dislike'))->middleware(['auth', 'baptise']);
 /*
 | Route concernant les pv's du comité
 */
