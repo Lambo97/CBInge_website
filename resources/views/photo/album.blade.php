@@ -48,37 +48,52 @@
 </div>
 
 
-<script>
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
-var slideIndex = 0;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 0}
-  
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  slides[slideIndex].style.display = "block";
-}
-</script>
-
-
 @endsection
+
+@push('scripts')
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+    
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 0;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n >= slides.length) {
+            slideIndex = 0;
+        }
+        else if( n < 0){
+            slideIndex = slides.length - 1 ;
+        }
+        
+        console.log(slideIndex);
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+    }
+    
+    window.addEventListener("keyup",function(e){
+        if(e.key == "ArrowRight")
+            plusSlides(1);
+        else if(e.key == "ArrowLeft")
+            plusSlides(-1);
+    });
+</script>
+    
+@endpush
