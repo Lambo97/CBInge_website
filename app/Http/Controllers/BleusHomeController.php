@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\NewContactMessage;
 use Illuminate\Validation\Rule;
+use App\Chant;
 
 class BleusHomeController extends Controller
 {
@@ -23,7 +24,10 @@ class BleusHomeController extends Controller
         return view('bleus/informations');
     }
     public function folklore(){
-        return view('bleus/bleusfolklore');
+        $chants_facultaires = Chant::where('type', 'Chants facultaires')->orderBy('nom')->get();
+        $chants_folkloriques = Chant::where('type', 'Chants folkloriques')->orderBy('nom')->get();
+        $chants_indispensables = Chant::where('type', 'Chants indispensables')->orderBy('nom')->get();
+        return view('bleus/bleusfolklore', compact('chants_facultaires', 'chants_folkloriques', 'chants_indispensables'));
     }
     public function faq(){
         return view('bleus/faq');

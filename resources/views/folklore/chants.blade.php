@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<script src="{{ asset('/js/chants.js') }}" defer></script>
 <div class="row mb-3">
     <div class="col-md-4 col-sm-12">
         <h1 class="mb-3">Chants</h1>
