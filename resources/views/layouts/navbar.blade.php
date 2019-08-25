@@ -3,32 +3,33 @@
 </div>
 <div id = "all_nav" class="nav-content pt-5 pb-5 pl-3">
     <ul class="list-unstyled">
-        @if(Auth::check() and Auth::user()->droit < 8)
-            <li class=" d-block pb-2">
+        @if(Auth::check() and Auth::user()->droit < 7)
+            <li class=" d-block mb-3">
                 <div class="font-weight-bold">
                     Bonjour  {{ Auth::user()->surnom_forum }} <span class="caret"></span>
                 </div>
             </li>
-            <li class=" d-block pb-2">
+            <li class=" d-block mb-3">
                 <a class="green-link" href="/profile/show/{{Auth::user()->id}}">Votre Fiche</a>
-            </li>                 
+            </li>
+        @elseif(Auth::check() and Auth::user()->droit == 7)
+            <li class=" d-block mb-3 pr-3">
+                <div class="font-weight-bold">
+                    Casse toi sur ton <a href="/bleus" class="green-link">site</a> sale bleu !<span class="caret"></span>
+                </div>
+            </li>              
         @elseif(Auth::check() and Auth::user()->droit == 8)
-            <li class=" d-block pb-2">
+            <li class=" d-block mb-3">
                 <div class="font-weight-bold">
                     Demande en attente de confirmation <span class="caret"></span>
                 </div>
             </li>
         @else
-            <li class="nav-item d-block">
+            <li class="nav-item d-block mb-3">
                 <form id="login-form" action="{{ route('login') }}" method="GET">
                     <button type="submit" class="buttons-green">Connexion</button>
                 </form>
             </li>
-            @if (Route::has('register'))
-                <li class="nav-item d-block my-2 pl-2">
-                    <a class="green-link" href="{{ route('register') }}">S'inscrire</a>
-                </li>
-            @endif
         @endif
 
         <li>

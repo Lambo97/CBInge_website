@@ -27,20 +27,19 @@ INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) V
 (4, 4, 'Anciens comités', '/comite/anciens', 0, 1),
 (5, 4, 'Anciens webmasters', '/comite/webmaster', 0, 1),
 (6, 5, 'Photos', '#', 6, 1),
-(7, 5, 'Videos', '#', 6, 1),
-(8, 5, 'Archives', '#', 6, 1),
-(9, 6, 'Pv du comité', '/pvcomite', 5, 1),
-(10, 6, 'FORUUUUM', '/forum', 5, 1),
-(11, 6, 'Forum des bleus', '#', 5, 1),
-(12, 6, 'Pense-bête', '#', 5, 1),
-(13, 6, 'Insultes', '#', 6, 1),
-(14, 6, 'Citations', '#', 6, 1),
-(15, 6, 'Tu préfères', '#', 6, 1),
-(16, 6, 'Sondages', '#', 5, 1),
-(17, 6, 'Top 50 messages', '#', 5, 1),
-(18, 8, 'Délations', '#', 5, 1),
-(19, 8, 'Invité Messe', '#', 3, 1),
-(20, 10, 'Menus', '/admin/menus', 1, 1);
+(7, 5, 'Archives', '#', 6, 1),
+(8, 6, 'Pv du comité', '/pvcomite', 5, 1),
+(9, 6, 'FORUUUUM', '/forum', 5, 1),
+(10, 6, 'Forum des bleus', '#', 5, 1),
+(11, 6, 'Pense-bête', '#', 5, 1),
+(12, 6, 'Insultes', '#', 6, 1),
+(13, 6, 'Citations', '#', 6, 1),
+(14, 6, 'Tu préfères', '#', 6, 1),
+(15, 6, 'Sondages', '#', 5, 1),
+(16, 6, 'Top 50 messages', '#', 5, 1),
+(17, 8, 'Délations', '#', 5, 1),
+(18, 8, 'Invité Messe', '#', 3, 1),
+(19, 10, 'Menus', '/admin/menus', 1, 1);
 
 --
 -- Indexes for dumped tables

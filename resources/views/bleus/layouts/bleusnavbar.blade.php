@@ -11,7 +11,10 @@
             </li>
             <li class=" d-block pb-2">
                 <a class="green-link" href="/profile/show/{{Auth::user()->id}}">Votre Fiche</a>
-            </li>                 
+            </li>   
+            <li class=" d-block pb-2">
+                <a class="green-link" href="/">Retour vers le site du CB</a>
+            </li>              
         @elseif(Auth::check() and Auth::user()->droit == 8)
             <li class=" d-block pb-2">
                 <div class="font-weight-bold">
@@ -19,28 +22,22 @@
                 </div>
             </li>
         @else
-            <li class="nav-item d-block">
+            <li class="nav-item d-block mb-3">
                 <form id="login-form" action="{{ route('login') }}" method="GET">
                     <button type="submit" class="buttons-green">Connexion</button>
                 </form>
             </li>
-            @if (Route::has('register'))
-                <li class="nav-item d-block my-2 pl-2">
-                    <a class="green-link" href="{{ route('register') }}">S'inscrire</a>
-                </li>
-            @endif
         @endif
 
         <li>
             <searchbar link="/profile/show/"></searchbar>
         </li>
         @foreach($bleusmenus as $menu)
-        @if($menu->lien)
-        <li>
-            <a href="{{$menu->lien}}" class="d-inline text-white nav-link navigation-link">{{$menu->nom}}</a>
-        </li>
-        
-        @endif
+            @if($menu->droit == "0" or ($menu->droit == 1 and Auth::check() and (Auth::user()->droit == 7 or Auth::user()->droit <= 5)))
+            <li>
+                <a href="{{$menu->lien}}" class="d-inline text-white nav-link navigation-link">{{$menu->nom}}</a>
+            </li>
+            @endif
         @endforeach
         @if(Auth::check() and Auth::user()->droit <= 8)
         <li class=" d-block pt-4">

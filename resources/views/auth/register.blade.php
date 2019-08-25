@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('bleus.layouts.bleusapp')
 
 @section('title')
 <title> CB Ingé - Inscription au baptême</title>

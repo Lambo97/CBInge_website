@@ -16,7 +16,7 @@ class CreateBleusMenusTable extends Migration
         Schema::create('bleus_menus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->string('lien')->nullable();
+            $table->string('lien');
             $table->integer('droit');
             $table->boolean('afficher');
         });

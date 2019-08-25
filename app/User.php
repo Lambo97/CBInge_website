@@ -45,12 +45,27 @@ class User extends Authenticatable
         return User::where([['last_login_at', '>=', $dateNow],['droit', '<', 7]])->get();
     }
 
+    public static function bleusConnectedNow()
+    {
+        $timenow = time() - (15*60); // 15 min
+        $dateNow = date("Y-m-d H:i:s",$timenow);
+        return User::where([['last_login_at', '>=', $dateNow],['droit', 7]])->get();
+    }
+
     public static function connectedToday()
     {
         $timeYesterday = time() - (24*60*60); // 24 h
         $dateYesterday = date("Y-m-d H:i:s",$timeYesterday);
 
         return User::where([['last_login_at', '>=', $dateYesterday], ['droit', '<', 7]])->get();
+    }
+
+    public static function bleusConnectedToday()
+    {
+        $timeYesterday = time() - (24*60*60); // 24 h
+        $dateYesterday = date("Y-m-d H:i:s",$timeYesterday);
+
+        return User::where([['last_login_at', '>=', $dateYesterday], ['droit', 7]])->get();
     }
 
     public static function anniversaire()

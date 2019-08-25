@@ -46,6 +46,17 @@ class AppServiceProvider extends ServiceProvider
             $view->with(['connectedNow' => User::connectedNow(), 'connectedToday' => User::connectedToday(), 'anniversaires' => User::anniversaire()]);
         });
 
+        view()->composer('bleus.layouts.bleusfooter', function($view){
+            if(\Auth::check() and \Auth::user()->droit <= 7)
+            {
+                \Auth::user()->update([
+                    'last_login_at' => date("Y-m-d H:i:s")
+                ]);
+            }
+            
+            $view->with(['bleusConnectedNow' => User::bleusConnectedNow(), 'bleusConnectedToday' => User::bleusConnectedToday()]);
+        });
+
         view()->composer('layouts.navbar', function($view){
             if(\Auth::check() and \Auth::user()->droit <= 7)
             {
@@ -60,17 +71,7 @@ class AppServiceProvider extends ServiceProvider
             
         });
         view()->composer('bleus.layouts.bleusnavbar', function($view){
-            if(\Auth::check() and \Auth::user()->droit <= 7)
-            {
-                $check_forum = PostForum::orderBy('created_at', 'desc')->first()->id - \Auth::user()->forum_check;
-                $check_pv_comite = ComitePv::orderBy('created_at', 'desc')->first()->id - \Auth::user()->pv_comite_check;
-                $view->with(['bleusmenus' => BleusMenu::navMenu(), 'check_forum' => $check_forum, 'check_pv_comite' => $check_pv_comite]);
-            }
-            else
-            {
-                $view->with(['bleusmenus' => BleusMenu::navMenu()]);
-            }
-            
+            $view->with(['bleusmenus' => BleusMenu::navMenu()]);            
         });
 
         View::composer('layout', function ($view) {
