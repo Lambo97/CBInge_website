@@ -39,7 +39,8 @@ INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) V
 (16, 6, 'Sondages', '#', 5, 1),
 (17, 6, 'Top 50 messages', '#', 5, 1),
 (18, 8, 'Délations', '#', 5, 1),
-(19, 8, 'Invité Messe', '#', 3, 1);
+(19, 8, 'Invité Messe', '#', 3, 1),
+(20, 10, 'Menus', '/admin/menus', 1, 1);
 
 --
 -- Indexes for dumped tables

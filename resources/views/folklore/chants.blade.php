@@ -7,15 +7,15 @@
 @section('content')
 <script src="{{ asset('/js/chants.js') }}" defer></script>
 <div class="row mb-3">
-        <div class="col-md-4 col-sm-12">
-            <h1 class="mb-3">Chants</h1>
-        </div>
-        @if(Auth::check() and Auth::user()->droit == 1)
-        <div class="col-md-8 d-flex justify-content-end align-items-center">
-            <a class="buttons-green font-weight-bold" href="/folklore/chants/admin">Admin</a>
-        </div>
-        @endif
+    <div class="col-md-4 col-sm-12">
+        <h1 class="mb-3">Chants</h1>
     </div>
+    @if(Auth::check() and Auth::user()->droit == 1)
+    <div class="col-md-8 d-flex justify-content-end align-items-center">
+        <a class="buttons-green font-weight-bold" href="/folklore/chants/admin">Admin</a>
+    </div>
+    @endif
+</div>
 <p style="text-align:center; background-color:#168E33; padding-top:2px; padding-bottom:2px; margin-bottom:10px"> Le chant ingé </p>
 <div>
     C'est nous les étudiants,<br />

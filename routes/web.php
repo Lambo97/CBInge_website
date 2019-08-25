@@ -133,3 +133,19 @@ Route::get('/bleus',('BleusHomeController@index'));
 Route::get('/bleus/informations',('BleusHomeController@informations'));
 Route::get('/bleus/folklore',('BleusHomeController@folklore'));
 Route::get('/bleus/faq',('BleusHomeController@faq'));
+
+/*
+| Route administration
+*/
+Route::get('/admin/menus',('AdminController@menus'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/droitMenu/{menu}/{droit}',('AdminController@droitMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/droitMenuBleus/{menu}/{droit}',('AdminController@droitMenuBleus'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/droitSousMenu/{sous_menu}/{droit}',('AdminController@droitSousMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/afficheMenu/{menu}/{affiche}',('AdminController@afficheMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/afficheMenuBleus/{menu}/{affiche}',('AdminController@afficheMenuBleus'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/afficheSousMenu/{sous_menu}/{affiche}',('AdminController@afficheSousMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/addMenu',('AdminController@addMenu'))->middleware(['auth', 'admin']);
+Route::post('/admin/menus/addMenu',('AdminController@storeMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/destroyMenu/{menu}',('AdminController@destroyMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuBleus'))->middleware(['auth', 'admin']);
+Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
