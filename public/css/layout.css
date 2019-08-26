@@ -183,7 +183,17 @@ html, body {
     border-bottom: 1px solid #168E33;
     cursor:default;
 }
-
+/*approve_bleus*/
+.approve{
+    background-color: #484747;
+    width:100%;
+}
+.approve_title{
+    color:white;
+}
+.approve_user{
+    color:white;
+}
 .form-content{
     background-color:#484747 !important;
     width: 100%;
