@@ -1623,7 +1623,11 @@ pre code {
   color: #212529;
 }
 
-.table th,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
 .table td {
   padding: 0.75rem;
   vertical-align: top;
