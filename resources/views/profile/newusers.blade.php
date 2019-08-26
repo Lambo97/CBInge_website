@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<h1 class="mb-3">Bleus à approuver</h1>
-<div class="row">
-    <table class="table approve">
+<div class="row approve">
+    <h4 class="card-header">Bleus à approuver</h4>
+    <table class="table card-body">
         <tr class="approve_title">
             <th>Nom</th>
             <th>Prenom</th>
