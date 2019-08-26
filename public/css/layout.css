@@ -188,6 +188,9 @@ html, body {
     background-color: #484747;
     width:100%;
 }
+.approve > h4{
+    background-color: #484747;
+}
 .approve_title{
     color:white;
 }
