@@ -149,3 +149,6 @@ Route::post('/admin/menus/addMenu',('AdminController@storeMenu'))->middleware(['
 Route::get('/admin/menus/destroyMenu/{menu}',('AdminController@destroyMenu'))->middleware(['auth', 'admin']);
 Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuBleus'))->middleware(['auth', 'admin']);
 Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);

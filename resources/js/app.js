@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('smiley', require('./components/Smiley.vue').default);
 Vue.component('searchbar', require('./components/SearchBar.vue').default);
+Vue.component('searchbaracces', require('./components/SearchBarAcces.vue').default);
 Vue.component('smiley', require('./components/Smiley.vue').default);
 Vue.component('smileycomment', require('./components/SmileyComment.vue').default);
 Vue.component('smileyinsult', require('./components/SmileyInsult.vue').default);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Menu;
 use App\SousMenu;
 use App\BleusMenu;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -140,4 +141,29 @@ class AdminController extends Controller
         $menu->delete();
         return redirect('/admin/menus')->with('success', 'Menu supprimé');
     }
+
+    public function acces()
+    {
+        return view('admin.acces');
+    }
+
+    public function changeDroit(Request $request)
+    {
+        $user = User::find($request->user_id);
+        $user->droit = $request->droit;
+        $user->save();
+        return response()->json("Droit de ".$user->prenom." ".$user->name." changé en ".$user->droit);
+    }
+
+    public function changeBleus()
+    {
+        $users = User::where('droit', 7)->get();
+        foreach($users as $user)
+        {
+            $user->droit = 6;
+            $user->save();
+        }
+        return redirect('admin/acces')->with('success', 'Droits des bleus changés');
+    }
 }
+

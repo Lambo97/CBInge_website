@@ -766,7 +766,6 @@
         };
 
         function hide(id){
-            console.log("Hello");
             var titre = document.getElementById('chant_titre'+id)
             titre.classList.remove('chosen');
             titre.setAttribute("onclick", "display("+id+")");
