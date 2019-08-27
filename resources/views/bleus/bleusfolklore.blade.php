@@ -3,7 +3,7 @@
 
 @section('content')
 <h1 class="mb-3">Folklore</h1>
-<div class="nav_welcome_action d-flex font-size">
+<div class="nav_welcome_action_blue d-flex font-size">
     <p class="w-50 pb-2 mt-5 text-center welcome_active font-weight-bold" id='10' onclick="penne_f()">
         Penne
     </p>
@@ -24,15 +24,15 @@
 <p>La penne n’est ni une casquette, ni une calotte. Elle est faite de velours et de plastique. Et pour l’instant tu ne peux que rêver de pouvoir un jour en orner ta petite tête vide. Le port de la penne n’est donc autorisé qu’à ceux qui ont fait et réussi un baptême à Liège.</p>
 <p>Les baptisés de Bruxelles et Mons portent cependant, eux, des pennes également, contrairement aux baptisés universitaires catholiques, qui portent des calottes.</p>
 <p>La penne se porte sur le cœur lors des chants sacrés (chants facultaires, Valeureux Liégeois et Chant des Wallons), mais aussi lorsque l’on s’apprête à faire un à-fond.
-     Pour ces deux points, toi sale merde de bleu, tu es obligé de mettre ta main ou ton ellipse sur ton cœur, puisque tu ne possèdes pas de penne.</p>                
+     Pour ces deux points, toi sale merde de bleu, tu es obligé de mettre ta main ou ton ellipse sur ton cœur, puisque tu ne possèdes pas de penne.</p>
 <p>Les pennes à Liège sont soit grises et laides (écoles supérieures), soit noires et belles (sauf celles des Sciences, archis, ingénieurs industriels et infos)
     , soit vertes et nulles, soit blanches et vulgaires, soit bordeaux et bof .</p>
-<p>Voici un tableau récapitulatif des différentes pennes portées à Liège par les baptisés de comités de l’AGEL (et de Cureghem). On t’expliquera comment lire 
+<p>Voici un tableau récapitulatif des différentes pennes portées à Liège par les baptisés de comités de l’AGEL (et de Cureghem). On t’expliquera comment lire
     une penne en regardant sa couleur, son ruban, ses insignes et ses étoiles.</p>
 <ul>
-<li>La première étoile qui orne une penne est une étoile dorée.</li> 
-<li>Chaque étoile qui suivra te dira si oui ou non son propriétaire a réussi l’année qui précède celle en cours. Une étoile dorée veut dire oui, une argentée… à toi de deviner !</li> 
-<li>Si quelqu’un rate une année et change de section, il change de ruban et met une étoile dorée.</li> 
+<li>La première étoile qui orne une penne est une étoile dorée.</li>
+<li>Chaque étoile qui suivra te dira si oui ou non son propriétaire a réussi l’année qui précède celle en cours. Une étoile dorée veut dire oui, une argentée… à toi de deviner !</li>
+<li>Si quelqu’un rate une année et change de section, il change de ruban et met une étoile dorée.</li>
 <li>Si quelqu’un fait deux années en une, il met les étoiles correspondantes l’une au-dessus de l’autre (c’est en général une dorée au-dessus d’une argentée). </li>
 </ul>
 <div class="d-flex flex-wrap justify-content-center big-container">
@@ -475,7 +475,7 @@
 </div>
 <div class="d-none" id="insignes">
     <p> Il y a également d’autres signes significatifs sur les pennes qui n‘ont rien à voir avec les études que l’on fait. Certains de ces insignes sont décernés. </p>
-    <div> 
+    <div>
         <ul>
             <li><b>Un chameau</b> à l’endroit signifie que tu es célibataire, à l’envers que tu es pris.</li>
             <li><b>Un éléphant</b> à l’endroit signifie que tu es un gros lourd de la guindaille. S’il est retourné, cela veut dire que tu es tellement lourd que tu ne tiens plus sur tes pattes.</li>
@@ -720,7 +720,7 @@
 </div>
 
 <div class="d-none" id="chants">
-    <p style="text-align:center; background-color:#168E33; padding-top:2px; padding-bottom:2px; margin-bottom:10px"> Le chant ingé </p>
+    <p style="text-align:center; background-color:#244395; padding-top:2px; padding-bottom:2px; margin-bottom:10px"> Le chant ingé </p>
     <div>
         C'est nous les étudiants,<br />
         En Ingénieur à Liège,<br />
@@ -761,7 +761,7 @@
         C'est plus pratique.
         <br />
         </div>
-    <div class="nav_welcome_action d-flex" style="flex-direction:column; width:100%;">
+    <div class="nav_welcome_action_blue d-flex" style="flex-direction:column; width:100%;">
         <p class="mt-5 font-weight-bold chants_titre"> Chants facultaires </p>
         @foreach ($chants_facultaires as $chant)
             <p class="font-weight-light c_titre" id="chant_titre{{$chant->id}}" data-toggle="collapse" href="#chant{{$chant->id}}" role="button" aria-expanded="false" aria-controls="chant{{$chant->id}}" onclick="display({{$chant->id}})">{{$chant->nom}}</p>
@@ -769,7 +769,7 @@
                 {!!$chant->paroles!!}
             </div>
         @endforeach
-        
+
         <p class="mt-2 font-weight-bold chants_titre"> Chants folkloriques </p>
         @foreach ($chants_folkloriques as $chant)
             <p class="font-weight-light c_titre" id="chant_titre{{$chant->id}}" data-toggle="collapse" href="#chant{{$chant->id}}" role="button" aria-expanded="false" aria-controls="chant{{$chant->id}}" onclick="display({{$chant->id}})">{{$chant->nom}}</p>

@@ -22,10 +22,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/bleus/bleuslayout.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/layout.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/v4-shims.css">
-    
+
     <!-- Scripts -->
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <script src="{{ asset('/js/nav.js') }}" defer></script>
@@ -46,7 +46,7 @@
             droit: '{{Auth::user()->droit}}'
         }).then(function(tagsSent) {
             // Callback called when tags have finished sending
-            console.log(tagsSent);   
+            console.log(tagsSent);
         });
     });
     </script>
@@ -64,13 +64,13 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
+
                 <div class="collapse navbar-collapse position-relative" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-    
+
                     </ul>
-                   
+
                     <div class= "div-center position-absolute">
                         <p class="text-center margin-null">
                             Comité de baptême
@@ -78,16 +78,16 @@
                         <p class="text-center margin-null font-weight-bold">
                             Bleus ingénieur civil
                         </p>
-    
+
                     </div>
-    
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-sm-auto">
                         <li style="z-index:2000;">
                             <div class="hamburger-menu cursor" id="open_nav" style="z-index:2000;">
                                 <img src="../../img/menu.svg" alt="menu">
                             </div>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -96,7 +96,7 @@
         <div id="navigation" class="position-fixed zindex-tooltip d-none position-absolute col-8 col-sm-6 col-md-3 col-lg-3 col-xl-2 bg-black top-0 right-0 w-100" style="z-index: 2000 ; height:100%;  overflow:scroll;">
             @include('bleus.layouts.bleusnavbar')
         </div>
-        
+
         <div class="container">
         <main class="pt-6 pb-5">
             @include('layouts.messages')
@@ -104,15 +104,15 @@
             @yield('content')
             </div>
         </main>
-            
-            
-            
+
+
+
         </div>
 
         <div class="container-fluid mx-0 px-0 mt-3">
         @include('bleus.layouts.bleusfooter')
         </div>
-        
+
     </div>
     <script src="https://cdn.tiny.cloud/1/jsp5xx9rfjgnpg9sblclrw75cf7bzbj0bfessb0vkba9q0zm/tinymce/5/tinymce.min.js"></script>
     <script>
