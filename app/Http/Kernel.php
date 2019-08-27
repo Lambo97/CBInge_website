@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'comite' => \App\Http\Middleware\CheckComite::class,
         'bureau' => \App\Http\Middleware\CheckBureau::class,
         'baptise' => \App\Http\Middleware\CheckBaptise::class,
+        'comite+bleu' => \App\Http\Middleware\CheckComiteBleu::class,
     ];
 
     /**

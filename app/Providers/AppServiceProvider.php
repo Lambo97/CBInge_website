@@ -8,6 +8,7 @@ use App\User;
 use App\Menu;
 use App\BleusMenu;
 use App\PostForum;
+use App\BleusPostForum;
 use App\PostInsulte;
 use App\ComitePv;
 use Illuminate\Support\ServiceProvider;
@@ -62,7 +63,8 @@ class AppServiceProvider extends ServiceProvider
             {
                 $check_forum = PostForum::orderBy('created_at', 'desc')->first()->id - \Auth::user()->forum_check;
                 $check_pv_comite = ComitePv::orderBy('created_at', 'desc')->first()->id - \Auth::user()->pv_comite_check;
-                $view->with(['menus' => Menu::navMenu(), 'check_forum' => $check_forum, 'check_pv_comite' => $check_pv_comite]);
+                $check_forum_bleu = BleusPostForum::orderBy('created_at', 'desc')->first()->id - \Auth::user()->forum_bleu_check;
+                $view->with(['menus' => Menu::navMenu(), 'check_forum' => $check_forum, 'check_forum_bleu' => $check_forum_bleu, 'check_pv_comite' => $check_pv_comite]);
             }
             else
             {

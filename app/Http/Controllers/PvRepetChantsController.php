@@ -14,7 +14,7 @@ class PvRepetChantsController extends Controller
      */
     public function index()
     {
-        \Auth::user()->pv_comite_check = RepetChantsPv::orderBy('created_at', 'desc')->first()->id;
+        \Auth::user()->pv_repet_chant_check = RepetChantsPv::orderBy('created_at', 'desc')->first()->id;
         $pvs = RepetChantsPv::orderBy('created_at', 'desc')->paginate(10);
         return view('bleus.pvrepetchant.index', compact('pvs'));
     }
@@ -45,7 +45,7 @@ class PvRepetChantsController extends Controller
 
         // Send notification
         \OneSignal::sendNotificationToSegment(
-            auth()->user()->surnom_forum." a publié un PV !",
+            auth()->user()->surnom_forum." a publié un PV d'une repet chants !",
             $segment = "Comite",
             $url = "/forum"
         );

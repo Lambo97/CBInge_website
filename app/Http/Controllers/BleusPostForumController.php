@@ -16,7 +16,7 @@ class BleusPostForumController extends Controller
      */
     public function index()
     {
-        \Auth::user()->forum_check = BleusPostForum::orderBy('created_at', 'desc')->first()->id;
+        \Auth::user()->forum_bleu_check = BleusPostForum::orderBy('created_at', 'desc')->first()->id;
         $posts = BleusPostForum::orderBy('ancre','desc')->orderBy('updated_at','desc')->paginate(10);
         return view('bleus.forum.index', compact('posts'));
     }
@@ -54,7 +54,7 @@ class BleusPostForumController extends Controller
 
         // Send notification
         \OneSignal::sendNotificationToSegment(
-            auth()->user()->surnom_forum." a envoyé un message !",
+            auth()->user()->surnom_forum." a envoyé un message sur le forum des bleus!",
             $segment = "Comite",
             $url = "/bleus/forum"
         );

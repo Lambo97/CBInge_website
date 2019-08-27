@@ -42,7 +42,11 @@
         </li>
         @else
         <li>
-            <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">{{$menu->nom}}</p>
+            @if($menu->nom == "Discussion")
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">{{$menu->nom}} @if($check_forum+$check_forum_bleu+$check_pv_comite > 0)<span class="badge badge-light">{{$check_forum+$check_forum_bleu+$check_pv_comite}}</span>@endif</p>
+            @else
+                <p class="p-nav cursor nav-link navigation-link pb-0 mb-0">{{$menu->nom}}</p>
+            @endif
             <ul class="d-none list-unstyled ml-5">
                 @foreach($menu->sousMenus as $sousMenu)
                     @if(((Auth::check() and $sousMenu->droit >= Auth::user()->droit) or $sousMenu->droit == 0) and $sousMenu->afficher == 1)
@@ -53,6 +57,10 @@
                         @elseif($sousMenu->lien == '/pvcomite')
                             <li>
                                 <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}} @if($check_pv_comite > 0)<span class="badge badge-light">{{$check_pv_comite}}</span>@endif</a>
+                            </li>
+                        @elseif($sousMenu->lien == '/bleus/forum')
+                            <li>
+                                <a href="{{$sousMenu->lien}}" class="text-white nav-link navigation-link">{{$sousMenu->nom}} @if($check_forum_bleu > 0)<span class="badge badge-light">{{$check_forum_bleu}}</span>@endif</a>
                             </li>
                         @else
                             <li>
