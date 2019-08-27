@@ -30,7 +30,7 @@ INSERT INTO `sous_menus` (`id`, `id_menu`, `nom`, `lien`, `droit`, `afficher`) V
 (7, 5, 'Archives', '#', 6, 1),
 (8, 6, 'Pv du comité', '/pvcomite', 5, 1),
 (9, 6, 'FORUUUUM', '/forum', 5, 1),
-(10, 6, 'Forum des bleus', '#', 5, 1),
+(10, 6, 'Forum des bleus', '/bleus/forum', 5, 1),
 (11, 6, 'Pense-bête', '#', 5, 1),
 (12, 6, 'Insultes', '#', 6, 1),
 (13, 6, 'Citations', '#', 6, 1),

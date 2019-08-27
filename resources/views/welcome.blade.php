@@ -26,14 +26,15 @@ Le CB ingé est de loin le CB le plus présent et imposant en guindaille. Avec p
              payer des putes au week-end CB, manger deux boulets au resto après les Trottis et couler sous le Reggio à nos évènements !</p>
         </div>
         <div class="nav_welcome_action d-flex">
-            <p class="w-50 pb-2 mt-5 text-center welcome_active font-weight-bold" id="0">
-                4H trottis
-            </p>
-            <p class="w-50 pb-2 mt-5 text-center font-weight-bold" id="1">
+        <p class="w-50 pb-2 mt-5 text-center welcome_active font-weight-bold" id="0">
                 Baptême
             </p>
+            <p class="w-50 pb-2 mt-5 text-center font-weight-bold" id="1">
+                4H trottis
+            </p>
+            
         </div>
-        <div id="4h">
+        <div class="d-none" id="bleus">
             <p>Les 4 heures trottinettes est un évènement estudiantin se déroulant au Sart-Tilman à Liège le mercredi de la Saint-Torè. L'évènement était tenu jusque dans les années 1990 sur le site du Val-Benoit.</p>
             <p>Elles constituent le point d'orgue des festivités de la Saint-Torè, et rassemblent chaque année, depuis 1977, plusieurs milliers de spectateurs et participants.</p>
             <p>Cette course, par équipes de quatre personnes se partageant une même trottinette (ou tout autre objet y ressemblant de près ou de loin), comporte principalement
@@ -45,7 +46,7 @@ Le CB ingé est de loin le CB le plus présent et imposant en guindaille. Avec p
                  fruités, etc.) à vendre sur le site de la compétition.</p>
                  <a class="buttons-green font-weight-bold"href="http://www.4htrottis.be">Avoir plus d'informations</a>
         </div>
-        <div class="d-none" id="bleus">
+        <div id="4h">
 
             <p>Le baptême est une cérémonie initiatique qui permet à un nouvel étudiant (bleu) de passer du statut de bleu à celui de baptisé. En d'autres termes de rentrer dans un cercle d'étudiants baptisés.
              De manière générale, le terme de bleu peut également englober toutes les activités de bleusailles, qui précèdent le baptême proprement dit. Les baptêmes sont organisés par des comités de baptême,

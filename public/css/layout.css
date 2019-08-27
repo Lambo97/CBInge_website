@@ -65,6 +65,24 @@ html, body {
     background-size: contain;
     background-position: center;
 }
+.logobleu{
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 200px;
+}
+.logobleu div{
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: 5% 0 0 5%;
+    background: url("../img/logobleu.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+}
 @media only screen and (max-width: 400px) {
   .logo {
 

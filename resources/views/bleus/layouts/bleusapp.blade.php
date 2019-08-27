@@ -56,7 +56,7 @@
     <div id="app">
         <nav class="navbar navbar-expand navbar-light bg-black shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-light text-hide logo" href="{{ url('/') }}">
+                <a class="navbar-brand text-light text-hide logobleu" href="{{ url('/bleus') }}">
                     <div>
                         {{ config('app.name', 'CB Ingé') }}
                     </div>
