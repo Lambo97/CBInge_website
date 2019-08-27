@@ -5,7 +5,7 @@
         <div class="mx-auto">
             <p class="my-0 pt-3">Bleu en ligne :</p>
             @foreach ($bleusConnectedNow as $user)
-                <a class= "green-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
+                <a class= "blue-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
             @endforeach
         </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="mx-auto">
             <p class="my-0">Bleus connectés aujourd'hui :</p>
             @foreach ($bleusConnectedToday as $user)
-                <a class= "green-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
+                <a class= "blue-link" href="/profile/show/{{$user->id}}" > {{$user->surnom_forum}}</a>,
             @endforeach
         </div>
     </div>

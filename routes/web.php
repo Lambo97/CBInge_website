@@ -133,6 +133,30 @@ Route::get('/bleus',('BleusHomeController@index'));
 Route::get('/bleus/informations',('BleusHomeController@informations'));
 Route::get('/bleus/folklore',('BleusHomeController@folklore'));
 Route::get('/bleus/faq',('BleusHomeController@faq'));
+Route::get('/bleus/forum/Like')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum', ('BleusPostForumController@index'))->middleware(['auth', 'comite']);
+Route::post('/bleus/forum/add', 'BleusPostForumController@add')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/edit/{post}', 'BleusPostForumController@edit')->middleware(['auth', 'comite']);
+Route::post('/bleus/forum/update/{post}', 'BleusPostForumController@update')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/destroy/{post}', 'BleusPostForumController@destroy')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/ancre/{post}', 'BleusPostForumController@ancre')->middleware(['auth', 'bureau']);
+Route::post('/bleus/forum/comment/add/{post}', 'BleusCommentForumController@add')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/comment/edit/{comment}', 'BleusCommentForumController@edit')->middleware(['auth', 'comite']);
+Route::post('/bleus/forum/comment/update/{comment}', 'BleusCommentForumController@update')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/comment/destroy/{comment}', 'BleusCommentForumController@destroy')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/like/{post}', 'BleusPostForumController@like')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/dislike/{post}', 'BleusPostForumController@dislike')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/comment/like/{comment}', 'BleusCommentForumController@like')->middleware(['auth', 'comite']);
+Route::get('/bleus/forum/comment/dislike/{comment}', 'BleusCommentForumController@dislike')->middleware(['auth', 'comite']);
+Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant', ('PvRepetChantsController@index'))->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/show/{pv}', ('PvRepetChantsController@show'))->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/add', 'PvRepetChantsController@add')->middleware(['auth', 'comite']);
+Route::post('/bleus/pvrepetchant/add', 'PvRepetChantsController@store')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->middleware(['auth', 'comite']);
+Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite']);
+
 
 /*
 | Route administration

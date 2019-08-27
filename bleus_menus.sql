@@ -24,8 +24,8 @@ INSERT INTO `bleus_menus` (`id`, `nom`, `lien`, `droit`, `afficher`) VALUES
 (2, 'FAQ', '/bleus/faq', 0, 1),
 (3, 'Agenda', '/events', 0, 1),
 (4, 'Folklore', '/bleus/folklore', 0, 1),
-(5, 'Forum', '#', 0, 1),
-(6, 'Pv Repet Chants', '#', 0, 1),
+(5, 'Forum', '/bleus/forum', 7, 1),
+(6, 'Pv Repet Chants', '/bleus/pvrepetchant', 7, 1),
 (7, "S'inscrire", '/register', 0, 0);
 
 
