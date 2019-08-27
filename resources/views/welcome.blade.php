@@ -8,7 +8,14 @@
 @section('content')
 <script src="{{ asset('/js/welcome.js') }}" defer></script>
     <h2><strong>Le comité de baptême</strong></h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae. Aliquet lectus proin nibh nisl condimentum id venenatis. Ullamcorper malesuada proin libero nunc consequat. Viverra nam libero justo laoreet sit amet cursus sit amet. Suscipit adipiscing bibendum est ultricies integer. Sit amet justo donec enim diam vulputate. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Enim ut sem viverra aliquet. Diam vel quam elementum pulvinar etiam non quam. Tempor commodo ullamcorper a lacus vestibulum. At erat pellentesque adipiscing commodo elit at. Nisi est sit amet facilisis magna etiam tempor orci eu.</p>
+        <p> Bienvenue sur le noble, très prestigieux et hautement jalousé site du CB ingé !<br /> <i>Le site étant tout nouveau tout propre tout beau, il est impératif de réinitialiser ton mot de passe sinon ton identifiant n’est pas valide. </i> <br />Sur ce site tu trouveras toutes les réponses à tes questions et supports relatif au CB.
+
+</p><p>
+<u>Le Comité de baptème c’est qui ?</u><br />
+Le Comité de baptème ingénieur civil (CB ingé) est composé de 13 togés et d’une quarantaine d’assistants tous étudiants en ingénieur civil. Les togés sont l’instance supérieure, les chefs du comité. Au moins en 3ème BAC ingénieur civil, ils organisent et encadrent toutes les bleusailles et soirées durant l’année. Les assistants, eux, aident et participent au bon déroulement des évènements.
+</p><p>
+<u>Le CB ingé, pourquoi c’est mieux ?</u><br />
+Le CB ingé est de loin le CB le plus présent et imposant en guindaille. Avec plus de 50 membres à son actif il est omniprésent. Toujours une bouteille de menthe à la main, il ne boit jamais sa bière sans son demi centimètre de sirop en transformant sa simple bière en un magnifique perroquet. Si son gosier n’est pas rafraîchit par cette bière améliorée c’est qu’il boit tout simplement du Reggio, autre boisson née au sein des ingés et qui s’exporte à travers les frontières. En plus des soirées habituelles, le CB ingé organise les « 4h Trottinettes » l’un des plus grand évènement étudiant qui regroupe près de 10 000 personnes chaque année. Le CB organise aussi le <a class="green-link"href="https://www.facebook.com/SKIINGE/">Ski Ingé</a>, plus grand ski universitaire de Wallonie et de loin le meilleur. </p>
         <button type="button" class=" buttons-green font-weight-bold" id="bouton_dons">Nous faire un don</button>
         <p class="d-none mt-4" id="compte_dons">
            Dess fera un beau texte pour nous donner envie de faire un don au :
