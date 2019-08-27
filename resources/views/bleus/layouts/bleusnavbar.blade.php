@@ -1,5 +1,5 @@
 <div id="close_nav" class="hamburger-menu position-absolute top-0 right-0 pt-3 pr-4 cursor">
-    <img src="../../img/close.svg" alt="close">
+    <img src="../../../img/close.svg" alt="close">
 </div>
 <div id = "all_nav" class="nav-content pt-5 pb-5 pl-3">
     <ul class="list-unstyled">

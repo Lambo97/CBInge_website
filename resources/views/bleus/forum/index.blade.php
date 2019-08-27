@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('bleus.layouts.bleusapp')
 <script src="{{ asset('/js/forum.js') }}" defer></script>
 
 @section('title')
@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-12  form-content mb-5">
       <p class="font-weight-bold mt-3 mb-3">Poster un nouveau message</p>  
-    <form method="POST" action="/forum/add" enctype="multipart/form-data">
+    <form method="POST" action="/bleus/forum/add" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">
@@ -68,9 +68,9 @@
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
                     <div class="col-2 col-xs-3 d-flex justify-content-end">
                         <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deletePost{{$post->id}}"></i></div>
-                        <a href="/forum/edit/{{$post->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
+                        <a href="/bleus/forum/edit/{{$post->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                         @if(Auth::user()->droit < 3)
-                        <a href="/forum/ancre/{{$post->id}}" class="green-link"><i class="fas fa-anchor"></i></a>
+                        <a href="/bleus/forum/ancre/{{$post->id}}" class="green-link"><i class="fas fa-anchor"></i></a>
                         @endif
                     </div>
                     @endif
@@ -91,16 +91,16 @@
                 <div class="row" id="post{{$post->id}}">
                     <div class="col-4 col-sm-2 d-flex justify-content-center">
                         @if($post->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
-                            <b><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b> 
+                            <b><a href="/bleus/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></b> 
                         @else
-                            <small><a href="/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
+                            <small><a href="/bleus/forum/like/{{$post->id}}" onclick="like(this, true); return false;" class="green-link" id={{$post->id}}><i>j'aime ({{$post->like->where('value', 1)->count()}})</i></a></small>
                         @endif
                     </div>
                     <div class="col-4 col-sm-3 d-flex justify-content-center">
                         @if($post->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
-                            <b><a href="/forum/dislike/{{$post->id}}"  onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
+                            <b><a href="/bleus/forum/dislike/{{$post->id}}"  onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></b>
                         @else
-                            <small><a href="/forum/dislike/{{$post->id}}"   onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
+                            <small><a href="/bleus/forum/dislike/{{$post->id}}"   onclick="dislike(this, true); return false;" class="green-link" id={{$post->id}}><i>je n'aime pas ({{$post->like->where('value', -1)->count()}})</i></a></small>
                         @endif
                     </div>
                     <div class="col-4 col-sm-2 d-flex justify-content-center">
@@ -115,11 +115,11 @@
                         <div class="col-2">
                             <img class="mx-auto d-block img-fluid rounded-circle mt-2 img-small" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
                         </div>
-                        <div class="col-10 position-relative">
+                        <div class="col-10 position-relative p-3" style="border: 1px solid grey;">
                         @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="d-flex justify-content-end position-absolute right-0 mt-1">
                                 <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></div>
-                                <a href="/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
+                                <a href="/bleus/forum/comment/edit/{{$comment->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
                             </div>
                             @endif
                             
@@ -131,16 +131,16 @@
                             <div class="row align-self-end" id="comment{{$comment->id}}">
                                 <div class="pl-3">
                                 @if($comment->like->where('value', 1)->where('user_id', Auth::user()->id)->count() > 0)
-                                    <b><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></b>
+                                    <b><a href="/bleus/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></b>
                                 @else
-                                    <small><a href="/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
+                                    <small><a href="/bleus/forum/comment/like/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>j'aime ({{$comment->like->where('value', 1)->count()}})</i></a></small>
                                 @endif
                                 </div> 
                                  <div>
                                 @if($comment->like->where('value', -1)->where('user_id', Auth::user()->id)->count() > 0)
-                                    <b class="mx-3"><a href="/forum/comment/dislike/{{$comment->id}}"  onclick="like(this, false); return false;"class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></b>
+                                    <b class="mx-3"><a href="/bleus/forum/comment/dislike/{{$comment->id}}"  onclick="like(this, false); return false;"class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></b>
                                 @else
-                                    <small class="mx-3"><a href="/forum/comment/dislike/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
+                                    <small class="mx-3"><a href="/bleus/forum/comment/dislike/{{$comment->id}}" onclick="like(this, false); return false;" class="green-link mx-1" id={{$comment->id}}><i>je n'aime pas ({{$comment->like->where('value', -1)->count()}})</i></a></small>
                                 @endif
                                 </div> 
                                 <div><small><a href="#" class="green-link mx-2" data-toggle="modal" data-target="#viewlikeComment{{$comment->id}}"><i>Consulter</i></a></small></div>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                                    <a href="/forum/comment/destroy/{{$comment->id}}" class="btn btn-danger">Supprimer</a>
+                                    <a href="/bleus/forum/comment/destroy/{{$comment->id}}" class="btn btn-danger">Supprimer</a>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
 
                 @endforeach
                 <div class=" mb-3 mt-3">
-                    <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
+                    <form method="POST" action="/bleus/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
                         @csrf  
                         <div class="">
                             <div class="">
@@ -240,7 +240,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                    <a href="/forum/destroy/{{$post->id}}" class="btn btn-danger">Supprimer</a>
+                    <a href="/bleus/forum/destroy/{{$post->id}}" class="btn btn-danger">Supprimer</a>
                 </div>
             </div>
         </div>

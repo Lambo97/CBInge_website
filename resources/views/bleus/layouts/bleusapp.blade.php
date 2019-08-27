@@ -85,7 +85,7 @@
                     <ul class="navbar-nav ml-sm-auto">
                         <li style="z-index:2000;">
                             <div class="hamburger-menu cursor" id="open_nav" style="z-index:2000;">
-                                <img src="../../img/menu.svg" alt="menu">
+                                <img src="../../../img/menu.svg" alt="menu">
                             </div>
                             
                         </li>
