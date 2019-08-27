@@ -27,17 +27,17 @@
         </div>
         <div class="form-group row mb-0">
             <div class="col-md-2 offset-2">
-                <button type="submit" class="buttons-green font-weight-bold">
+                <button type="submit" class="buttons-blue font-weight-bold">
                     Envoyer
                 </button>
             </div>
             <div class="col-md-2">
-                <button type="reset" class="buttons-green font-weight-bold">
+                <button type="reset" class="buttons-blue font-weight-bold">
                     Reset
                 </button>
             </div>
             <div class="col-md-2">
-                    <a href="/bleus/forum"><button type="button" class="buttons-green font-weight-bold">
+                    <a href="/bleus/forum"><button type="button" class="buttons-blue font-weight-bold">
                         Retour
                 </button></a>
             </div>
