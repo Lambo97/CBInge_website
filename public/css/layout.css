@@ -1,5 +1,5 @@
 html, body {
-    background-color: #353131; 
+    background-color: #353131;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
@@ -21,11 +21,11 @@ html, body {
 }
 .buttons-green:hover{
     background-color: rgba(22, 142, 51, 0.7);
-    
+
     text-decoration: none;
 }
 .buttons-green-dark{
-    background-color: #4D6052 !important;    
+    background-color: #4D6052 !important;
 }
 
 .bg-black{
@@ -53,7 +53,7 @@ html, body {
     width: 100px;
     height: 100px;
     background-color: white;
-    border-radius: 200px; 
+    border-radius: 200px;
 }
 .logo div{
     content: "";
@@ -67,11 +67,11 @@ html, body {
 }
 @media only screen and (max-width: 400px) {
   .logo {
-    
+
     top: 20px;
     width: 70px;
     height: 70px;
-  
+
   }
 }
 .navigation-link{
@@ -126,7 +126,7 @@ html, body {
     background-clip: initial;
     border-color: #353131!important;
     border-bottom-color: #484747!important;
-    
+
 }
 .fc th{
     border: 10px #353131 solid !important;
@@ -208,7 +208,7 @@ html, body {
     color:white;
 }
 .green-link{
-    color: #168E33;
+    color: #38BA58;
     transition: all 0.4s ease-in-out;
 
 }
@@ -217,7 +217,7 @@ html, body {
     text-decoration: none;
 }
 .div-center{
-   
+
     margin: 0 auto;
     width: 100%;
 
@@ -246,29 +246,29 @@ html, body {
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
-    
+
 }
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .container{
         max-width: 650px;
     }
  }
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .container{
         max-width: 850px;
     }
-    
+
  }
 
 /* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
      .container{
     max-width: 1000px;
-    } 
+    }
  }
 .form-control::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 4 to 18 */
@@ -284,12 +284,12 @@ html, body {
     left: 15%;
     width: 70%;
 }
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
     .agenda-css{
         left: 120px;
         width: 560px;
     }
-    
+
 }
 @media(max-width:1000px){
     .fc-day-grid-event{
@@ -310,7 +310,7 @@ html, body {
     overflow: auto;
     background-color: black;
   }
-  
+
   /* Modal Content */
   .modal .modal-content {
     position: relative;
@@ -320,7 +320,7 @@ html, body {
     width: 90%;
     max-width: 1200px;
   }
-  
+
   /* The Close Button */
   .modal .close {
     color: white;
@@ -330,22 +330,22 @@ html, body {
     font-size: 35px;
     font-weight: bold;
   }
-  
+
   .modal .close:hover,
   .modal .close:focus {
     color: #999;
     text-decoration: none;
     cursor: pointer;
   }
-  
+
   .modal .mySlides {
     display: none;
   }
-  
+
   .cursor {
     cursor: pointer;
   }
-  
+
   /* Next & previous buttons */
   .modal .prev,
   .modal .next {
@@ -363,34 +363,120 @@ html, body {
     user-select: none;
     -webkit-user-select: none;
   }
-  
+
   /* Position the "next button" to the right */
   .modal .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
-  
+
   /* On hover, add a black background color with a little bit see-through */
   .modal .prev:hover,
   .modal .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-  
-  
+
+
   .modal img {
     margin-bottom: -4px;
   }
-  
+
   .modal .caption-container {
     text-align: center;
     background-color: black;
     padding: 2px 16px;
     color: white;
   }
-  
+
   .modal .active{
     opacity: 1;
   }
+
+/* CSS class pour les bleus */
+
+.buttons-blue{
+    background-color: #244395;
+    border-radius: 30px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    outline: none !important;
+    padding: 5px 20px;
+    color: white !important;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.buttons-blue:hover{
+    background-color: #5583FF;
+
+    text-decoration: none;
+}
+.buttons-blue-dark{
+    background-color: rgb(11, 124, 145) !important;
+}
+
+.navigation-link-blue{
+    position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 15px;
+    transition: all 0.4s ease;
+    pointer-events: true;
+}
+.navigation-link-blue:hover{
+    color: #5583FF !important;
+}
+.navigation-link-blue:hover::before{
+    width: 25px;
+    background-color: #5583FF;
+}
+.navigation-link-blue::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: -15px;
+    width: 20px;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.4s ease;
+}
+.nav_welcome_action_blue p{
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+}
+.nav_welcome_action_blue p:hover, .nav_welcome_action_blue .welcome_active{
+    border-bottom: 1px solid white;
+    color: white;
+}
+/*chants*/
+.nav_welcome_action_blue .chants_titre{
+    border-bottom: 1px solid white;
+    cursor:default;
+}
+.nav_welcome_action_blue .c_titre{
+    color:grey;
+}
+.nav_welcome_action_blue .chosen{
+    color: #5583FF;
+    border-bottom: 1px solid #5583FF;
+}
+.nav_welcome_action_blue .chants{
+    padding-bottom: 18px ;
+}
+.nav_welcome_action_blue .chosen:hover{
+    color: #5583FF;
+    border-bottom: 1px solid #5583FF;
+    cursor:default;
+}
+.blue-link{
+    color: #5583FF;
+    transition: all 0.4s ease-in-out;
+
+}
+.blue-link:hover{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
 
 
 /*.flex-center {
