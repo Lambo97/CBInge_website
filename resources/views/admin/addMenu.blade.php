@@ -33,7 +33,7 @@
         <label for="menu" class="d-none col-md-4 col-form-label text-md-right">Menu</label>
                 
         <select id="menu" type="text" class="form-control form-content" name="menu">
-            <option value="0" selected>Menu correspondant</option>
+            <option value="0" disabled selected>Menu correspondant</option>
             @foreach ($menus as $menu)
             <option value="{{$menu->id}}">{{$menu->nom}}</option>
             @endforeach
@@ -59,7 +59,7 @@
         <label for="droit" class="d-none col-md-4 col-form-label text-md-right">Droit</label>
                 
         <select id="droit" type="text" class="form-control form-content" name="droit">
-            <option selected value="10">Droit utilisateur</option>
+            <option selected disabled value="10">Droit utilisateur</option>
             @foreach ($droits as $value => $droit)
             <option value="{{$value}}">{{$droit}}</option>
             @endforeach

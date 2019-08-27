@@ -23,29 +23,29 @@ class EventController extends Controller
 
 
 
-public function calender()
+    public function calender()
+    {
+        $events = [];
+        $data = Event::all();
+        if($data->count())
+        {
+            foreach ($data as $key => $value) 
             {
-                $events = [];
-                $data = Event::all();
-                if($data->count())
-                 {
-                    foreach ($data as $key => $value) 
-                    {
-                        $events[] = Calendar::event(
-                            $value->title,
-                            true,
-                            new \DateTime($value->start_date),
-                            new \DateTime($value->end_date.'+1 day'),
-                            null,
-                            // Add color
-                         [
-                             'color' => '#000000',
-                             'textColor' => '#008000',
-                         ]
-                        );
-                    }
-                }
-                $calendar = Calendar::addEvents($events);
-                return view('calender', compact('calendar'));
+                $events[] = Calendar::event(
+                    $value->title,
+                    true,
+                    new \DateTime($value->start_date),
+                    new \DateTime($value->end_date.'+1 day'),
+                    null,
+                    // Add color
+                    [
+                        'color' => '#000000',
+                        'textColor' => '#008000',
+                    ]
+                );
             }
+        }
+        $calendar = Calendar::addEvents($events);
+        return view('calender', compact('calendar'));
+    }
 }
