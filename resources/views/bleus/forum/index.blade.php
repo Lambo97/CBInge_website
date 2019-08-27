@@ -115,7 +115,7 @@
                         <div class="col-2">
                             <img class="mx-auto d-block img-fluid rounded-circle mt-2 img-small" src="/profile/{{$comment->auteur->id}}/image" alt="{{$post->auteur->surnom_forum}}"> 
                         </div>
-                        <div class="col-10 position-relative p-3" style="border: 1px solid grey;">
+                        <div class="col-10 position-relative">
                         @if(Auth::user()->id == $comment->id_auteur || Auth::user()->droit < 3)
                             <div class="d-flex justify-content-end position-absolute right-0 mt-1">
                                 <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteComment{{$comment->id}}"></i></div>
