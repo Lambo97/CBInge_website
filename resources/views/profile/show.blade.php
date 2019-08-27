@@ -99,6 +99,14 @@
         <p class="mb-0 font-weight-light">{{$user->description}}</p>
     @endif
 </div>
+
+<div class="row my-4">
+    @if(Auth::check() and Auth::user()->droit == 1)
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+        <a class="buttons-green font-weight-bold" href="/profile/destroy/{{$user->id}}">Supprimer l'utilisateur</a>
+    </div>
+    @endif
+</div>
    
         
     
