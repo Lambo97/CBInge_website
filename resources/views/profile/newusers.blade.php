@@ -7,7 +7,7 @@
 @section('content')
 <div class="row approve">
     <h4 class="card-header">Bleus à approuver</h4>
-    <table class="table card-body">
+    <table class="table card-body text-light">
         <tr class="approve_title">
             <th>Nom</th>
             <th>Prenom</th>
