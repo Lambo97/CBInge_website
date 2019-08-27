@@ -149,6 +149,13 @@ Route::get('/bleus/forum/dislike/{post}', 'BleusPostForumController@dislike')->m
 Route::get('/bleus/forum/comment/like/{comment}', 'BleusCommentForumController@like')->middleware(['auth', 'comite']);
 Route::get('/bleus/forum/comment/dislike/{comment}', 'BleusCommentForumController@dislike')->middleware(['auth', 'comite']);
 Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant', ('PvRepetChantsController@index'))->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/show/{pv}', ('PvRepetChantsController@show'))->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/add', 'PvRepetChantsController@add')->middleware(['auth', 'comite']);
+Route::post('/bleus/pvrepetchant/add', 'PvRepetChantsController@store')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->middleware(['auth', 'comite']);
+Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite']);
+Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite']);
 
 
 /*

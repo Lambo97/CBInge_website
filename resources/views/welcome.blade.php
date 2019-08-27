@@ -10,10 +10,14 @@
     <h2><strong>Le comité de baptême</strong></h2>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae. Aliquet lectus proin nibh nisl condimentum id venenatis. Ullamcorper malesuada proin libero nunc consequat. Viverra nam libero justo laoreet sit amet cursus sit amet. Suscipit adipiscing bibendum est ultricies integer. Sit amet justo donec enim diam vulputate. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Enim ut sem viverra aliquet. Diam vel quam elementum pulvinar etiam non quam. Tempor commodo ullamcorper a lacus vestibulum. At erat pellentesque adipiscing commodo elit at. Nisi est sit amet facilisis magna etiam tempor orci eu.</p>
         <button type="button" class=" buttons-green font-weight-bold" id="bouton_dons">Nous faire un don</button>
-        <p class="d-none mt-4" id="compte_dons">
-           Dess fera un beau texte pour nous donner envie de faire un don au :
-            BE39 0682 1469 9019
-        </p>
+        <div class="d-none mt-4" id="compte_dons">
+        <p>La guindaille c’est cher et les bleus encore plus !
+         Afin que Radoux ne soit pas en négatif cette année, verse un petit montant sur ce noble,
+          très prestigieux et hautement jalousé numéro de compte bancaire</p>
+          <p class="text-center font-weight-bold">BE39 0682 1469 9019 !</p>
+           <p> Tu ne le regretteras pas ! Grâce à toi on pourra être toujours plus riche que le CB HEC,
+             payer des putes au week-end CB, manger deux boulets au resto après les Trottis et couler sous le Reggio à nos évènements !</p>
+        </div>
         <div class="nav_welcome_action d-flex">
             <p class="w-50 pb-2 mt-5 text-center welcome_active font-weight-bold" id="0">
                 4H trottis
