@@ -19,14 +19,8 @@ class ProfileController extends Controller
      */
     public function show(User $user)
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
-
-        $fonctionCourante = $user->fonctions()->where('nom' ,'!=', 'Webmaster')->wherePivot('annee', $year)->first();
-        $fonctionsPrecedantes = $user->fonctions()->wherePivot('annee', '<', $year)->orderBy('pivot_annee')->get();
+        $fonctionCourante = $user->fonctions()->where('nom' ,'!=', 'Webmaster')->wherePivot('annee', year())->first();
+        $fonctionsPrecedantes = $user->fonctions()->wherePivot('annee', '<', year())->orderBy('pivot_annee')->get();
 
         return view('profile.show', compact('user', 'fonctionCourante', 'fonctionsPrecedantes'));
     }

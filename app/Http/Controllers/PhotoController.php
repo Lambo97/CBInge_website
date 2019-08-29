@@ -10,14 +10,8 @@ class PhotoController extends Controller
 {
     public function index()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
-
         $annees = array();
-        for($y = $year; $y >= 1999; $y--)
+        for($y = year(); $y >= 1999; $y--)
         {
             $annee = array();
             $annee['annee'] = $y;
@@ -61,13 +55,8 @@ class PhotoController extends Controller
 
     public function admin()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
         $annees = array();
-        for($y = $year; $y >= 1999; $y --)
+        for($y = year(); $y >= 1999; $y --)
         {
             array_push($annees, $y);
         }

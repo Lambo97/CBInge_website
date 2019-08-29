@@ -14,11 +14,7 @@ class ComiteController extends Controller
      */
     public function actuel()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
+        $year = year();
 
         // Président
         $president = User::whereHas('fonctions', function($query) use ($year){
@@ -73,13 +69,8 @@ class ComiteController extends Controller
 
     public function anciens()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
+        $year = year();
 
-        
         $comites = array();
         for($y = $year; $y > 1980; $y--)
         {
@@ -141,11 +132,7 @@ class ComiteController extends Controller
 
     public function webmaster()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
+        $year = year();
 
         $webmasters = User::whereHas('fonctions', function($query){
             $query->where('nom', 'Webmaster');
