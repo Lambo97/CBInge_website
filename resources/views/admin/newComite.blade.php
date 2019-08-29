@@ -11,7 +11,7 @@
     </div>
     @if(Auth::check() and Auth::user()->droit == 1)
     <div class="col-md-6 d-flex justify-content-end align-items-center">
-        <a class="buttons-green font-weight-bold" href="#">Retour</a>
+        <a class="buttons-green font-weight-bold" href="/admin/repertoire">Retour</a>
     </div>
     @endif
 </div>

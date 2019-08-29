@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Menu;
 use App\SousMenu;
 use App\BleusMenu;
@@ -167,6 +168,11 @@ class AdminController extends Controller
         return redirect('admin/acces')->with('success', 'Droits des bleus changés');
     }
 
+    public function repertoire()
+    {
+        return view('admin.repertoire');
+    }
+
     public function nouveauComite()
     {
         $users = User::orderBy('name')->get();
@@ -231,8 +237,64 @@ class AdminController extends Controller
             $webmaster->fonctions()->attach(Fonction::where('nom', 'Webmaster')->first()->id, array("annee" => year()));
         }
 
-        return redirect('admin/repertoire/nouveauComite')->with('success', 'Comité ajouté');
+        return redirect('admin/repertoire')->with('success', 'Comité ajouté');
         
     }
+
+    public function nouvelleFonction()
+    {
+        $fonctions = Fonction::all();
+        $users = User::orderBy('name')->get();
+        return view('admin.newFonction', compact('users', 'fonctions'));
+    }
+
+    public function addNouvelleFonction(Request $request)
+    {
+        $this->validate($request, [
+            'user' => 'required',
+            'fonction' => 'required',
+            'annee' => 'required',
+        ]);
+
+        $already = User::whereHas('fonctions', function($query) use($request){
+            $query->where('annee', $request->input('annee'))->where('fonctions.id', $request->input('fonction'));
+        })->count();
+
+        if($already > 0)
+        {
+            return redirect('admin/repertoire/nouvelleFonction')->with('error', 'Cette fonction existe déjà');
+        }
+
+        $user = User::find($request->input('user'));
+        $user->fonctions()->attach($request->input('fonction'), array("annee" => $request->input('annee')));
+
+        return redirect('admin/repertoire')->with('success', 'Fonction ajoutée');
+    }
+
+    public function searchFonction(Request $request)
+    {
+        if($request->keywords == "")
+        {
+            return response()->json(array());
+        }
+            
+        $token = explode(' ', $request->keywords);
+        $results = DB::table('users')->join('fonction_user', 'users.id', '=', 'fonction_user.user_id')->join('fonctions', 'fonction_user.fonction_id', '=', 'fonctions.id');
+        $results->where('name', 'like', '%'.$request->keywords.'%')->orWhere('prenom', 'like', '%'.$request->keywords.'%')->orWhere('annee',$request->keywords)->orWhere('nom', $request->keywords);
+        $results->when($token, function($q, $token) {
+            if(count($token) > 1)
+                return $q->orWhere([['prenom', 'like', '%'.$token[0].'%'],['name', 'like', '%'.$token[1].'%']])->orWhere([['name', 'like', '%'.$token[0].'%'],['prenom', 'like', '%'.$token[1].'%']]);
+            else
+                return $q;
+        });
+        return response()->json($results->orderBy('annee','desc')->orderBy('name')->select('name', 'prenom', 'surnom', 'user_id', 'nom', 'fonction_id', 'annee')->get());
+    }
+
+    public function deleteFonction(User $user, $fonction_id, $annee)
+    {
+        $user->fonctions()->newPivotStatement()->where('fonction_id',$fonction_id)->where('annee', $annee)->delete();
+        return redirect('admin/repertoire')->with('success', 'Fonction supprimée');
+    }
+
 }
 

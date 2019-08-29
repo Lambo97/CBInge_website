@@ -173,8 +173,15 @@ Route::post('/admin/menus/addMenu',('AdminController@storeMenu'))->middleware(['
 Route::get('/admin/menus/destroyMenu/{menu}',('AdminController@destroyMenu'))->middleware(['auth', 'admin']);
 Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuBleus'))->middleware(['auth', 'admin']);
 Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
+
 Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);
+
+Route::get('/admin/repertoire',('AdminController@repertoire'))->middleware(['auth', 'admin']);
 Route::get('/admin/repertoire/nouveauComite',('AdminController@nouveauComite'))->middleware(['auth', 'admin']);
 Route::post('/admin/repertoire/nouveauComite',('AdminController@addNouveauComite'))->middleware(['auth', 'admin']);
+Route::get('/admin/repertoire/nouvelleFonction',('AdminController@nouvelleFonction'))->middleware(['auth', 'admin']);
+Route::post('/admin/repertoire/nouvelleFonction',('AdminController@addNouvelleFonction'))->middleware(['auth', 'admin']);
+Route::get('/admin/repertoire/searchFonction',('AdminController@searchFonction'))->middleware(['auth', 'admin']);
+Route::get('/admin/repertoire/deleteFonction/{user}/{fonction_id}/{annee}', ('AdminController@deleteFonction'))->middleware(['auth', 'admin']);
