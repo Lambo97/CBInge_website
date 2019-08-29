@@ -10,8 +10,7 @@
 
     @yield('title')
     @yield('head-agenda')
-
-
+    
     <!-- Icon -->
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
@@ -25,13 +24,19 @@
     <link href="{{ asset('/css/layout.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/v4-shims.css">
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!--Select2-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
     
+
     <!-- Scripts -->
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <script src="{{ asset('/js/nav.js') }}" defer></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     
-
     <!-- One signal -->
     @if(Auth::check())
     <link rel="manifest" href="/manifest.json" />
@@ -131,6 +136,8 @@
             menubar: false,
         });
     </script>
+
+
      @yield('script-agenda')
 </body>
 </html>

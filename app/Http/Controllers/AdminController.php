@@ -7,6 +7,7 @@ use App\Menu;
 use App\SousMenu;
 use App\BleusMenu;
 use App\User;
+use App\Fonction;
 
 class AdminController extends Controller
 {
@@ -164,6 +165,74 @@ class AdminController extends Controller
             $user->save();
         }
         return redirect('admin/acces')->with('success', 'Droits des bleus changés');
+    }
+
+    public function nouveauComite()
+    {
+        $users = User::orderBy('name')->get();
+        return view('admin.newComite', compact('users'));
+    }
+
+    public function addNouveauComite(Request $request)
+    {
+        $this->validate($request, [
+            'president' => 'required',
+            'tresorier' => 'required',
+            'secretaire' => 'required',
+            'toge' => 'required',
+            'assistants' => 'required',
+        ]);
+        
+        $already = User::whereHas('fonctions', function($query){
+            $query->where('annee', year())->where('nom', 'Président');
+        })->count();
+
+        if($already > 0)
+        {
+            return redirect('admin/repertoire/nouveauComite')->with('error', 'Un comité existe déjà pour cette année');
+        }
+
+        $president = User::find($request->input('president'));
+        $president->fonctions()->attach(Fonction::where('nom', 'Président')->first()->id, array("annee" => year()));
+
+        if($request->input('vp'))
+        {
+            $vp = User::find($request->input('vp'));
+            $vp->fonctions()->attach(Fonction::where('nom', 'Vice-Président')->first()->id, array("annee" => year()));
+        }
+
+        if($request->input('presidente'))
+        {
+            $presidente = User::find($request->input('presidente'));
+            $presidente->fonctions()->attach(Fonction::where('nom', 'Présidente')->first()->id, array("annee" => year()));
+        }
+
+        $tresorier = User::find($request->input('tresorier'));
+        $tresorier->fonctions()->attach(Fonction::where('nom', 'Trésorier')->first()->id, array("annee" => year()));
+
+        $secretaire = User::find($request->input('secretaire'));
+        $secretaire->fonctions()->attach(Fonction::where('nom', 'Secrétaire')->first()->id, array("annee" => year()));
+
+        foreach($request->input('toge') as $user_id)
+        {
+            $user = User::find($user_id);
+            $user->fonctions()->attach(Fonction::where('nom', 'Togé sans fonction')->first()->id, array("annee" => year()));
+        }
+
+        foreach($request->input('assistants') as $user_id)
+        {
+            $user = User::find($user_id);
+            $user->fonctions()->attach(Fonction::where('nom', 'Assistant')->first()->id, array("annee" => year()));
+        }
+
+        if($request->input('webmaster'))
+        {
+            $webmaster = User::find($request->input('webmaster'));
+            $webmaster->fonctions()->attach(Fonction::where('nom', 'Webmaster')->first()->id, array("annee" => year()));
+        }
+
+        return redirect('admin/repertoire/nouveauComite')->with('success', 'Comité ajouté');
+        
     }
 }
 

@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "emoji-mart-vue": "^2.6.6",
+        "vue-select": "^3.1.0",
         "vue-upload-component": "^2.8.20"
     }
 }

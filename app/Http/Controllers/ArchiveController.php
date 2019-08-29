@@ -17,13 +17,8 @@ class ArchiveController extends Controller
 
     public function add()
     {
-        $year = date('Y');
-        if(date('m')<9)
-        {
-            $year = $year-1;
-        }
         $annees = array();
-        for($y = $year; $y >= 2000; $y --)
+        for($y = year(); $y >= 2000; $y --)
         {
             array_push($annees, $y);
         }

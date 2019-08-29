@@ -402,6 +402,14 @@ html, body {
     text-decoration: none;
 }
 
+.select2-results__option{
+    color: black !important;
+}
+
+.select2-selection__choice{
+    color: black !important;
+}
+
 
 /*.flex-center {
     align-items: center;

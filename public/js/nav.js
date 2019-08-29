@@ -92,7 +92,3 @@ for (var i = 0; i < parent.length; i++) {
     /* DONS */
     var bouton_dons = document.getElementById('bouton_dons');
     var compte_dons = document.getElementById('compte_dons');
-    bouton_dons.onclick = function(){
-        compte_dons.classList.toggle('d-none');
-    }
-   

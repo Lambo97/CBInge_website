@@ -176,3 +176,5 @@ Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySo
 Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);
+Route::get('/admin/repertoire/nouveauComite',('AdminController@nouveauComite'))->middleware(['auth', 'admin']);
+Route::post('/admin/repertoire/nouveauComite',('AdminController@addNouveauComite'))->middleware(['auth', 'admin']);

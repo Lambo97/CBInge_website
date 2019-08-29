@@ -7020,7 +7020,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n::-webkit-scrollbar {\r\n  width: 0px;  /* Remove scrollbar space */\r\n  background: transparent;  /* Optional: just make scrollbar invisible */\n}\r\n/* Optional: show position indicator in red */\n::-webkit-scrollbar-thumb {\r\n  background: rgb(182, 199, 230);\r\n  border-radius: 50px;\n}\r\n", ""]);
+exports.push([module.i, "\n::-webkit-scrollbar {\n  width: 0px;  /* Remove scrollbar space */\n  background: transparent;  /* Optional: just make scrollbar invisible */\n}\n/* Optional: show position indicator in red */\n::-webkit-scrollbar-thumb {\n  background: rgb(182, 199, 230);\n  border-radius: 50px;\n}\n", ""]);
 
 // exports
 
@@ -7039,7 +7039,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.chat-card[data-v-0f7087c8]{\r\n  margin-bottom:140px;\n}\n.floating-div[data-v-0f7087c8]{\r\n    z-index: 2000;\r\n    position: absolute;\r\n    bottom: -380px;\n}\n.chat-card img[data-v-0f7087c8] {\r\n    max-width: 300px;\r\n    max-height: 200px;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-card[data-v-0f7087c8]{\n  margin-bottom:140px;\n}\n.floating-div[data-v-0f7087c8]{\n    z-index: 2000;\n    position: absolute;\n    bottom: -380px;\n}\n.chat-card img[data-v-0f7087c8] {\n    max-width: 300px;\n    max-height: 200px;\n}\n", ""]);
 
 // exports
 
@@ -7058,7 +7058,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.chat-card[data-v-0bd0095a]{\r\n  margin-bottom:140px;\n}\n.floating-div[data-v-0bd0095a]{\r\n    z-index: 2000;\r\n    position: absolute;\r\n    bottom: -410px;\n}\n.chat-card img[data-v-0bd0095a] {\r\n    max-width: 300px;\r\n    max-height: 200px;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-card[data-v-0bd0095a]{\n  margin-bottom:140px;\n}\n.floating-div[data-v-0bd0095a]{\n    z-index: 2000;\n    position: absolute;\n    bottom: -410px;\n}\n.chat-card img[data-v-0bd0095a] {\n    max-width: 300px;\n    max-height: 200px;\n}\n", ""]);
 
 // exports
 
@@ -7077,7 +7077,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.chat-card[data-v-ba8a786a]{\r\n  margin-bottom:140px;\n}\n.floating-div[data-v-ba8a786a]{\r\n    z-index: 2000;\r\n    position: absolute;\r\n    bottom: -440px;\n}\n.chat-card img[data-v-ba8a786a] {\r\n    max-width: 300px;\r\n    max-height: 200px;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-card[data-v-ba8a786a]{\n  margin-bottom:140px;\n}\n.floating-div[data-v-ba8a786a]{\n    z-index: 2000;\n    position: absolute;\n    bottom: -440px;\n}\n.chat-card img[data-v-ba8a786a] {\n    max-width: 300px;\n    max-height: 200px;\n}\n", ""]);
 
 // exports
 
@@ -57782,8 +57782,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mathi\Desktop\CBInge_website\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\mathi\Desktop\CBInge_website\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lamborellemaxime/Desktop/CBInge_website/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lamborellemaxime/Desktop/CBInge_website/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
