@@ -156,6 +156,7 @@ Route::post('/bleus/pvrepetchant/add', 'PvRepetChantsController@store')->middlew
 Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->middleware(['auth', 'comite+bleu']);
 Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite+bleu']);
+Route::get('/bleus/pvrepetchant/old', 'PvRepetChantsController@old')->middleware(['auth', 'toge']);
 
 
 /*
@@ -185,3 +186,7 @@ Route::get('/admin/repertoire/nouvelleFonction',('AdminController@nouvelleFoncti
 Route::post('/admin/repertoire/nouvelleFonction',('AdminController@addNouvelleFonction'))->middleware(['auth', 'admin']);
 Route::get('/admin/repertoire/searchFonction',('AdminController@searchFonction'))->middleware(['auth', 'admin']);
 Route::get('/admin/repertoire/deleteFonction/{user}/{fonction_id}/{annee}', ('AdminController@deleteFonction'))->middleware(['auth', 'admin']);
+
+Route::get('/admin/newsletter', ('AdminController@newsletter'))->middleware(['auth', 'bureau']);
+Route::post('/admin/newsletter', ('AdminController@sendNewsletter'))->middleware(['auth', 'bureau']);
+Route::get('/admin/newsletter/old', ('AdminController@oldNewsletter'))->middleware(['auth', 'bureau']);
