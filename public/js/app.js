@@ -1943,6 +1943,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1976,6 +1978,15 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         return _this.results = response.data;
       })["catch"](function (error) {});
+    },
+    photo: function photo(user_id) {
+      axios.get('/admin/acces/changePhoto', {
+        params: {
+          user: user_id
+        }
+      }).then(function (response) {
+        alert(response.data);
+      });
     }
   },
   components: {
@@ -44731,7 +44742,19 @@ var render = function() {
                       })
                     ],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("input", {
+                      attrs: { type: "checkbox" },
+                      domProps: { checked: result.admin_photo == 1 },
+                      on: {
+                        change: function($event) {
+                          return _vm.photo(result.id)
+                        }
+                      }
+                    })
+                  ])
                 ])
               }),
               0
@@ -44754,7 +44777,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Année Baptême")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Droit")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Droit")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Photo")])
       ])
     ])
   }

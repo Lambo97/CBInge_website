@@ -176,6 +176,7 @@ Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuB
 Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
 
 Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces/changePhoto',('AdminController@changePhoto'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);
 
