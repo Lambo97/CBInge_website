@@ -6,5 +6,5 @@ function year()
     {
         $year = $year-1;
     }
-    return 2019;
+    return $year;
 }

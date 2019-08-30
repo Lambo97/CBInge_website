@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewNewsletter;
 use App\Menu;
 use App\SousMenu;
 use App\BleusMenu;
 use App\User;
 use App\Fonction;
+use App\Newsletter;
 
 class AdminController extends Controller
 {
@@ -296,5 +299,40 @@ class AdminController extends Controller
         return redirect('admin/repertoire')->with('success', 'Fonction supprimée');
     }
 
+    public function newsletter()
+    {
+        return view('admin.newsletter');
+    }
+
+    public function sendNewsletter(Request $request)
+    {
+        $this->validate($request, [
+            'sujet' => 'required',
+            'message' => 'required',
+        ]);
+
+        $sujet = $request->input('sujet');
+        $message = $request->input('message');
+
+        $newsletter = new Newsletter;
+        $newsletter->sujet = $sujet;
+        $newsletter->message = $message;
+        $newsletter->id_auteur = auth()->user()->id;
+        $newsletter->save();
+
+        $users = User::where('droit', '<', 3)->orWhere('droit', 5)->where('newsletter',1)->get();
+        $users = User::where('droit', 1)->get();
+        if($users){
+            Notification::send($users, new NewNewsletter($sujet, $message));
+        }
+
+        return redirect('/admin/newsletter/old')->with('success', 'Mail envoyé');
+    }
+
+    public function oldNewsletter()
+    {
+        $newsletters = Newsletter::paginate(7);
+        return view('admin.oldNewsletter', compact('newsletters'));
+    }
 }
 
