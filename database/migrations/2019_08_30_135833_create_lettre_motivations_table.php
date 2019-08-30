@@ -15,6 +15,9 @@ class CreateLettreMotivationsTable extends Migration
     {
         Schema::create('lettre_motivations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_auteur');
+            $table->year('annee');
+            $table->string('url');
             $table->timestamps();
         });
     }

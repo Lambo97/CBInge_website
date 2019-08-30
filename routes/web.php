@@ -190,3 +190,11 @@ Route::get('/admin/repertoire/deleteFonction/{user}/{fonction_id}/{annee}', ('Ad
 Route::get('/admin/newsletter', ('AdminController@newsletter'))->middleware(['auth', 'bureau']);
 Route::post('/admin/newsletter', ('AdminController@sendNewsletter'))->middleware(['auth', 'bureau']);
 Route::get('/admin/newsletter/old', ('AdminController@oldNewsletter'))->middleware(['auth', 'bureau']);
+
+
+/*
+| Route concernant les lettres de motivations
+*/
+Route::get('/lettremotivation', ('LettreMotivationController@index'))->middleware(['auth', 'comite']);
+Route::post('/lettremotivation', ('LettreMotivationController@post'))->middleware(['auth', 'comite']);
+Route::get('/lettremotivation/get/{lettre}', ('LettreMotivationController@get'))->middleware(['auth', 'toge+vieux']);
