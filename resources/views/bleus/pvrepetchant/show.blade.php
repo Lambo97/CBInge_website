@@ -44,7 +44,7 @@
 
 <div class="row mh-100">
     <div class="col-12">
-        {!!Purifier::clean($pv->message);!!}
+    {!!Purifier::clean($pv->message);!!}
     </div>
 </div>
 

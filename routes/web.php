@@ -77,6 +77,16 @@ Route::get('/insultes/destroy/{post}', ('InsultesController@destroy'))->middlewa
 Route::get('/insultes/like/{post}', ('InsultesController@like'))->middleware(['auth', 'baptise']);
 Route::get('/insultes/dislike/{post}', ('InsultesController@dislike'))->middleware(['auth', 'baptise']);
 /*
+| Route concernant les citations
+*/ 
+Route::get('/citations', ('CitationsController@index'))->middleware(['auth', 'baptise']);
+Route::post('/citations/add', ('CitationsController@add'))->middleware(['auth', 'baptise']);
+Route::get('/citations/edit/{post}', ('CitationsController@edit'))->middleware(['auth', 'baptise']);
+Route::post('/citations/update/{post}', ('CitationsController@update'))->middleware(['auth', 'baptise']);
+Route::get('/citations/destroy/{post}', ('CitationsController@destroy'))->middleware(['auth', 'baptise']);
+Route::get('/citations/like/{post}', ('CitationsController@like'))->middleware(['auth', 'baptise']);
+Route::get('/citations/dislike/{post}', ('CitationsController@dislike'))->middleware(['auth', 'baptise']);
+/*
 | Route concernant les pv's du comité
 */
 Route::get('/pvcomite', ('PvComiteController@index'))->middleware(['auth', 'comite']);

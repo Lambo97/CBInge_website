@@ -15,7 +15,7 @@ class PvRepetChantsController extends Controller
     public function index()
     {
         \Auth::user()->pv_repet_chant_check = RepetChantsPv::orderBy('created_at', 'desc')->first()->id;
-        $pvs = RepetChantsPv::whereYear('created_at', year())->orderBy('created_at', 'desc')->paginate(10);
+        $pvs = RepetChantsPv::orderBy('created_at', 'desc')->paginate(10);
         return view('bleus.pvrepetchant.index', compact('pvs'));
     }
 

@@ -43,12 +43,12 @@ class InsultesController extends Controller
     {
         //Check if post exists before editing
         if (!isset($post)){
-            return redirect('/insulte')->with('error', 'Pas d\'insulte à éditer');
+            return redirect('/insultes')->with('error', 'Pas d\'insulte à éditer');
         }
         // Check for correct user
         if(auth()->user()->id !== $post->id_auteur and auth()->user()->droit > 1)
         {
-            return redirect('/insulte')->with('error', "Vous n'avez pas l'autorisation de modifier cette insulte");
+            return redirect('/insultes')->with('error', "Vous n'avez pas l'autorisation de modifier cette insulte");
         }
         return view('insultes.editinsulte', compact('post'));
     }
