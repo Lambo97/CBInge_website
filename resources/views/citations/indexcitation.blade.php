@@ -56,7 +56,7 @@
                 <div class="row mb-2 mt-2 justify-content-between">
                     <div class="col-6">
                         <h4 style='display:inline' class="mr-3"><a href="/profile/show/{{$post->auteur->id}}" class="green-link">{{$post->auteur->surnom_forum}}</a></h4>  @if($post->ancre == 1) <small><i>Message encré</i></small> @endif
-                        <p><strong class="font-weight-bold">Score: <span id="score">{{$post->score}}</span></strong></p>
+                        <p><strong class="font-weight-bold">Score: <span class="score">{{$post->score}}</span></strong></p>
                     </div>
                     @if(Auth::user()->id == $post->id_auteur || Auth::user()->droit < 3)
                     <div class="col-2 col-xs-3 d-flex justify-content-end">
@@ -161,7 +161,7 @@ function like(obj, post){
         if(post)
             var id = 'post'+obj.id;
         
-        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike, data.score);
+        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike, data.score, obj);
     });
  };
 
@@ -173,15 +173,16 @@ function dislike(obj, post){
             var id = 'post'+obj.id;
         else
             var id = 'comment'+obj.id;
-        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike, data.score);
+        update(id, data.nb_like, data.is_like, data.nb_dislike, data.is_dislike, data.score, obj);
     });
 };
 
-function update(id, nb_like, is_like, nb_dislike, is_dislike, score)
+function update(id, nb_like, is_like, nb_dislike, is_dislike, score, obj)
 {
     var row = document.getElementById(id);
     var like = row.childNodes[0].childNodes[0], dislike = row.childNodes[2].childNodes[0];
-    var scor = document.getElementById('score');
+    var this_parent = obj.parentNode.parentNode.parentNode.parentNode;
+    var scor = this_parent.querySelector('.score');
     scor.innerHTML = score;
     like.childNodes[0].childNodes[0].innerHTML = "j'aime ("+nb_like+")";
     dislike.childNodes[0].childNodes[0].innerHTML = "je n'aime pas ("+nb_dislike+")";
