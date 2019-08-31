@@ -77,6 +77,15 @@ Route::get('/insultes/destroy/{post}', ('InsultesController@destroy'))->middlewa
 Route::get('/insultes/like/{post}', ('InsultesController@like'))->middleware(['auth', 'baptise']);
 Route::get('/insultes/dislike/{post}', ('InsultesController@dislike'))->middleware(['auth', 'baptise']);
 /*
+| Route concernant les vestes
+*/ 
+Route::get('/vestes', ('VestesController@index'))->middleware(['auth', 'comite']);
+Route::post('/vestes/add', ('VestesController@add'))->middleware(['auth', 'comite']);
+Route::get('/vestes/edit/{post}', ('VestesController@edit'))->middleware(['auth', 'comite']);
+Route::post('/vestes/update/{post}', ('VestesController@update'))->middleware(['auth', 'comite']);
+Route::get('/vestes/destroy/{post}', ('VestesController@destroy'))->middleware(['auth', 'comite']);
+
+/*
 | Route concernant les citations
 */ 
 Route::get('/citations', ('CitationsController@index'))->middleware(['auth', 'baptise']);
