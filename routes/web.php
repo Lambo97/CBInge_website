@@ -248,4 +248,12 @@ Route::post('/file/add_fichier/{parent}', ('FileController@store_fichier'))->mid
 Route::get('/file/edit_fichier/{fichier}', ('FileController@edit_fichier'))->middleware(['auth', 'baptise']);
 Route::post('/file/update_fichier/{fichier}', ('FileController@update_fichier'))->middleware(['auth', 'baptise']);
 Route::get('/file/destroy_fichier/{fichier}', ('FileController@destroy_fichier'))->middleware(['auth', 'baptise']);
+/*
+| Route concernant les bugs
+*/
+Route::get('/bug', ('BugController@index'))->middleware(['auth', 'comite']);
+Route::post('/bug/add', ('BugController@add'))->middleware(['auth', 'comite']);
+Route::get('/bug/edit/{post}', ('BugController@edit'))->middleware(['auth', 'comite']);
+Route::post('/bug/update/{post}', ('BugController@update'))->middleware(['auth', 'comite']);
+Route::get('/bug/destroy/{post}', ('BugController@destroy'))->middleware(['auth', 'comite']);
 
