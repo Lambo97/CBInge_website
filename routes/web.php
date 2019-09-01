@@ -140,6 +140,7 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
 Route::get('/folklore/chant/{chant}',('FolkloreController@chant'));
+Route::get('/folklore/chant_mp3/{chant}',('FolkloreController@chant_mp3'));
 Route::get('/folklore/chants/admin',('FolkloreController@admin'))->middleware(['auth', 'bureau']);
 Route::get('/folklore/chants/edit',('FolkloreController@edit'))->middleware(['auth', 'bureau']);
 Route::post('/folklore/chants/update/{chant}',('FolkloreController@update'))->middleware(['auth', 'bureau']);
@@ -195,6 +196,7 @@ Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuB
 Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
 
 Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces/changePhoto',('AdminController@changePhoto'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);
 
