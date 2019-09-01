@@ -53,7 +53,7 @@ Le CB ingé est de loin le CB le plus présent et imposant en guindaille. Avec p
              qui ne peuvent être dirigés que par des étudiants baptisés.</p>
             <p>Le baptême chez nous en ingénieur civil consiste en 6 soirées réparties en 6 semaines. Toutes nos bleusailles se terminent avant minuit afin de permettre de prendre le dernier bus pour rentrer à son domicile.</p>
             <p>Un site internet a été créé spécialement pour répondre aux diverses questions que l'on peut se poser:</p>
-            <a class="buttons-green font-weight-bold"href="http://127.0.0.1:8000/bleus">Site des bleus</a>
+            <a class="buttons-green font-weight-bold"href="/bleus">Site des bleus</a>
         </div>
 
 

@@ -66,7 +66,7 @@
         <select id="categorie" onchange="display_form()" class="form-control form-content @error('categorie') is-invalid @enderror" name="categorie" value="{{ old('categorie')}}">
             <option disabled selected>Choisir un catégore de cours</option>
             <option value="Cours obligatoire">Cours obligatoire</option>
-            <option value="Cours d'option">Cours d'option</option>
+            <option value="Cours à option">Cours à option</option>
             <option value="Cours de master">Cours de master</option>
         </select>
 
@@ -126,7 +126,7 @@
 
         if(categorie.value == 'Cours obligatoire')
             var options = obligatoire;
-        else if(categorie.value == "Cours d'option")
+        else if(categorie.value == "Cours à option")
             var options = options_bac;
         else
             var options = master;
