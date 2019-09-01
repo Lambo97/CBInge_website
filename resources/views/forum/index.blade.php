@@ -126,6 +126,13 @@
                                 <a href="/profile/show/{{$comment->auteur->id}}" class="green-link mr-3">{{$comment->auteur->surnom_forum}}</a>
                                 <p><small class="font-weight-light">commenté le {{date("d-m-Y H:i:s", strtotime($comment->created_at))}}</small></p>
                                  <p>{!!Purifier::clean($comment->message);!!}</p>
+                                 @if($comment->photo)
+                                <div class="row mb-5">
+                                    <div class="col-10">
+                                        <img class="mx-auto d-block img-fluid mt-2 img-small" src="/forum/image/{{$comment->photo}}"> 
+                                    </div>
+                                </div>
+                                @endif
                                 
                             
                             <div class="row align-self-end" id="comment{{$comment->id}}">
@@ -201,7 +208,7 @@
                     </div>
 
                 @endforeach
-                <div class=" mb-3 mt-3">
+                <div class="row my-2">
                     <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
                         @csrf  
                         <div class="">
@@ -209,9 +216,10 @@
                             <textarea id="comment" rows="2" class="bg-grey w-100 p-2" name="comment" autocomplete="comment" placeholder="Ecris ton commentaire"></textarea>
                             </div>
 
-                            <div class=" form-group d-flex justify-content-end right-0 w-100">
-                            <smileycomment class="adjust"></smileycomment>
-                                <button type="submit" class="buttons-green font-weight-bold btn-sm mt-2 ml-1">
+                            <div class="form-group d-flex justify-content-end right-0 w-100 mt-3">
+                            <input type="file" class="buttons-green mr-2" id="photo" name="photo">
+                            <smileycomment class="adjust mr-2"></smileycomment>
+                                <button type="submit" class="buttons-green font-weight-bold btn-sm mr-2 ml-1">
                                     Commenter
                                 </button>
                                
