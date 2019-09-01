@@ -11,6 +11,9 @@
     <div class="col-md-6 col-sm-12">
         <h1>Admin pense-bête</h1>
     </div>
+    <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <a class="buttons-green font-weight-bold" href="/pensebete">Retour</a>
+    </div>
 </div>
 
 <form name="form" method="POST" action="" enctype="multipart/form-data">
