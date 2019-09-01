@@ -12,7 +12,7 @@
 
     <p>Si tu te poses des questions concernant le baptême en ingénieur civil à l'Université de Liège, alors tu es sur le bon site.</p>
     <p>Tu trouveras tous les renseignements que tu souhaites sur les différentes pages.</p>
-    <p>Dans les sections <a class="blue-link" href="#"> Informations</a> et <a class="blue-link" href="#">Folklore</a> se trouve une excellente description du baptême.</p>
+    <p>Dans les sections <a class="blue-link" href="/bleus/informations"> Informations</a> et <a class="blue-link" href="/bleus/folklore">Folklore</a> se trouve une excellente description du baptême.</p>
     <p>Sache qu'un baptême est très différent d'une université à l'autre, d'un comité à l'autre et parfois même d'une année à l'autre.</p>
     <p>Oublie donc tout ce que tu as pu entendre dans les médias et informes-toi ici.</p>
     <p>Nous t'invitons également à faire un tour sur notre <a class="blue-link "href="#">Foire aux Questions</a> et si tu as d'autres questions ou d'autres doutes, n'hésite pas à poster un mot sur le Forum prévu à cet effet (aucune inscription n'est requise). Un membre du comité se fera un plaisir de te répondre le plus rapidement possible.</p>
@@ -23,7 +23,7 @@
 
 
     <h2 class="mt-5"><strong>Nous contacter</strong></h2>
-        <p> Si tu as d'autres question, tu peux contacté le comité de baptême ingénieur civil en laissant un email sur comite@cbinge.com ou en complétant le formulaire ci dessous :</p>
+        <p> Si tu as d'autres questions, tu peux contacter le comité de baptême ingénieur civil en laissant un email sur comite@cbinge.com ou en complétant le formulaire ci-dessous :</p>
 
                         <form method="POST" action="/contact" enctype="multipart/form-data">
                                 @csrf

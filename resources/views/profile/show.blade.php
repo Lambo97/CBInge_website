@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    
+
 <div class="d-sm-flex">
     <div class="col-sm-3">
         <img src="/profile/{{$user->id}}/image" class="w-100 img-big">
@@ -22,19 +22,19 @@
             @if($fonctionCourante)
                 <p class="font-weight-light">{{$fonctionCourante->nom}}</p>
             @endif
-            <p class="mt-4 mb-0  font-weight-light">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
             @if(Auth::check() and Auth::user()->droit < 8)
-            <p class="m-0 font-weight-light">{{$user->email}}</p>
-            <p class="m-0 font-weight-light"><a class="green-link" href="tel:{{$user->gsm}}" >{{$user->gsm}}</a></p>
+              <p class="mt-4 mb-0  font-weight-light">{{$user->adresse}} - {{$user->code_postal}} {{$user->ville}}</p>
+              <p class="m-0 font-weight-light">{{$user->email}}</p>
+              <p class="m-0 font-weight-light"><a class="green-link" href="tel:{{$user->gsm}}" >{{$user->gsm}}</a></p>
             @endif
             <p class="m-0 font-weight-light">{{date('d-m-Y', strtotime($user->date_de_naissance))}}</p>
-            
+
     </div>
 </div>
-<div class="pl-3">    
+<div class="pl-3">
     <h6 class=" font-weight-bold mt-3 mb-0">Entrée en ingé</h6>
     <p class="mb-0 font-weight-light">{{$user->entree_inge}}</p>
-        
+
     <h6 class="mb-0 mt-2 font-weight-bold">Année de baptême</h6>
     <p class=" font-weight-light">{{$user->annee_bapteme}}</p>
 
@@ -83,13 +83,13 @@
         <h6 class="mb-0 mt-2 font-weight-bold">Guindaille(s) favorite(s)</h6>
         <p class="mb-0 font-weight-light">{!!Purifier::clean($user->guindaille);!!}</p>
     @endif
-            
+
     @if($user->titre_guindaille != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Titre(s) de guindaille</h6>
         <p class="mb-0 font-weight-light">{!!Purifier::clean($user->titre_guindaille);!!}</p>
     @endif
 
-    @if($user->probleme_sante != null)
+    @if(Auth::check() and Auth::user()->droit < 8 and $user->probleme_sante != null)
         <h6 class="mb-0 mt-2 font-weight-bold">Problême(s) de santé</h6>
         <p class="mb-0 font-weight-light">{{$user->probleme_sante}}</p>
     @endif
@@ -107,7 +107,7 @@
     </div>
     @endif
 </div>
-   
-        
-    
+
+
+
 @endsection

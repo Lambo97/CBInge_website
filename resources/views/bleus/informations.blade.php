@@ -12,7 +12,7 @@ nous ne sommes pas une bande de brutes sanguinaires frustrées imbibées d'alcoo
  celui qui ne se révèle que dans l'adversité.</p>
 <p class="mt-0">C'est aussi l'occasion de te créer un réseau (immense) de connaissances et souvent d'amis alors que tu arrives dans un nouvel environnement bien plus austère que ta jolie petite école secondaire et dans lequel tu ne peux connaitre tout le
 monde tout de suite (un amphi de 300 personnes c'est autre chose qu'une classe de 25...)</p>
-<img class="mt-5 d-block mb-5 imgwidth shadow-lg" src="../../img/CB.jpg"alt="">
+<img class="mt-5 d-block mb-5 imgwidth shadow-lg" width="100%" height="100%" src="../../img/CB.jpg"alt="">
 <p class="mb-0">Maintenant, si tu le veux bien, abordons le côté pratique de la chose et laissons les "pour" et les "contre" se disputer à une autre page...</p>
 <p class="my-0">Le baptême chez les ingénieurs est basé sur 6 sorties réparties en 6 semaines (avant décembre et la bloque) et accompagnées de répétitions des
 chants folkloriques sur certains temps de midi (bref pas la mer à boire !)</p>

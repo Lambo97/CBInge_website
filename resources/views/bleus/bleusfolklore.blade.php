@@ -24,7 +24,9 @@
 <p>La penne n’est ni une casquette, ni une calotte. Elle est faite de velours et de plastique. Et pour l’instant tu ne peux que rêver de pouvoir un jour en orner ta petite tête vide. Le port de la penne n’est donc autorisé qu’à ceux qui ont fait et réussi un baptême à Liège.</p>
 <p>Les baptisés de Bruxelles et Mons portent cependant, eux, des pennes également, contrairement aux baptisés universitaires catholiques, qui portent des calottes.</p>
 <p>La penne se porte sur le cœur lors des chants sacrés (chants facultaires, Valeureux Liégeois et Chant des Wallons), mais aussi lorsque l’on s’apprête à faire un à-fond.
+    @if(Auth::user() !== null and Auth::user()->droit < 8)
      Pour ces deux points, toi sale merde de bleu, tu es obligé de mettre ta main ou ton ellipse sur ton cœur, puisque tu ne possèdes pas de penne.</p>
+    @endif
 <p>Les pennes à Liège sont soit grises et laides (écoles supérieures), soit noires et belles (sauf celles des Sciences, archis, ingénieurs industriels et infos)
     , soit vertes et nulles, soit blanches et vulgaires, soit bordeaux et bof .</p>
 <p>Voici un tableau récapitulatif des différentes pennes portées à Liège par les baptisés de comités de l’AGEL (et de Cureghem). On t’expliquera comment lire

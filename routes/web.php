@@ -13,18 +13,18 @@
 
 /*
 | Route concernant la page d'accueil
-*/ 
+*/
 Route::get('/', 'HomeController@index');
 Route::post('/contact', 'HomeController@contact');
 
 /*
 | Route concernant l'authentification
-*/ 
+*/
 Auth::routes();
 
 /*
 | Route concernant l'éditage du profil
-*/ 
+*/
 Route::get('/profile/show/{user}', ('ProfileController@show'));
 Route::get('/profile/edit/{user}', ('ProfileController@edit'))->middleware(['auth', 'approved']);
 Route::post('/profile/update/{user}', ('ProfileController@update'))->middleware(['auth', 'approved']);
@@ -42,14 +42,14 @@ Route::get('/profile/search', ('ProfileController@search'));
 
 /*
 | Route concernant l'agenda
-*/ 
+*/
 //Route::get('event/add','EventController@createEvent');
 Route::post('event','EventController@store');
 Route::get('event','EventController@calender');
 
 /*
 | Route concernant le forum
-*/ 
+*/
 Route::get('/forum/Like')->middleware(['auth', 'comite']);
 Route::get('/forum', ('PostForumController@index'))->middleware(['auth', 'comite']);
 Route::post('/forum/add', 'PostForumController@add')->middleware(['auth', 'comite']);
@@ -68,7 +68,7 @@ Route::get('/forum/comment/dislike/{comment}', 'CommentForumController@dislike')
 Route::get('/forum/image/{url}', 'PostForumController@image')->middleware(['auth', 'comite']);
 /*
 | Route concernant les insultes
-*/ 
+*/
 Route::get('/insultes', ('InsultesController@index'))->middleware(['auth', 'baptise']);
 Route::post('/insultes/add', ('InsultesController@add'))->middleware(['auth', 'baptise']);
 Route::get('/insultes/edit/{post}', ('InsultesController@edit'))->middleware(['auth', 'baptise']);
@@ -77,8 +77,17 @@ Route::get('/insultes/destroy/{post}', ('InsultesController@destroy'))->middlewa
 Route::get('/insultes/like/{post}', ('InsultesController@like'))->middleware(['auth', 'baptise']);
 Route::get('/insultes/dislike/{post}', ('InsultesController@dislike'))->middleware(['auth', 'baptise']);
 /*
+| Route concernant les vestes
+*/
+Route::get('/vestes', ('VestesController@index'))->middleware(['auth', 'comite']);
+Route::post('/vestes/add', ('VestesController@add'))->middleware(['auth', 'comite']);
+Route::get('/vestes/edit/{post}', ('VestesController@edit'))->middleware(['auth', 'comite']);
+Route::post('/vestes/update/{post}', ('VestesController@update'))->middleware(['auth', 'comite']);
+Route::get('/vestes/destroy/{post}', ('VestesController@destroy'))->middleware(['auth', 'comite']);
+
+/*
 | Route concernant les citations
-*/ 
+*/
 Route::get('/citations', ('CitationsController@index'))->middleware(['auth', 'baptise']);
 Route::post('/citations/add', ('CitationsController@add'))->middleware(['auth', 'baptise']);
 Route::get('/citations/edit/{post}', ('CitationsController@edit'))->middleware(['auth', 'baptise']);
@@ -209,3 +218,13 @@ Route::get('/admin/newsletter/old', ('AdminController@oldNewsletter'))->middlewa
 Route::get('/lettremotivation', ('LettreMotivationController@index'))->middleware(['auth', 'comite']);
 Route::post('/lettremotivation', ('LettreMotivationController@post'))->middleware(['auth', 'comite']);
 Route::get('/lettremotivation/get/{lettre}', ('LettreMotivationController@get'))->middleware(['auth', 'toge+vieux']);
+
+/*
+| Route concernant le pense-bete
+*/
+Route::get('/pensebete',('PenseBeteController@pensebete'))->middleware(['auth', 'baptise']);
+Route::get('/pensebete/memo/{memo}',('PenseBeteController@memo'))->middleware(['auth', 'baptise']);
+Route::get('/pensebete/admin',('PenseBeteController@admin'))->middleware(['auth', 'baptise']);
+Route::get('/pensebete/edit',('PenseBeteController@edit'))->middleware(['auth', 'baptise']);
+Route::post('/pensebete/update/{memo}',('PenseBeteController@update'))->middleware(['auth', 'baptise']);
+Route::post('/pensebete/add',('PenseBeteController@add'))->middleware(['auth', 'baptise']);
