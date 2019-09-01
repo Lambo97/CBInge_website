@@ -14,14 +14,14 @@ close_nav_btn.onclick = function(){
 /* OUVRIR ENFANT */
 
 var parent = document.querySelectorAll('.p-nav');
-for (var i = 0; i < parent.length; i++) {
-    parent[i].onmouseover = function(){
-        /*if(parent[i] != this)
+/*for (var i = 0; i < parent.length; i++) {
+    parent[i].onclick = function(){
+        if(parent[i] != this)
         {
         var li = parent[i].parentNode;
         ul = li.querySelector('ul');
         ul.classList.add("d-none");
-        }*/
+        }
         var li = this.parentNode;
         ul = li.querySelector('ul');
         
@@ -35,7 +35,7 @@ for (var i = 0; i < parent.length; i++) {
         ul.classList.remove("d-none");
         
       }
-    }
+    }*/
   /*  for (var i = 0; i < parent.length; i++) {
         parent[i].onmouseleave = function(){
             /*if(parent[i] != this)
@@ -59,15 +59,15 @@ for (var i = 0; i < parent.length; i++) {
           }
         }
 */
-/*
+
 for (var i = 0; i < parent.length; i++) {
-    parent[i].onmouseover = function(){
+    parent[i].onclick = function(){
         /*if(parent[i] != this)
         {
         var li = parent[i].parentNode;
         ul = li.querySelector('ul');
         ul.classList.add("d-none");
-        }
+        }*/
         var li = this.parentNode;
         ul = li.querySelector('ul');
         if(!(ul.classList.contains('d-none'))){
@@ -87,7 +87,7 @@ for (var i = 0; i < parent.length; i++) {
       }
     }
 }
-*/
+
 
     /* DONS */
     var bouton_dons = document.getElementById('bouton_dons');
