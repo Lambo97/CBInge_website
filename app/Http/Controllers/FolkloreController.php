@@ -26,6 +26,11 @@ class FolkloreController extends Controller
         return response()->json($chant);
     }
 
+    public function chant_mp3(Chant $chant)
+    {
+        return response()->file(storage_path('app/public/chants/'.$chant->mp3));
+    }
+
     public function oripeaux()
     {
 
@@ -42,14 +47,25 @@ class FolkloreController extends Controller
         $this->validate($request, [
             'nom' => 'required', 
             'type' => 'required',
-            'paroles' => 'required'
+            'paroles' => 'required',
+            'mp3' => ['file', 'nullable', 'mimes:mp3']
         ]);
         
-        // Create Album
+        // Handle File Upload
+        if($request->hasFile('chant')){
+            $fileNameToStore = str_replace(" ", "_", $request->input('nom')).'.mp3';
+            // Upload Image
+            $path = $request->file('photo')->storeAs('public/chants', $fileNameToStore);
+        } else {
+            $fileNameToStore = NULL;
+        }
+
+        // Create Chant
         $chant = new Chant;
         $chant->nom = $request->input('nom');
         $chant->type = $request->input('type');
         $chant->paroles = $request->input('paroles');
+        $chant->mp3 = $fileNameToStore;
         $chant->timestamps = false;
         $chant->save();
 
@@ -66,8 +82,18 @@ class FolkloreController extends Controller
 
     public function update(Request $request, Chant $chant)
     {
+        // Handle File Upload
+        if($request->hasFile('mp3')){
+            $fileNameToStore = str_replace(" ", "_",$chant->nom).'.mp3';
+            // Upload Image
+            $path = $request->file('mp3')->storeAs('public/chants', $fileNameToStore);
+        } else {
+            $fileNameToStore = $chant->mp3;
+        }
+
         $chant->type = $request->input('type');
         $chant->paroles = $request->input('paroles');
+        $chant->mp3 = $fileNameToStore;
         $chant->timestamps = false;
         $chant->save();
         return redirect('/folklore/chants')->with('success', 'Chant modifié');

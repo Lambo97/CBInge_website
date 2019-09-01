@@ -63,6 +63,17 @@
         
     </div>
 
+    <div class="form-group row">
+        <input type="file" class="buttons-green-dark" id="mp3" name="mp3">
+
+        @error('mp3')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+        
+    </div>
+
     <div class="d-flex flex-row-reverse mb-2">
         
         <button type="submit" class="buttons-green font-weight-bold">

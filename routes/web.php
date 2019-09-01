@@ -140,6 +140,7 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
 Route::get('/folklore/chant/{chant}',('FolkloreController@chant'));
+Route::get('/folklore/chant_mp3/{chant}',('FolkloreController@chant_mp3'));
 Route::get('/folklore/chants/admin',('FolkloreController@admin'))->middleware(['auth', 'bureau']);
 Route::get('/folklore/chants/edit',('FolkloreController@edit'))->middleware(['auth', 'bureau']);
 Route::post('/folklore/chants/update/{chant}',('FolkloreController@update'))->middleware(['auth', 'bureau']);

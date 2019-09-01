@@ -62,6 +62,9 @@
         <p class="font-weight-light c_titre" id="chant_titre{{$chant->id}}" data-toggle="collapse" href="#chant{{$chant->id}}" role="button" aria-expanded="false" aria-controls="chant{{$chant->id}}" onclick="display({{$chant->id}})">{{$chant->nom}}</p>
         <div class="chants collapse multi-collapse" id="chant{{$chant->id}}">
             {!!$chant->paroles!!}
+            @if($chant->mp3)
+            <br/><mp3-reader mp3="/folklore/chant_mp3/{{$chant->id}}"></mp3-reader>
+            @endif
         </div>
     @endforeach
     
@@ -70,6 +73,9 @@
         <p class="font-weight-light c_titre" id="chant_titre{{$chant->id}}" data-toggle="collapse" href="#chant{{$chant->id}}" role="button" aria-expanded="false" aria-controls="chant{{$chant->id}}" onclick="display({{$chant->id}})">{{$chant->nom}}</p>
         <div class="chants collapse multi-collapse" id="chant{{$chant->id}}">
             {!!$chant->paroles!!}
+            @if($chant->mp3)
+            <br/><mp3-reader mp3="/folklore/chant_mp3/{{$chant->id}}"></mp3-reader>
+            @endif
         </div>
     @endforeach
     <p class="mt-2 font-weight-bold chants_titre"> Chants indispensables </p>
@@ -77,6 +83,9 @@
         <p class="font-weight-light c_titre" id="chant_titre{{$chant->id}}" data-toggle="collapse" href="#chant{{$chant->id}}" role="button" aria-expanded="false" aria-controls="chant{{$chant->id}}" onclick="display({{$chant->id}})">{{$chant->nom}}</p>
         <div class="chants collapse multi-collapse" id="chant{{$chant->id}}">
             {!!$chant->paroles!!}
+            @if($chant->mp3)
+            <br/><mp3-reader mp3="/folklore/chant_mp3/{{$chant->id}}"></mp3-reader>
+            @endif
         </div>
     @endforeach
     <p class="mt-1 font-weight-light c_titre" id="122"> Fanchon </p>
