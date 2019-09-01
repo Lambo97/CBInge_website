@@ -41,6 +41,11 @@ composer require berkayk/onesignal-laravel
 composer require intervention/image
 ```
 
+### Intervention image
+```bash
+composer require guzzlehttp/guzzle
+```
+
 ### VueJS Audio
 ```bash
 npm install vue-audio --save 
