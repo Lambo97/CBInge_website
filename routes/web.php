@@ -231,3 +231,21 @@ Route::get('/pensebete/admin',('PenseBeteController@admin'))->middleware(['auth'
 Route::get('/pensebete/edit',('PenseBeteController@edit'))->middleware(['auth', 'baptise']);
 Route::post('/pensebete/update/{memo}',('PenseBeteController@update'))->middleware(['auth', 'baptise']);
 Route::post('/pensebete/add',('PenseBeteController@add'))->middleware(['auth', 'baptise']);
+
+/*
+| Route concernant les fichiers
+*/
+Route::get('/file/{user_id}', ('FileController@index'))->middleware(['auth', 'baptise']);
+Route::get('/file/dossier/{dossier}', ('FileController@dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/fichier/{fichier}', ('FileController@fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/add_dossier/{parent}', ('FileController@add_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/file/add_dossier/{parent}', ('FileController@store_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/edit_dossier/{dossier}', ('FileController@edit_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/file/update_dossier/{dossier}', ('FileController@update_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/destroy_dossier/{dossier}', ('FileController@destroy_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/add_fichier/{parent}', ('FileController@add_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/file/add_fichier/{parent}', ('FileController@store_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/edit_fichier/{fichier}', ('FileController@edit_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/file/update_fichier/{fichier}', ('FileController@update_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/destroy_fichier/{fichier}', ('FileController@destroy_fichier'))->middleware(['auth', 'baptise']);
+

@@ -39,7 +39,7 @@
     </div>
 
     <div>
-        <label for="photos" class="d-none col-md-4 col-form-label text-md-right">Couverture de l'album</label>
+        <label for="photos" class="d-none col-md-4 col-form-label text-md-right">Photos</label>
         <p class=" col-form-label mt-n2">Photos : </p>
         <p>
         <input type="file" multiple class=" col-9 form-control-file form-content" id="photos" name="photos[]" placeholder="Nouvelle image">
