@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 INSERT INTO `bleus_menus` (`id`, `nom`, `lien`, `droit`, `afficher`) VALUES
 (1, 'Informations', '/bleus/informations', 0, 1),
 (2, 'FAQ', '/bleus/faq', 0, 1),
-(3, 'Agenda', '/events', 0, 1),
+(3, 'Agenda', '/bleus/agenda', 0, 1),
 (4, 'Folklore', '/bleus/folklore', 0, 1),
 (5, 'Forum', '/bleus/forum', 7, 1),
 (6, 'Pv Repet Chants', '/bleus/pvrepetchant', 7, 1),
