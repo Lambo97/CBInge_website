@@ -6,7 +6,7 @@ html, body {
     margin: 0;
 }
 .adjust{
-    margin-top:11px !important;
+    margin-top:3px !important;
 }
 .buttons-green{
     background-color: #168E33;
@@ -296,6 +296,9 @@ html, body {
 
 
 /* Agenda */
+.view-cap,.view-container-border{
+    background-color: #168E33 !important;
+}
 .agenda-css{
     position: absolute;
     top: 120px;

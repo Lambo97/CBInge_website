@@ -44,8 +44,9 @@ Route::get('/profile/search', ('ProfileController@search'));
 | Route concernant l'agenda
 */
 //Route::get('event/add','EventController@createEvent');
-Route::post('event','EventController@store');
-Route::get('event','EventController@calender');
+
+Route::get('/agenda','EventController@index');
+
 
 /*
 | Route concernant le forum
@@ -177,6 +178,7 @@ Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->mid
 Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/old', 'PvRepetChantsController@old')->middleware(['auth', 'toge']);
+Route::get('/bleus/agenda','BleusHomeController@agenda');
 
 
 /*
@@ -246,6 +248,14 @@ Route::post('/file/add_fichier/{parent}', ('FileController@store_fichier'))->mid
 Route::get('/file/edit_fichier/{fichier}', ('FileController@edit_fichier'))->middleware(['auth', 'baptise']);
 Route::post('/file/update_fichier/{fichier}', ('FileController@update_fichier'))->middleware(['auth', 'baptise']);
 Route::get('/file/destroy_fichier/{fichier}', ('FileController@destroy_fichier'))->middleware(['auth', 'baptise']);
+/*
+| Route concernant les bugs
+*/
+Route::get('/bug', ('BugController@index'))->middleware(['auth', 'comite']);
+Route::post('/bug/add', ('BugController@add'))->middleware(['auth', 'comite']);
+Route::get('/bug/edit/{post}', ('BugController@edit'))->middleware(['auth', 'comite']);
+Route::post('/bug/update/{post}', ('BugController@update'))->middleware(['auth', 'comite']);
+Route::get('/bug/destroy/{post}', ('BugController@destroy'))->middleware(['auth', 'comite']);
 
 /*
 | Route concernant les tuyaux

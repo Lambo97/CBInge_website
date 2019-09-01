@@ -208,7 +208,7 @@
                     </div>
 
                 @endforeach
-                <div class="row my-2">
+                <div class="my-2">
                     <form method="POST" action="/forum/comment/add/{{$post->id}}" style="width:100%" enctype="multipart/form-data">
                         @csrf  
                         <div class="">
@@ -217,12 +217,15 @@
                             </div>
 
                             <div class="form-group d-flex justify-content-end right-0 w-100 mt-3">
-                            <input type="file" class="buttons-green mr-2" id="photo" name="photo">
+            
                             <smileycomment class="adjust mr-2"></smileycomment>
                                 <button type="submit" class="buttons-green font-weight-bold btn-sm mr-2 ml-1">
                                     Commenter
                                 </button>
                                
+                            </div>
+                            <div class="d-flex justify-content-end">
+                            <input type="file" class="buttons-green mr-2 w-75 right-0" id="photo" name="photo">
                             </div>
                         </div>
                     </form>
