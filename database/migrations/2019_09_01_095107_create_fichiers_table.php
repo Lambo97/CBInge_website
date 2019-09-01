@@ -21,6 +21,7 @@ class CreateFichiersTable extends Migration
             $table->unsignedBigInteger('id_proprietaire');
             $table->unsignedBigInteger('id_dossier');
             $table->integer('size');
+            $table->boolean('public')->default(0);
             $table->timestamps();
         });
     }

@@ -247,3 +247,26 @@ Route::get('/file/edit_fichier/{fichier}', ('FileController@edit_fichier'))->mid
 Route::post('/file/update_fichier/{fichier}', ('FileController@update_fichier'))->middleware(['auth', 'baptise']);
 Route::get('/file/destroy_fichier/{fichier}', ('FileController@destroy_fichier'))->middleware(['auth', 'baptise']);
 
+/*
+| Route concernant les tuyaux
+*/
+Route::get('/tuyaux', ('TuyauxController@index'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/dossier/{dossier}', ('TuyauxController@dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/fichier/{fichier}', ('TuyauxController@fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_dossier/{parent}', ('TuyauxController@add_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_dossier/{parent}', ('TuyauxController@store_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_dossier/{dossier}', ('TuyauxController@edit_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_dossier/{dossier}', ('TuyauxController@update_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_dossier/{dossier}', ('TuyauxController@destroy_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_fichier/{parent}', ('TuyauxController@add_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_fichier/{parent}', ('TuyauxController@store_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_fichier/{fichier}', ('TuyauxController@edit_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_fichier/{fichier}', ('TuyauxController@update_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_fichier/{fichier}', ('TuyauxController@destroy_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_cours', ('TuyauxController@add_cours'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_cours', ('TuyauxController@store_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_cours', ('TuyauxController@edit_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/cours/{cours}', ('TuyauxController@cours'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_cours/{cours}', ('TuyauxController@update_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_cours/{cours}', ('TuyauxController@destroy_cours'))->middleware(['auth', 'admin']);
+

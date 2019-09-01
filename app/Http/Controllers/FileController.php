@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
 use App\Dossier;
 use App\Fichier;
 use App\User;
@@ -26,7 +24,7 @@ class FileController extends Controller
     public function dossier(Dossier $dossier)
     {
         // Check for correct user
-        if(auth()->user()->id !== $dossier->id_proprietaire){
+        if(auth()->user()->id !== $dossier->id_proprietaire and $dossier->public == 0){
             return redirect('/file/'.auth()->user()->id)->with('error', 'Page non autorisée');
         }
 
@@ -35,6 +33,10 @@ class FileController extends Controller
 
     public function fichier(Fichier $fichier)
     {
+        // Check for correct user
+        if(auth()->user()->id !== $dossier->id_proprietaire and $dossier->public == 0){
+            return redirect('/file/'.auth()->user()->id)->with('error', 'Page non autorisée');
+        }
         return response()->file(storage_path('app/public/file/perso/'.$fichier->url));
     }
 
@@ -160,6 +162,15 @@ class FileController extends Controller
             redirect('/file/add_fichier/'.$parent->id)->with('error', 'Aucun fichier soumis');
         }
 
+        if($request->input('public'))
+        {
+            $public = 1;
+        }
+        else
+        {
+            $public = 0;
+        }
+
         $fichier = new Fichier;
         $fichier->titre = $request->input('titre');
         $fichier->commentaire = $request->input('commentaire');
@@ -167,6 +178,7 @@ class FileController extends Controller
         $fichier->id_proprietaire = auth()->user()->id;
         $fichier->id_dossier = $parent->id;
         $fichier->size = $request->file('file')->getSize();
+        $fichier->public = $public;
         $fichier->save();
 
         return redirect('/file/dossier/'.$parent->id)->with('success', 'Dossier créé');
@@ -203,8 +215,18 @@ class FileController extends Controller
             $fichier->url = $fichier->dossier->url.$fileNameToStore;
         }
 
+        if($request->input('public'))
+        {
+            $public = 1;
+        }
+        else
+        {
+            $public = 0;
+        }
+
         $fichier->titre = $request->input('titre');
         $fichier->commentaire = $request->input('commentaire');
+        $fichier->public = $public;
         $fichier->save();
 
         return redirect('/file/dossier/'.$fichier->dossier->id)->with('success', 'Dossier updaté');
@@ -212,6 +234,10 @@ class FileController extends Controller
 
     public function destroy_fichier(Fichier $fichier)
     {
+        // Check for correct user
+        if(auth()->user()->id !== $fichier->id_proprietaire){
+            return redirect('/file/'.auth()->user()->id)->with('error', "Impossible d'écraser ce fichier");
+        }
         $dossier = $fichier->dossier;
         unlink(storage_path('app/public/file/perso/'.$fichier->url));
         $fichier->delete();
