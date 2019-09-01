@@ -33,7 +33,7 @@
             <searchbar link="/profile/show/"></searchbar>
         </li>
         @foreach($bleusmenus as $menu)
-            @if($menu->droit == "0" or ($menu->droit == 1 and Auth::check() and (Auth::user()->droit == 7 or Auth::user()->droit <= 5)))
+            @if($menu->droit == "0" or ($menu->droit == 7 and Auth::check() and (Auth::user()->droit == 7 or Auth::user()->droit <= 5)))
             <li>
                 <a href="{{$menu->lien}}" class="d-inline text-white nav-link navigation-link-blue">{{$menu->nom}}</a>
             </li>
