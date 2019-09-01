@@ -296,6 +296,9 @@ html, body {
 
 
 /* Agenda */
+.view-cap,.view-container-border{
+    background-color: #168E33 !important;
+}
 .agenda-css{
     position: absolute;
     top: 120px;

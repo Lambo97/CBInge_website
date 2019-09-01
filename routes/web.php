@@ -44,8 +44,9 @@ Route::get('/profile/search', ('ProfileController@search'));
 | Route concernant l'agenda
 */
 //Route::get('event/add','EventController@createEvent');
-Route::post('event','EventController@store');
-Route::get('event','EventController@calender');
+
+Route::get('/agenda','EventController@index');
+
 
 /*
 | Route concernant le forum
@@ -177,6 +178,7 @@ Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->mid
 Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/old', 'PvRepetChantsController@old')->middleware(['auth', 'toge']);
+Route::get('/bleus/agenda','BleusHomeController@agenda');
 
 
 /*
