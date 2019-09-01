@@ -12,11 +12,11 @@
         <h1>Editer dossier</h1>
     </div>
     <div class="col-md-6 d-flex justify-content-end align-items-center">
-        <a class="buttons-green font-weight-bold" href="/file/dossier/{{$dossier->parent->id}}">Retour</a>
+        <a class="buttons-green font-weight-bold" href="/tuyaux/dossier/{{$dossier->parent->id}}">Retour</a>
     </div>
 </div>
 
-<form method="POST" action="/file/update_dossier/{{$dossier->id}}" enctype="multipart/form-data">
+<form method="POST" action="/tuyaux/update_dossier/{{$dossier->id}}" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group row">

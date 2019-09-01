@@ -123,15 +123,7 @@ class TuyauxController extends Controller
             redirect('/tuyaux/add_fichier/'.$parent->id)->with('error', 'Aucun fichier soumis');
         }
 
-        if($request->input('public'))
-        {
-            $public = 1;
-        }
-        else
-        {
-            $public = 0;
-        }
-
+        
         $fichier = new Fichier;
         $fichier->titre = $request->input('titre');
         $fichier->commentaire = $request->input('commentaire');
@@ -139,7 +131,7 @@ class TuyauxController extends Controller
         $fichier->id_proprietaire = auth()->user()->id;
         $fichier->id_dossier = $parent->id;
         $fichier->size = $request->file('file')->getSize();
-        $fichier->public = $public;
+        $fichier->public = 1;
         $fichier->save();
 
         return redirect('/tuyaux/dossier/'.$parent->id)->with('success', 'Dossier créé');
@@ -176,18 +168,8 @@ class TuyauxController extends Controller
             $fichier->url = $fichier->dossier->url.$fileNameToStore;
         }
 
-        if($request->input('public'))
-        {
-            $public = 1;
-        }
-        else
-        {
-            $public = 0;
-        }
-
         $fichier->titre = $request->input('titre');
         $fichier->commentaire = $request->input('commentaire');
-        $fichier->public = $public;
         $fichier->save();
 
         return redirect('/tuyaux/dossier/'.$fichier->dossier->id)->with('success', 'Dossier updaté');
