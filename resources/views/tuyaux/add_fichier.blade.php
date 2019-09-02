@@ -12,11 +12,11 @@
         <h1>Ajouter fichier</h1>
     </div>
     <div class="col-md-6 d-flex justify-content-end align-items-center">
-        <a class="buttons-green font-weight-bold" href="/file/dossier/{{$parent->id}}">Retour</a>
+        <a class="buttons-green font-weight-bold" href="/tuyaux/dossier/{{$parent->id}}">Retour</a>
     </div>
 </div>
 
-<form method="POST" action="/file/add_fichier/{{$parent->id}}" enctype="multipart/form-data">
+<form method="POST" action="/tuyaux/add_fichier/{{$parent->id}}" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group row">
@@ -35,7 +35,7 @@
     <div class="form-group row">
         <label for="commentaire" class="d-none col-md-4 col-form-label text-md-right">Commentaire</label>
                 
-        <textarea id="commentaire" type="text" class="form-control form-content @error('commentaire') is-invalid @enderror" name="commentaire" value="{{ old('commentaire')}}" placeholder="Commentaires"></textarea>
+        <textarea id="commentaire" type="text" class="form-control form-content @error('commentaire') is-invalid @enderror" name="commentaire" value="{{ old('commentaire')}}" placeholder="Commentaires (préciser l'année svp)"></textarea>
 
         @error('commentaire')
             <span class="invalid-feedback" role="alert">
@@ -43,15 +43,6 @@
             </span>
         @enderror
         
-    </div>
-
-    <div class="form-group row">
-        <div class="form-group row">
-            <label for="public" class="d-none col-md-4 col-form-label text-md-right">Public</label>
-    
-            <p style="margin-bottom: -5px;"><label for="public" class="mr-2">Public (accessible par un autre baptisé possédant le lien) :</label> <input id="public" type="checkbox" name="public" value="1"></p>
-    
-        </div>
     </div>
 
     <div>

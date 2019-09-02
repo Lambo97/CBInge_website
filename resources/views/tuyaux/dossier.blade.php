@@ -34,18 +34,20 @@
 
 <!-- Dossiers -->
 @foreach($dossier->sous_dossiers as $sous_dossier)
-    @if($sous_dossier->id_proprietaire == auth()->user()->id)
     <div class="form-content py-2 d-flex mb-2 mt-2 justify-content-between">
         <div class="col-6">
-            <h4 style='display:inline' class="mr-3"><a href="/file/dossier/{{$sous_dossier->id}}" class="pt-4 green-link"><i class="fas fa-folder-open"></i> {{$sous_dossier->titre}}</a></h4> 
+            <h4 style='display:inline' class="mr-3"><a href="/tuyaux/dossier/{{$sous_dossier->id}}" class="pt-4 green-link"><i class="fas fa-folder-open"></i> {{$sous_dossier->titre}}</a></h4> 
         </div>
+        @if($sous_dossier->id_proprietaire == auth()->user()->id or auth()->user()->droit == 1)
         <div class="col-2 col-xs-3 d-flex justify-content-end">
             <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteDossier{{$sous_dossier->id}}"></i></div>
-            <a href="/file/edit_dossier/{{$sous_dossier->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
+            <a href="/tuyaux/edit_dossier/{{$sous_dossier->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
         </div>        
+        @endif
     </div>
     <!-- Modal Post -->
     <!-- Delete message -->
+    @if($sous_dossier->id_proprietaire == auth()->user()->id or auth()->user()->droit == 1)
     <div class="modal fade" id="deleteDossier{{$sous_dossier->id}}" tabindex="-1" role="dialog" aria-labelledby="#deleteDossier{{$sous_dossier->id}}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -60,7 +62,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                    <a href="/file/destroy_dossier/{{$sous_dossier->id}}" class="btn btn-danger">Supprimer</a>
+                    <a href="/tuyaux/destroy_dossier/{{$sous_dossier->id}}" class="btn btn-danger">Supprimer</a>
                 </div>
             </div>
         </div>
@@ -70,19 +72,24 @@
 
 <!-- Fichiers -->
 @foreach($dossier->fichiers as $fichier)
-    @if($fichier->id_proprietaire == auth()->user()->id)
     <div class="form-content py-2 d-flex mb-2 mt-2 justify-content-between">
-        <div class="col-9">
-            <h4 style='display:inline' class="mr-3"><a href="/file/fichier/{{$fichier->id}}" class="pt-4 green-link"><i class="fas fa-file-invoice"></i> {{$fichier->titre}}</a></h4><br/>
+        <div class="col-5">
+            <h4 style='display:inline' class="mr-3"><a href="/tuyaux/fichier/{{$fichier->id}}" class="pt-4 green-link"><i class="fas fa-file-invoice"></i> {{$fichier->titre}}</a></h4><br/>
             @if($fichier->commentaire)<p class="mt-1 ml-2">{{$fichier->commentaire}}</p> @endif
         </div>
+        <div class="col-5 col-xs-6 d-flex justify-content-end">
+            <small>Posté par <a class="green-link" href="/profile/show/{{$fichier->auteur->id}}">{{$fichier->auteur->surnom_forum}}</a> le : {{date("d-m-Y", strtotime($fichier->created_at))}}</small>
+        </div>   
+        @if($fichier->id_proprietaire == auth()->user()->id or auth()->user()->droit == 1)
         <div class="col-2 col-xs-3 d-flex justify-content-end">
             <div class="green-link mr-2"><i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteFichier{{$fichier->id}}"></i></div>
-            <a href="/file/edit_fichier/{{$fichier->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
-        </div>        
+            <a href="/tuyaux/edit_fichier/{{$fichier->id}}" class="green-link mr-2"><i class="far fa-edit"></i></a>
+        </div>     
+        @endif   
     </div>
     <!-- Modal Post -->
     <!-- Delete message -->
+    @if($fichier->id_proprietaire == auth()->user()->id or auth()->user()->droit == 1)
     <div class="modal fade" id="deleteFichier{{$fichier->id}}" tabindex="-1" role="dialog" aria-labelledby="#deleteFichier{{$fichier->id}}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -97,7 +104,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                    <a href="/file/destroy_fichier/{{$fichier->id}}" class="btn btn-danger">Supprimer</a>
+                    <a href="/tuyaux/destroy_fichier/{{$fichier->id}}" class="btn btn-danger">Supprimer</a>
                 </div>
             </div>
         </div>

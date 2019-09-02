@@ -12,11 +12,11 @@
         <h1>Creer dossier</h1>
     </div>
     <div class="col-md-6 d-flex justify-content-end align-items-center">
-        <a class="buttons-green font-weight-bold" href="/file/dossier/{{$parent->id}}">Retour</a>
+        <a class="buttons-green font-weight-bold" href="/tuyaux/dossier/{{$parent->id}}">Retour</a>
     </div>
 </div>
 
-<form method="POST" action="/file/add_dossier/{{$parent->id}}" enctype="multipart/form-data">
+<form method="POST" action="/tuyaux/add_dossier/{{$parent->id}}" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group row">
