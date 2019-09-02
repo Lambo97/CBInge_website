@@ -208,7 +208,7 @@ class AdminController extends Controller
             'toge' => 'required',
             'assistants' => 'required',
         ]);
-        
+
         $already = User::whereHas('fonctions', function($query){
             $query->where('annee', year())->where('nom', 'Président');
         })->count();
@@ -258,7 +258,7 @@ class AdminController extends Controller
         }
 
         return redirect('admin/repertoire')->with('success', 'Comité ajouté');
-        
+
     }
 
     public function nouvelleFonction()
@@ -297,7 +297,7 @@ class AdminController extends Controller
         {
             return response()->json(array());
         }
-            
+
         $token = explode(' ', $request->keywords);
         $results = DB::table('users')->join('fonction_user', 'users.id', '=', 'fonction_user.user_id')->join('fonctions', 'fonction_user.fonction_id', '=', 'fonctions.id');
         $results->where('name', 'like', '%'.$request->keywords.'%')->orWhere('prenom', 'like', '%'.$request->keywords.'%')->orWhere('annee',$request->keywords)->orWhere('nom', $request->keywords);
@@ -351,5 +351,23 @@ class AdminController extends Controller
         $newsletters = Newsletter::paginate(7);
         return view('admin.oldNewsletter', compact('newsletters'));
     }
-}
 
+    public function nouveauClerge()
+    {
+        $users = User::orderBy('name')->get();
+        return view('admin.newClerge', compact('users'));
+    }
+
+    public function addNouveauClerge(Request $request)
+    {
+        $this->validate($request, [
+            'user' => 'required',
+            'annee' => 'required',
+        ]);
+
+        $user = User::find($request->input('user'));
+        $user->fonctions()->attach($request->input('fonction'), array("annee" => $request->input('annee')));
+
+        return redirect('admin/repertoire')->with('success', 'Clergé ajouté');
+    }
+}
