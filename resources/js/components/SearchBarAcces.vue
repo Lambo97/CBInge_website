@@ -12,6 +12,7 @@
                     <th scope="col">Prenom</th>
                     <th scope="col">Année Baptême</th>
                     <th scope="col">Droit</th>
+                    <th scope="col">Photo</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +21,7 @@
                     <td><a v-bind:href="'/profile/show/'+result.id" class="green-link">{{result.name}}</a></td>
                     <td><a v-bind:href="'/profile/show/'+result.id" class="green-link">{{result.annee_bapteme}}</a></td>
                     <td><select-acces v-bind:droit_user="result.droit" v-bind:user_id="result.id" ></select-acces></td>
+                    <td><input type="checkbox" :checked="result.admin_photo == 1" @change="photo(result.id)"></input></td>
                 </tr>
             </tbody>
         </table>
@@ -48,6 +50,13 @@ export default {
             axios.get('/profile/search', { params: { keywords: this.keywords } })
                 .then(response => this.results = response.data)
                 .catch(error => {});
+        },
+
+        photo(user_id) {
+            axios.get('/admin/acces/changePhoto', { params: { user: user_id } })
+                .then(function(response){
+                    alert(response.data);
+                })
         }
     },
 

@@ -27,6 +27,7 @@ Vue.component('searchbar-repertoire', require('./components/SearchBarRepertoire.
 Vue.component('smiley', require('./components/Smiley.vue').default);
 Vue.component('smileycomment', require('./components/SmileyComment.vue').default);
 Vue.component('smileyinsult', require('./components/SmileyInsult.vue').default);
+Vue.component('mp3-reader', require('./components/Mp3Reader.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

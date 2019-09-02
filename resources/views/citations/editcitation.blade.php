@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-<title> CB Ingé - Insultes - Edition message </title>
+<title> CB Ingé - Citations - Edition message </title>
 @endsection
 
 @section('content')

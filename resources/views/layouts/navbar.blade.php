@@ -37,9 +37,15 @@
         </li>
         @foreach($menus as $menu)
         @if($menu->lien)
+        @if($menu->nom == "Fichiers")
+        <li>
+            <a href="/file/{{Auth::user()->id}}" class="d-inline text-white nav-link navigation-link">{{$menu->nom}}</a>
+        </li>
+        @else
         <li>
             <a href="{{$menu->lien}}" class="d-inline text-white nav-link navigation-link">{{$menu->nom}}</a>
         </li>
+        @endif
         @else
         <li>
             @if($menu->nom == "Discussion")

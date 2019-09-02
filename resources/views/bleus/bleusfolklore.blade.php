@@ -41,7 +41,7 @@
     <div class="d-flex  m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Ingénieur Civil</p>
-            <div class="rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class="rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/inge.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -55,7 +55,7 @@
     <div class="d-flex  m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Informaticien</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/info.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -69,7 +69,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Gramme</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/gramme.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -83,7 +83,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISIL</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/isil.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -97,7 +97,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width: 250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Archi St-Luc</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/archi.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -111,7 +111,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Lambert-Lombard</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_lambert.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -125,7 +125,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Chimie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/chimie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -139,7 +139,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Bioch</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_biochimie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -153,7 +153,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Géologie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/geologie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -167,7 +167,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Biologie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/biologie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -181,7 +181,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Physique</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_physique.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -195,7 +195,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Maths</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_math.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -209,7 +209,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences / Géographie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/geographie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -223,7 +223,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3" style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Philosophie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_philo.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -237,7 +237,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Classiques</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_classiques.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -251,7 +251,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Histoire</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/histoire.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -265,7 +265,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Romanes</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/romane.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -279,7 +279,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Germaniques</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_germaniques.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -293,7 +293,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Archéo</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/archeologie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -307,7 +307,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Orientales</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/oriental.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -321,7 +321,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres / Commu</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/com.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -335,7 +335,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Psychologie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_psycho.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -349,7 +349,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Droit</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/droit.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -363,7 +363,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences-Po</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/science_po.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -377,7 +377,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC / Ingé Gestion</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/HEC.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -391,7 +391,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC / Sciences Eco</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/penne_scienceseco.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -405,7 +405,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Médecine</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/medecine.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -419,7 +419,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK / Educ. Phys.</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/educ_phys.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -433,7 +433,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK / Kiné</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/kine.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -447,7 +447,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Pharmacie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/pharma.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -461,7 +461,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Vétérinaires</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../../img/penne_vete.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Penne</p>
@@ -497,7 +497,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Ingénieur Civil</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_inge.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -511,7 +511,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Informaticien</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_info.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -525,7 +525,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Gramme</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_gramme.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -539,7 +539,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISIL</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_isil.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -553,7 +553,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Archi</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_archi.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -567,7 +567,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Sciences</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_sciences.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -581,7 +581,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Philo et Lettres</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_philo.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -595,7 +595,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Psychologie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_psycho.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -609,7 +609,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Droit</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_droit.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -623,7 +623,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">HEC</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_hec.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -637,7 +637,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Médecine</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_medecine.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -651,7 +651,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Pharmacie</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;" src="../img/toge_pharmacie.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -665,7 +665,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">ISEPK</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;"src="../img/toge_isepk.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>
@@ -679,7 +679,7 @@
     <div class="d-flex m-2 p-3" style="background-color:#484747;width:250px;">
         <div class="mr-3"style="width:50%;">
             <p class="font-weight-bold mt-0">Barbou</p>
-            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:100%; height:100%; object-fit:contain;" src="../img/logo.png" alt="test"></div>
+            <div class=" rounded-circle"style="width:100px;height:100px; background-color:white;"><img style="width:90%; height:90%; object-fit:contain; margin:5% 5%;"src="../img/toge_barbou.svg" alt="test"></div>
         </div>
         <div style="width:40%;">
             <p class="font-weight-bold my-0">Toge</p>

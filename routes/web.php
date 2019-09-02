@@ -44,8 +44,9 @@ Route::get('/profile/search', ('ProfileController@search'));
 | Route concernant l'agenda
 */
 //Route::get('event/add','EventController@createEvent');
-Route::post('event','EventController@store');
-Route::get('event','EventController@calender');
+
+Route::get('/agenda','EventController@index');
+
 
 /*
 | Route concernant le forum
@@ -140,6 +141,7 @@ Route::get('/archives/missel/{url}', ('ArchiveController@file'))->middleware(['a
 */
 Route::get('/folklore/chants',('FolkloreController@chants'));
 Route::get('/folklore/chant/{chant}',('FolkloreController@chant'));
+Route::get('/folklore/chant_mp3/{chant}',('FolkloreController@chant_mp3'));
 Route::get('/folklore/chants/admin',('FolkloreController@admin'))->middleware(['auth', 'bureau']);
 Route::get('/folklore/chants/edit',('FolkloreController@edit'))->middleware(['auth', 'bureau']);
 Route::post('/folklore/chants/update/{chant}',('FolkloreController@update'))->middleware(['auth', 'bureau']);
@@ -176,6 +178,7 @@ Route::get('/bleus/pvrepetchant/edit/{pv}', 'PvRepetChantsController@edit')->mid
 Route::post('/bleus/pvrepetchant/update/{pv}', 'PvRepetChantsController@update')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/destroy/{pv}', 'PvRepetChantsController@destroy')->middleware(['auth', 'comite+bleu']);
 Route::get('/bleus/pvrepetchant/old', 'PvRepetChantsController@old')->middleware(['auth', 'toge']);
+Route::get('/bleus/agenda','BleusHomeController@agenda');
 
 
 /*
@@ -195,6 +198,7 @@ Route::get('/admin/menus/destroyMenuBleus/{menu}',('AdminController@destroyMenuB
 Route::get('/admin/menus/destroySousMenu/{sousMenu}',('AdminController@destroySousMenu'))->middleware(['auth', 'admin']);
 
 Route::get('/admin/acces',('AdminController@acces'))->middleware(['auth', 'admin']);
+Route::get('/admin/acces/changePhoto',('AdminController@changePhoto'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeDroit',('AdminController@changeDroit'))->middleware(['auth', 'admin']);
 Route::get('/admin/acces/changeBleus',('AdminController@changeBleus'))->middleware(['auth', 'admin']);
 
@@ -227,3 +231,52 @@ Route::get('/pensebete/admin',('PenseBeteController@admin'))->middleware(['auth'
 Route::get('/pensebete/edit',('PenseBeteController@edit'))->middleware(['auth', 'baptise']);
 Route::post('/pensebete/update/{memo}',('PenseBeteController@update'))->middleware(['auth', 'baptise']);
 Route::post('/pensebete/add',('PenseBeteController@add'))->middleware(['auth', 'baptise']);
+
+/*
+| Route concernant les fichiers
+*/
+Route::get('/file/{user_id}', ('FileController@index'))->middleware(['auth', 'baptise']);
+Route::get('/file/dossier/{dossier}', ('FileController@dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/fichier/{fichier}', ('FileController@fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/add_dossier/{parent}', ('FileController@add_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/file/add_dossier/{parent}', ('FileController@store_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/edit_dossier/{dossier}', ('FileController@edit_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/file/update_dossier/{dossier}', ('FileController@update_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/destroy_dossier/{dossier}', ('FileController@destroy_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/file/add_fichier/{parent}', ('FileController@add_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/file/add_fichier/{parent}', ('FileController@store_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/edit_fichier/{fichier}', ('FileController@edit_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/file/update_fichier/{fichier}', ('FileController@update_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/file/destroy_fichier/{fichier}', ('FileController@destroy_fichier'))->middleware(['auth', 'baptise']);
+/*
+| Route concernant les bugs
+*/
+Route::get('/bug', ('BugController@index'))->middleware(['auth', 'comite']);
+Route::post('/bug/add', ('BugController@add'))->middleware(['auth', 'comite']);
+Route::get('/bug/edit/{post}', ('BugController@edit'))->middleware(['auth', 'comite']);
+Route::post('/bug/update/{post}', ('BugController@update'))->middleware(['auth', 'comite']);
+Route::get('/bug/destroy/{post}', ('BugController@destroy'))->middleware(['auth', 'comite']);
+
+/*
+| Route concernant les tuyaux
+*/
+Route::get('/tuyaux', ('TuyauxController@index'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/dossier/{dossier}', ('TuyauxController@dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/fichier/{fichier}', ('TuyauxController@fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_dossier/{parent}', ('TuyauxController@add_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_dossier/{parent}', ('TuyauxController@store_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_dossier/{dossier}', ('TuyauxController@edit_dossier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_dossier/{dossier}', ('TuyauxController@update_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_dossier/{dossier}', ('TuyauxController@destroy_dossier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_fichier/{parent}', ('TuyauxController@add_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_fichier/{parent}', ('TuyauxController@store_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_fichier/{fichier}', ('TuyauxController@edit_fichier'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_fichier/{fichier}', ('TuyauxController@update_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_fichier/{fichier}', ('TuyauxController@destroy_fichier'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/add_cours', ('TuyauxController@add_cours'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/add_cours', ('TuyauxController@store_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/edit_cours', ('TuyauxController@edit_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/cours/{cours}', ('TuyauxController@cours'))->middleware(['auth', 'baptise']);
+Route::post('/tuyaux/update_cours/{cours}', ('TuyauxController@update_cours'))->middleware(['auth', 'baptise']);
+Route::get('/tuyaux/destroy_cours/{cours}', ('TuyauxController@destroy_cours'))->middleware(['auth', 'admin']);
+

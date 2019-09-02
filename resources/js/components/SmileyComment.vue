@@ -1,7 +1,7 @@
 
     
 <template>
-  <v-layout row class="">
+  <div>
  <!--  <v-flex xs12 sm6 offset-sm3>
       <v-card class="chat-card" >
 
@@ -28,13 +28,13 @@
       color="grey"
       >
    -->
-      <v-layout row >
-          <v-flex class=" text-right buttons-green" xs1>
-              <v-btn @click="toggleEmo" fab dark small color="pink">
-                  <v-icon class="insert">Smiley</v-icon>
-                  <v-icon class="ferme d-none">Fermer</v-icon>
-              </v-btn>
-          </v-flex>
+      <span>
+          <span class=" text-right buttons-green" xs1>
+              <span @click="toggleEmo" fab dark small color="pink">
+                  <span class="insert">Smiley</span>
+                  <span class="ferme d-none">Fermer</span>
+              </span>
+            </span>
 
         <!--  <v-flex xs1 class="text-center">
              <file-upload
@@ -68,11 +68,11 @@
 
         </v-flex>
             -->
-      </v-layout>
+      
 
 
-    </v-footer>
-  </v-layout>
+    </span>
+  </div>
 </template>
 
 <script>
@@ -154,11 +154,11 @@
     },
     created(){
       this.fetchMessages();
-      Echo.private('lchat')
-      .listen('MessageSent',(e)=>{
-          this.allMessages.push(e.message)
-          setTimeout(this.scrollToEnd,100);
-      });
+     // Echo.private('lchat')
+    //  .listen('MessageSent',(e)=>{
+       //   this.allMessages.push(e.message)
+     //     setTimeout(this.scrollToEnd,100);
+     // });
     }
     
   }

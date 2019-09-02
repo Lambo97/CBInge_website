@@ -51,9 +51,9 @@
     </div>
 
     <div class="form-group row">
-        <label for="message" class="d-none col-md-4 col-form-label text-md-right">Message</label>
+        <label for="editor" class="d-none col-md-4 col-form-label text-md-right">Message</label>
 
-        <textarea id="message" rows="5" class="form-control form-content @error('message') is-invalid @enderror" name="message" placeholder="Message"autocomplete="message">{{ old('message')}}</textarea>
+        <textarea id="editor" rows="5" class="form-control form-content @error('message') is-invalid @enderror" name="message" placeholder="Message"autocomplete="message">{{ old('message')}}</textarea>
 
         @error('message')
             <span class="invalid-feedback" role="alert">

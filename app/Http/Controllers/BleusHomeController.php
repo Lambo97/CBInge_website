@@ -20,6 +20,9 @@ class BleusHomeController extends Controller
     {
         return view('bleus/bleuswelcome');
     }
+    public function agenda(){
+        return view('bleus.bleusagenda');
+    }
     public function informations(){
         return view('bleus/informations');
     }

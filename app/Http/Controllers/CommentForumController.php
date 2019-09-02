@@ -13,13 +13,31 @@ class CommentForumController extends Controller
     {
         $this->validate($request, [
             'comment' => 'required',
+            'photo' => ['image','nullable', 'max:1999']
         ]);
+
+        // Handle File Upload
+        if($request->hasFile('photo')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('photo')->storeAs('public/forum', $fileNameToStore);
+        } else {
+            $fileNameToStore = NULL;
+        }
         
         // Create comment
         $comment = new CommentForum;
         $comment->message = $request->input('comment');
         $comment->id_auteur = auth()->user()->id;
         $comment->post_id = $post->id;
+        $comment->photo = $fileNameToStore;
         $comment->save();
         $post->updated_at = date('Y-m-d H:i:s');
         $post->save();

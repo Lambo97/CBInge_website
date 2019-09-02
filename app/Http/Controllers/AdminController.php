@@ -152,6 +152,23 @@ class AdminController extends Controller
         return view('admin.acces');
     }
 
+    public function changePhoto(Request $request)
+    {
+        $user = User::find($request->user);
+        if($user->admin_photo == 1)
+        {
+            $user->admin_photo = 0;
+            $user->save();
+            return response()->json("Droit photo de ".$user->prenom." ".$user->name." désactivé");
+        }
+        else
+        {
+            $user->admin_photo = 1;
+            $user->save();
+            return response()->json("Droit photo de ".$user->prenom." ".$user->name." activé");
+        }
+    }
+
     public function changeDroit(Request $request)
     {
         $user = User::find($request->user_id);
