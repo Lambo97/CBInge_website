@@ -28,4 +28,5 @@ INSERT INTO `fonctions` (`id`, `nom`, `created_at`, `updated_at`) VALUES
 (7, 'Assistant', NULL, NULL),
 (8, 'Webmaster', NULL, NULL),
 (9, 'Maître des chants', NULL, NULL),
-(10, 'Délégué AGEL', NULL, NULL);
+(10, 'Délégué AGEL', NULL, NULL),
+(11, 'Clergé', NULL, NULL);
