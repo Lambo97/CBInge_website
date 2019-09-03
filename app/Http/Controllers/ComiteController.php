@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\User;
 
 class ComiteController extends Controller
@@ -71,60 +72,7 @@ class ComiteController extends Controller
     {
         $year = year();
 
-        $comites = array();
-        for($y = $year; $y > 1980; $y--)
-        {
-            $comite = array();
-            $comite['annee'] = $y;
-
-            // Président
-            $comite['president'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Président');
-            })->first();
-
-            // Trésorier
-            $comite['tresorier'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Tresorier');
-            })->first();
-
-            // Secrétaire
-            $comite['secretaire'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Secretaire');
-            })->first();
-
-            // Vice président
-            $comite['vp'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Vice-président');
-            })->first();
-
-            //Présidente
-            $comite['presidente'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Présidente');
-            })->first();
-
-            //Maître des chants
-            $comite['mdc'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Maître des chants');
-            })->first();
-
-            //Délégué AGEL
-            $comite['da'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Délégué AGEL');
-            })->first();
-
-            //Sans Fonctions
-            $comite['sansFonctions'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Togé sans fonction');
-            })->orderBy('name')->get();
-
-            //Assistants
-            $comite['assistants'] = User::whereHas('fonctions', function($query) use ($y){
-                $query->where('annee', $y)->where('nom', 'Assistant');
-            })->orderBy('name')->get();
-
-            array_push($comites, $comite);
-        }
-
+        $comites = DB::table('users')->join('fonction_user', 'users.id', '=', 'fonction_user.user_id')->join('fonctions', 'fonction_user.fonction_id', '=', 'fonctions.id')->select('users.id', 'name', 'prenom', 'surnom', 'nom', 'annee')->get();
 
         return view('comite.anciens', compact('comites'));
     }
