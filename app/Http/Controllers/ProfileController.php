@@ -77,7 +77,6 @@ class ProfileController extends Controller
             
             'name' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
-            'surnom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'date_de_naissance' => ['required', 'date'],
             'adresse' => ['required', 'string', 'max:255'],
@@ -112,7 +111,10 @@ class ProfileController extends Controller
             $surnom_forum = $request->input('prenom');
         }elseif($request->input('surnom_forum') == "4")
         {
-            $surnom_forum = $request->input('surnom');
+            if(!$request->input('surnom'))
+                $surnom_forum = $request->input('prenom').' '.$request->input('name');
+            else
+                $surnom_forum = $request->input('surnom');
         }else
         {
             $surnom_forum = $request->input('prenom').' '.$request->input('name');
@@ -127,11 +129,16 @@ class ProfileController extends Controller
             $newsletter = 0;
         }
 
+        if(!$request->input('surnom'))
+            $surnom = "";
+        else
+            $surnom = $request->input('surnom');
+
 
         // Update information
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
-        $user->surnom = $request->input('surnom');
+        $user->surnom = $surnom;
         $user->email = $request->input('email');
         $user->date_de_naissance = date("Y-m-d", strtotime($request->input('date_de_naissance')));
         $user->adresse = $request->input('adresse');

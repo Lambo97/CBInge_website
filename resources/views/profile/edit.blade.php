@@ -41,7 +41,7 @@
     <div class="form-group row">
         <label for="surnom" class="d-none col-md-4 col-form-label text-md-right">Surnom <small>(Bleu-ette ou Fossille + nom)</small></label>
 
-        <input id="surnom" type="text" class="form-control form-content @error('surnom') is-invalid @enderror" name="surnom" value="{{ old('surnom') ?? $user->surnom}}" required autocomplete="surnom" placeholder="Surnom (Bleu-ette ou Fossile + nom)">
+        <input id="surnom" type="text" class="form-control form-content @error('surnom') is-invalid @enderror" name="surnom" value="{{ old('surnom') ?? $user->surnom}}" autocomplete="surnom" placeholder="Surnom (Bleu-ette ou Fossile + nom)">
 
         @error('surnom')
             <span class="invalid-feedback" role="alert">
