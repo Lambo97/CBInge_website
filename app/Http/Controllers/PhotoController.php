@@ -44,7 +44,7 @@ class PhotoController extends Controller
 
     public function photo($annee, PhotoAlbum $album, Photo $photo)
     {
-        $img = \Image::make(storage_path('app/public/photos/'. $photo->album->annee.'/'.$photo->album->nom.'/'.$photo->lien))->fit(600, 600);
+        $img = \Image::make(storage_path('app/public/photos/'. $photo->album->annee.'/'.$photo->album->nom.'/'.$photo->lien));//->fit(600, 600);
         return $img->response();
     }
 
@@ -133,7 +133,7 @@ class PhotoController extends Controller
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();
                 $filenameToStore = $filename.'_'.time().'.'.$extension;
-                $img = \Image::make($file)->fit(600);
+                $img = \Image::make($file);//->fit(600);
                 $img->save($path.'/'.$filenameToStore);
                 $photo = new Photo;
                 $photo->album_id = $request->input('album');

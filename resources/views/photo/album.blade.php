@@ -26,8 +26,8 @@
 <div class="row">
     <?php $i = 0; ?>
     @foreach($photos as $photo)
-    <div class="col-md-3 col-6 mb-2">
-        <img style="width:100%;" class="mb-2" src="/photos/{{$photo->album->annee}}/{{$photo->album->id}}/{{$photo->id}}" onclick="openModal(); currentSlide(<?php echo $i; ?>);">
+    <div class="d-flex m-2" style="height:175px; width:175px;">
+        <img style="width:100%; height:100%; object-fit:cover;" class="mb-2" src="/photos/{{$photo->album->annee}}/{{$photo->album->id}}/{{$photo->id}}" onclick="openModal(); currentSlide(<?php echo $i; ?>);">
     </div>
     <?php $i ++ ?>
     @endforeach

@@ -23,10 +23,10 @@
     @endif
 </div>
 
-<div class="row">
+<div class="d-flex">
     @foreach($albums as $album)
-    <div class="col-md-3 col-6 mb-2">
-        <img style="width:100%" class="mb-2" src="/photos/cover/{{$album->id}}">
+    <div class=" m-2" style="width:175px; height:175px;">
+        <img style="width:100%; height:100%; object-fit:cover;" class="mb-2" src="/photos/cover/{{$album->id}}">
         <a href="/photos/{{$album->annee}}/{{$album->id}}" class="green-link">
         {{$album->nom}}</a><br>
         @if($album->photos()->count() > 1)
@@ -34,6 +34,9 @@
         @else
         {{$album->photos()->count()}} photo
         @endif
+    </div>
+    <div>
+        
     </div>
     @endforeach
 </div>

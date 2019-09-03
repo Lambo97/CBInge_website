@@ -19,7 +19,7 @@
 <div class="row">
     @foreach($annees as $annee)
     <div class="col-md-3 col-6 mb-3">
-        <img style="width:100%" class="mb-2" src="/photos/cover/{{$annee['cover_album']}}">
+        <img style="width:100%;" class="mb-2" src="/photos/cover/{{$annee['cover_album']}}">
         <a href="/photos/{{$annee['annee']}}" class="green-link">
         {{$annee['annee']}} - {{$annee['annee'] + 1}}</a><br>
         @if($annee['nb_album'] > 1)
