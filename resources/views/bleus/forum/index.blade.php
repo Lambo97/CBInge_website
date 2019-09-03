@@ -210,7 +210,7 @@
                             </div>
 
                             <div class=" form-group d-flex justify-content-end right-0 w-100">
-                            <smileycomment class="adjust"></smileycomment>
+                            <smileycomment class=""style="margin-top:11px;"></smileycomment>
                                 <button type="submit" class="buttons-blue font-weight-bold btn-sm mt-2 ml-1">
                                     Commenter
                                 </button>

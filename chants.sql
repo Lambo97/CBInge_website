@@ -40,4 +40,292 @@ INSERT INTO `chants` (`id`, `nom`, `type`, `paroles`, `mp3`) VALUES
 (19, 'La Brabançonne', 'Chants folkloriques', 'O Belgique, ô mère chérie<br />\r\nA toi nos coeurs, à toi nos bras<br />\r\nA toi notre sang ô Patrie !<br />\r\nNous le jurons tous, tu vivras !<br />\r\nTu vivras toujours grande et belle<br />\r\nEn ton invincible unité<br />\r\n<br />\r\nAura pour devise immortelle<br />\r\nLe Roi, la Loi, la Liberté<br />\r\nAura pour devise immortelle<br />\r\nLe Roi, la Loi, la Liberté<br />\r\nLe Roi, la Loi, la Liberté<br />\r\nLe Roi, la Loi, la Liberté', NULL),
 (20, 'Valeureux Liégeois', 'Chants folkloriques', 'Valeureux Liégeois,<br />\r\nFidèle à ma voix,<br />\r\nVole à la victoire.<br />\r\nEt la liberté<br />\r\nDe notre cité<br />\r\nTe couvrira de gloire<br />\r\n<br />\r\nCésar vainqueur de l\'univers<br />\r\nTe décerna le titre de brave<br />\r\nRomains tu brisas les fers<br />\r\nJamais tu ne vécus esclave<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nCélébrons par nos accords<br />\r\nLes droits sacrés d\'une si belle cause<br />\r\nEt rions des vains efforts<br />\r\nQue l\'ennemi nous oppose<br />\r\n<br />\r\nRefrain <br />\r\n<br />\r\n- A-s\' veyou - <b> L\'Torè ! </b><br />\r\n- Est-i bê ? - <b> Awè ! </b><br />\r\n- Ki magne-t-i ? - <b> Dès porês ! </b><br />\r\n- Ki beût-i ? - <b> Dès pèkèts ! </b><br />\r\n- Ki fèt-i ? - <b> Dès p\'tits vês ! </b><br />\r\n- En a-t-i ? - <b> Awè ! </b><br />\r\n- Kimin sont-èlles ? - <b> Hénaurmes ! </b><br />\r\n- <b> La la la la La la la la la . . . </b><br />\r\n- <b> La la la la La la la la la . . . (Lîdge) </b><br />\r\n- Et co\'n fèye po nin l\'rouvî . . . <b> - Allons Lîdge !</b>', NULL),
 (21, 'Ah que nos pères étaient heureux', 'Chants indispensables', 'Ah! Que nos pères étaient heureux (bis)<br />\r\nQuand ils étaient à table,<br />\r\nLe vin coulait à côté d\'eux: (bis)<br />\r\nCa leur était fort agréable.<br />\r\n<br />\r\nRefrain:<br />\r\nIls buvaient à leurs tonneaux,<br />\r\nComme des trous, (bis)<br />\r\nMorbleu! Bien autrement que nous! (bis)<br />\r\n<br />\r\nIls n\'avaient ni riches buffets (bis)<br />\r\nNi verres de Venise,<br />\r\nMais ils avaient des gobelets (bis)<br />\r\nAussi grands que leurs barbes grises.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nIls ne savaient ni le latin,(bis)<br />\r\nNi la théologie,<br />\r\nMais ils avaient le goût du vin (bis)<br />\r\nC\'était là leur philosophie.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nQuand ils avaient quelque chagrin (bis)<br />\r\nOu quelque maladie,<br />\r\nIls plantaient là le médecin (bis)<br />\r\nApothicaire et pharmacie.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nEt quand le petit dieu d\'amour (bis)<br />\r\nLeur envoyait quelque donzelle,<br />\r\nSans peur, sans crainte et sans détour (bis)<br />\r\nIls plantaient là la demoiselle.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nCelui qui planta le bon vin (bis)<br />\r\nAu doux pays de France,<br />\r\nDans l\'éclat du rubis divin, (bis)<br />\r\nIl a planté notre espérance.<br />\r\n<br />\r\nRefrain final:<br />\r\nAmis, buvons à nos tonneaux,<br />\r\nComme des trous (bis)<br />\r\nMorbleu! L\'avenir est à nous! (bis)', NULL),
-(22, 'Au 31 du mois d\'août', 'Chants indispensables', 'Au trente-et-un du mois d\'a-oût (bis)<br />\r\nNous vim\'s venir sous l\'vent à nous (bis)<br />\r\nUne frégate d\'Angleterre<br />\r\nQui fendait la mer-z-et les flots:<br />\r\nC\'était pour bombarder Bordeaux.<br />\r\n<br />\r\nRefrain:<br />\r\nBuvons un coup lala, buvons en deux lala,<br />\r\nA la santé des amoureux,<br />\r\nA la santé du Roi de France,<br />\r\nEt merd\' pour le Roi d\'Angleterre<br />\r\nQui nous a déclaré la guerre !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe Capitain\' du bâtiment (bis)<br />\r\nFit appeler son lieutenant, (bis)<br />\r\n\"Lieutenant, te sens-tu capable:<br />\r\nDe prendre l\'Anglais à son bord <br />\r\nOn verra bien qui s\'ra le plus fort !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe Lieutenant fier-z-et hardi (bis)<br />\r\nLui répondit: \"Capitain\'-z-oui !\" (bis)<br />\r\nFait\'s branle-bas à l\'équipage<br />\r\nJe vas hisser le pavillon<br />\r\nQui rest\'ra haut nous le jurons !\"<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe maitre donne un coup d\' sifflet (bis)<br />\r\nEt haut larguer les perroquet (bis)<br />\r\nLarger les riz et vent arrière<br />\r\nLaisse porter jusqu\'à son bord<br />\r\nOn verra bien qui s\'ra le plus fort !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nVir\' lof pour lof, au même instant (bis)<br />\r\nNous l\'attaquâmes par son avant (bis)<br />\r\nA coups de haches d\'abordage,<br />\r\nDe sabres, piqu\'s et mousquetons,<br />\r\nNous l\'eûm\'s vit\' mis à la raison.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nQue dira-t-on dudit bateau (bis)<br />\r\nEn Angleterr\'-z-et à Bordeaux (bis)<br />\r\nQu\'a laissé prendr\' son équipage<br />\r\nPar un corsair\' de six canons,<br />\r\nLui qu\'en avait trente et si bons ?<br />\r\n<br />\r\nRefrain', NULL);
+(22, 'Au 31 du mois d\'août', 'Chants indispensables', 'Au trente-et-un du mois d\'a-oût (bis)<br />\r\nNous vim\'s venir sous l\'vent à nous (bis)<br />\r\nUne frégate d\'Angleterre<br />\r\nQui fendait la mer-z-et les flots:<br />\r\nC\'était pour bombarder Bordeaux.<br />\r\n<br />\r\nRefrain:<br />\r\nBuvons un coup lala, buvons en deux lala,<br />\r\nA la santé des amoureux,<br />\r\nA la santé du Roi de France,<br />\r\nEt merd\' pour le Roi d\'Angleterre<br />\r\nQui nous a déclaré la guerre !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe Capitain\' du bâtiment (bis)<br />\r\nFit appeler son lieutenant, (bis)<br />\r\n\"Lieutenant, te sens-tu capable:<br />\r\nDe prendre l\'Anglais à son bord <br />\r\nOn verra bien qui s\'ra le plus fort !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe Lieutenant fier-z-et hardi (bis)<br />\r\nLui répondit: \"Capitain\'-z-oui !\" (bis)<br />\r\nFait\'s branle-bas à l\'équipage<br />\r\nJe vas hisser le pavillon<br />\r\nQui rest\'ra haut nous le jurons !\"<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nLe maitre donne un coup d\' sifflet (bis)<br />\r\nEt haut larguer les perroquet (bis)<br />\r\nLarger les riz et vent arrière<br />\r\nLaisse porter jusqu\'à son bord<br />\r\nOn verra bien qui s\'ra le plus fort !<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nVir\' lof pour lof, au même instant (bis)<br />\r\nNous l\'attaquâmes par son avant (bis)<br />\r\nA coups de haches d\'abordage,<br />\r\nDe sabres, piqu\'s et mousquetons,<br />\r\nNous l\'eûm\'s vit\' mis à la raison.<br />\r\n<br />\r\nRefrain<br />\r\n<br />\r\nQue dira-t-on dudit bateau (bis)<br />\r\nEn Angleterr\'-z-et à Bordeaux (bis)<br />\r\nQu\'a laissé prendr\' son équipage<br />\r\nPar un corsair\' de six canons,<br />\r\nLui qu\'en avait trente et si bons ?<br />\r\n<br />\r\nRefrain', NULL),
+(23, 'Fanchon', 'Chants indispensables', 'Amis, il faut faire une pause<br />J\'aperçois l\'ombre d\'un bouchon<br />Buvons à l\'aimable Fanchon<br />Chantons pour elle quelque chose<br /><br />Refrain:<br /><br />Et ah !<br />C\'que son entretien est bon<br />Qu\'elle a de mérite et de gloire<br />Elle aime à rire, elle aime à boire )<br />Elle aime à chanter comme nous ) (ter)<br />Oui comme nous,<br />oui comme nous<br /><br />Fanchon, quoique bonne chrétienne<br />Fut baptisée avec du vin<br />Un bourguignon fut son parrain<br />Une bretonne sa marraine<br /><br />Refrain<br /><br />Fanchon préfère la grillade<br />A d\'autres mets plus délicats<br />Son teint prend un nouvel éclat<br />Lorsqu\'on lui verse une rasade<br /><br />Refrain<br /><br />Fanchon ne se montre cruelle<br />Que lorsqu\'on lui parle d\'amour<br />Mais moi si je vais à la cour<br />C\'est pour m\'enivrer avec elle<br /><br />Refrain', NULL),
+(24, 'L\'Hôtel Dieu', 'Chants indispensables', 'Au bal de l\'Hôtel-Dieu, nom de Dieu ! } (bis)<br />
+Y avait une servante. }<br />
+Elle avait tant d\'amants, nom de Dieu !<br />
+Qu\'ell\' ne savait quel prendre.<br />
+<br />
+Refrain:<br />
+<br />
+Ah, nom de Dieu ! Nom de Dieu, nom de Dieu !<br />
+Cré nom de Dieu, quelle allure !<br />
+Ah, nom de Dieu ! Nom de Dieu, nom de Dieu !<br />
+Ah quelle allure ! Nom de Dieu !<br />
+<br />
+Elle avait tant d\'amants, nom de Dieu ! } (bis)<br />
+Qu\'ell\' ne savait quel prendre. }<br />
+<br />
+Un jour l\' intern' de gard\', nom de Dieu !<br />
+En mariag\' la demande.<br />
+<br />
+Le pèr\' ne dit pas non, nom de Dieu !<br />
+La mère est consentante.<br />
+<br />
+Malgré tous les envieux, nom de Dieu !<br />
+Ils coucheront ensemble.<br />
+<br />
+Dans un grand lit carré, nom de Dieu !<br />
+Tout garni de guirlandes.<br />
+<br />
+Aux quatre coins du lit, nom de Dieu !<br />
+Quatr\' carabins qui bandent.<br />
+<br />
+La belle est au milieu, nom de Dieu !<br />
+Elle écarte les jambes.<br />
+<br />
+Les règl\'s lui sort\'nt du con, nom de Dieu !<br />
+Encor\' toutes fumantes.<br />
+<br />
+Vous tous qui m\'écoutez, nom de Dieu!<br />
+Y passeriez la langue.', NULL),
+(25, 'La ballade du mutant', 'Chants indispensables', 'Il est né un soir près d\'une centrale nucléaire<br />
+D\'un père alcoolique et d\'une mère étheromane<br />
+Il avait trois jambes, de grands bras tout verts<br />
+Son grand nez tout jaun\'luisait comme une banane.<br />
+<br />
+Refrain<br />
+<br />
+Qu\'il soit vert ou bleu depuis sa naissance<br />
+Il a les yeux rouges, il est plein d\'excroissances<br />
+Qu\'il soit asthmatique, gloîtreux ou rampant<br />
+Malheur à celui qui blesse un mutant.<br />
+Dans l\'institution où l\'on plaça le p\'tit chauve<br />
+Il faisait bien rire avec sa douzaine de doigts<br />
+Il faut reconnaître qu\'une main tout\'mauve<br />
+Ca n\'est pas courant sur la tête d\'un p\'tit gars.<br />
+<br />
+Refrain<br />
+<br />
+Il y avait des jours où c\'était dur pour l\'pauvr\'gosse<br />
+Quand avec une sonde il fallait l\'alimenter<br />
+Car je n\'vous l\'ai pas dit, mais en plus de sa bosse<br />
+Le pauvre chéri était paralysé.<br />
+<br />
+Refrain<br />
+<br />
+Et quand il eut l\'âge d\'aller vers les filles<br />
+Qu\'il voulut sortir sa queue en form\'de tir-bouchon<br />
+Sa petit\'peau flasque était molle et sans vie<br />
+Et sa couille unique avait l'air d'un ballon.<br />
+<br />
+Refrain', NULL),
+(26, 'La brabançonne d\'une putain', 'Chants indispensables', 'Je me souviens, lorsque j\'étais jeune fille,<br />
+D\'un jeune garçon qui passait par bonheur<br />
+Il me trouva si jeune et si gentille<br />
+Qu\'il me montra sa gross\'pine en chaleur<br />
+Et tout d\'un coup, sous mes jupons s\'élance<br />
+L\'énorme queue qu\'il tenait à la main,<br />
+Il déchira mon voile d\'innocence<br />
+Voilà pourquoi je me suis fait putain! (ter)<br />
+Je ne sais pas si j\'étais déjà coquine<br />
+J\'aimais déjà qu\'on m\'châtouillât l\'bouton,<br />
+J\'avais goûté de ce bon jus de pine,<br />
+J\'avais reçu du foutre dans le con,<br />
+J\'avais baisé, je n\'étais plus pucelle,<br />
+Je chérissais le métier de putain,<br />
+Plus je baisais plus je devenais belle,<br />
+Voilà pourquoi je me suis fait putain! (ter)<br />
+Quoique je ne sois qu\'une fille publique<br />
+J\'ai de l\'amour et de l\'humanité<br />
+Tout citoyen de notr\'libre Belgique<br />
+A l\'droit d\'baiser et d\'jouir en liberté,<br />
+Pour de l\'argent, le riche aura ma fente<br />
+Le pauvre, lui, peut en jouir pour rien,<br />
+Pour soulager lhumanité souffrante<br />
+Voilà pourquoi je me suis fait putain! (ter)', NULL),
+(27, 'La digue du cul', 'Chants indispensables', 'La digue du cul, en revenant de Nantes (bis)<br />
+De Nantes à Montaigu,<br />
+La digue, la digue,<br />
+De Nantes à Montaigu,<br />
+La digue du cul.<br />
+<br />
+Refrain:<br />
+<br />
+Lève la jambe, voilà qu\'ça entre, )<br />
+Lève la cuisse, cuisse, cuisse )<br />
+Voilà qu\'ça glisse ) (bis)<br />
+Oh! hisse<br />
+<br />
+La digue du cul, je rencontre une belle (bis)<br />
+Qui dormait le cul nu,<br />
+La digue, la digue,<br />
+Qui dormait le cul nu,<br />
+La digue du cul.<br />
+<br />
+La digue du cul, je band\'mon arbalète (bis)<br />
+Et la lui fous dans l\'cul,...<br />
+<br />
+La digue du cul, la belle se réveille (bis)<br />
+Et dit:"J\'ai le diable au cul!",...<br />
+<br />
+La digue du cul, non, ce n\'est pas le diable (bis)<br />
+Mais un gros dard poilu,...<br />
+<br />
+La digue du cul, qui bande et qui décharge (bis)<br />
+Et qui t\'en fout plein le cul,...<br />
+<br />
+La digue du cul, puisqu\'il y est qu\'il y reste (bis)<br />
+Et qu\'il n\'en sorte plus,...<br />
+<br />
+La digue du cul, Il fallut bien qu\'il sorte (bis)<br />
+Il est entré bien raide<br />
+La digue, la digue,<br />
+Il en sortit menu,<br />
+La digue du cul.', NULL),
+(28, 'La femme du Roulier', 'Chants indispensables', 'Il est minuit,<br />
+La femme du roulier<br />
+S\'en va de porte en porte<br />
+De taverne en taverne,<br />
+Pour chercher son mari<br />
+Tireli<br />
+Avec une lanterne<br />
+(Les trois derniers en bis).<br />
+<br />
+Madam\' l\'hotesse,<br />
+Où donc est mon mari ?<br />
+Ton mari est ici<br />
+Il est dans la soupente,<br />
+Il y prend ses ébats,<br />
+Tirela,<br />
+Avec notre servante<br />
+(Les trois derniers en bis).<br />
+<br />
+Cochon de mari,<br />
+Pilier de cabaret,<br />
+Tu es là qui te saoule<br />
+Et qui fais la ripaille,<br />
+Pendant que tes enfants,<br />
+Tirelan,<br />
+Sont couchés sur la paille<br />
+(Les trois derniers en bis).<br />
+<br />
+Et toi la belle,<br />
+Aux yeux de merlan frit,<br />
+Tu m\'as pris mon mari,<br />
+Je vais te prendre mesure<br />
+D\'un\' bonne culott\' de peau,<br />
+Tirelo,<br />
+Qui ne craint pas l\'usure<br />
+(Les trois derniers en bis).<br />
+<br />
+Tais-toi ma femme,<br />
+Tais-toi tu me fais chier,<br />
+Dans la bonne société,<br />
+Est-ce ainsi qu\'on s\' comporte?<br />
+J\'te fous mon pied dansl\'cul,<br />
+Tirelu,<br />
+Si tu ne prends pas la porte<br />
+(Les trois derniers en bis).<br />
+<br />
+Pauvres enfants,<br />
+Mes chers petits enfants,<br />
+Plaignez votre destin,<br />
+Vous n\'avez plus de père.<br />
+Je l\'ai trouvé couché<br />
+Tirelé,<br />
+Avec une autre mère<br />
+(Les trois derniers en bis).<br />
+<br />
+Il a raison<br />
+S\'écrient les enfants,<br />
+D\'aller tirer son coup,<br />
+avec la celle qui l\'aime,<br />
+Et quand nous serons grands,<br />
+Tirelan,<br />
+nous ferons tous de même<br />
+(Les trois derniers en bis).<br />
+<br />
+Méchants Enfants,<br />
+Sacrés cochons d\'enfants,<br />
+Sécrie la mère furieuse,<br />
+Et pleine de colère,<br />
+Vous serez tous cocu,<br />
+Tirelu,<br />
+Comme le fut votre père<br />
+(Les trois derniers en bis).', NULL),
+(29, 'La Javanaise', 'Chants indispensables', 'Quand pour la première fois Julot encula<br />
+Une Javanaise<br />
+Il sentit sur son doigt quelque chose de gras<br />
+Comme de la mayonnaise<br />
+Son con était si long, si large et profond,<br />
+Si plein de liquide<br />
+Qu\'il avait l\'impression que son saucisson<br />
+Nageait dans le vide<br />
+<br />
+Refrain:<br />
+<br />
+C\'est la Java, la bite à papa<br />
+Les couilles à Julot oh oh<br />
+Sa petite casquette, ses grosses roupettes<br />
+Et son p\'tit mégot<br />
+Viens mon landru, mon tordu<br />
+Fous-la moi dans l\'cul<br />
+Viens mon trésor, mon Nestor<br />
+Pousse un peu plus fort<br />
+<br />
+Mon père était branleur, astiqueur de bites<br />
+Dans un bal musette<br />
+Ma mère était putain, faisait des pompiers<br />
+A tous ceux d\'l\'orchestre<br />
+Non ! Tu ne verras plus les poils de mon cul<br />
+J\'en ai fait des brosses<br />
+A vingt francs du kilo, c\'est du bon boulot<br />
+Pour nourrir les gosses<br />
+<br />
+Refrain', NULL),
+(30, 'Le cordonnier Pamphyle', 'Chants indispensables', 'Le cordonnier Pamphyle<br />
+A élu domicile<br />
+Près d\'un couvent de filles<br />
+Et bien, il s\'en trouva<br />
+(Ah!Ah!Ah!Ah! )<br />
+(Et bien il s\'en trouva ) (bis)<br />
+<br />
+Car la gent monastique<br />
+Jettait dans sa boutique<br />
+Des ognons et des chiques<br />
+Restes de ses repas.<br />
+<br />
+Un jour la soeur Charlotte<br />
+S\'asticotait la motte<br />
+Avec une carotte<br />
+Grosse comme le bras.<br />
+<br />
+Mais quelque effort qu\'elle fasse<br />
+En vain elle se masse<br />
+Ell\'s\'astiqu\'la connasse<br />
+Le foutre ne vient pas.<br />
+<br />
+Mais comm\'tout a son terme<br />
+Enfin jaillit le sperme<br />
+Son con s\'ouvre et se ferme<br />
+Et elle déchargea.<br />
+<br />
+Alors toute contente<br />
+Ell\'retir\' de sa fente<br />
+La carotte écumante<br />
+Et ell\' la rejetta.<br />
+<br />
+Par un hasard comique<br />
+La carotte impudique<br />
+Tomba dans la boutique<br />
+Du cordonnier d\'en bas.<br />
+<br />
+Cré nom de dieu, quelle chance,<br />
+Elle est à la sauc\'blanche,<br />
+Bourrons-nous en la panse.<br />
+Et il la boulotta.<br />
+<br />
+Cré nom de Dieu Fifine<br />
+Cette carott\'sent l\'urine,<br />
+Elle a servi de pine<br />
+Et il la dégueula.', NULL),
+(31, 'Le Fusil', 'Chants indispensables', '', NULL),
+(32, '', 'Chants indispensables', '', NULL),
+(33, '', 'Chants indispensables', '', NULL),
+(34, '', 'Chants indispensables', '', NULL),
+(35, '', 'Chants indispensables', '', NULL),
+(36, '', 'Chants indispensables', '', NULL),
+(37, '', 'Chants indispensables', '', NULL),
+(38, '', 'Chants indispensables', '', NULL);

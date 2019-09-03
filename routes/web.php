@@ -209,6 +209,8 @@ Route::get('/admin/repertoire/nouvelleFonction',('AdminController@nouvelleFoncti
 Route::post('/admin/repertoire/nouvelleFonction',('AdminController@addNouvelleFonction'))->middleware(['auth', 'admin']);
 Route::get('/admin/repertoire/searchFonction',('AdminController@searchFonction'))->middleware(['auth', 'admin']);
 Route::get('/admin/repertoire/deleteFonction/{user}/{fonction_id}/{annee}', ('AdminController@deleteFonction'))->middleware(['auth', 'admin']);
+Route::get('/admin/repertoire/nouveauClerge',('AdminController@nouveauClerge'))->middleware(['auth', 'admin']);
+Route::post('/admin/repertoire/nouveauClerge',('AdminController@addNouveauClerge'))->middleware(['auth', 'admin']);
 
 Route::get('/admin/newsletter', ('AdminController@newsletter'))->middleware(['auth', 'bureau']);
 Route::post('/admin/newsletter', ('AdminController@sendNewsletter'))->middleware(['auth', 'bureau']);
@@ -280,3 +282,11 @@ Route::get('/tuyaux/cours/{cours}', ('TuyauxController@cours'))->middleware(['au
 Route::post('/tuyaux/update_cours/{cours}', ('TuyauxController@update_cours'))->middleware(['auth', 'baptise']);
 Route::get('/tuyaux/destroy_cours/{cours}', ('TuyauxController@destroy_cours'))->middleware(['auth', 'admin']);
 
+
+/*
+| Route concernant les délations
+*/
+Route::get('/delations', ('DelationsController@balance'))->middleware(['auth', 'baptise']);
+Route::get('/delations/clerge', ('DelationsController@index'))->middleware(['auth', 'comite']);
+Route::post('/delations/add', ('DelationsController@add'))->middleware(['auth', 'baptise']);
+Route::get('/delations/image/{url}', ('DelationsController@image'))->middleware(['auth', 'comite']);

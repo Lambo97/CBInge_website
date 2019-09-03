@@ -7,7 +7,7 @@
 @section('content')
 <div class="row mb-3">
     <div class="col-md-4 col-sm-12">
-        <h1 class="mb-3">Chants</h1>
+        <h1 class="mb-3">Folklore - Chants</h1>
     </div>
     @if(Auth::check() and Auth::user()->droit == 1)
     <div class="col-md-8 d-flex justify-content-end align-items-center">

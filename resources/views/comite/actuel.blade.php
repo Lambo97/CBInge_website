@@ -46,8 +46,9 @@
         {{$tresorier->prenom}} {{$tresorier->name}} <br>
         @if($tresorier->surnom)
         ({{$tresorier->surnom}})
-        </a>
         @endif
+        </a>
+        
     </div>
     @endif
 
