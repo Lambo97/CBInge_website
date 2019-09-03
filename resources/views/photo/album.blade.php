@@ -33,6 +33,8 @@
     @endforeach
 </div>
 
+{{$photos->links()}}
+
 <div id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal();">&times;</span>
     <div class="modal-content">

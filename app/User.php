@@ -95,4 +95,14 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Fonction')->withPivot('annee');
     }
 
+    public function sendPasswordResetNotification($token)
+    {
+        $from = "comite@cbinge.com";
+        $to = $this->email;
+        $subject = "Reset Password";
+        $message = "Pour réinitialiser votre mot de passe, cliquez sur ce lien: https://www.cbinge.com/password/reset/".$token;
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+    }
+
 }
