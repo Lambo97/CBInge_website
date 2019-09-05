@@ -21,11 +21,6 @@ Vous pouvez également importer les tables `users`, `bleu_parrain` et `fonction_
 
 Pour utiliser le site il faudra utiliser plusieurs package.
 
-### Full calendar
-```bash
-composer require maddhatter/laravel-fullcalendar
-```
-
 ### Purifier
 ```bash
 composer require mews/purifier
