@@ -37,6 +37,12 @@ Route::get('/profile/removeParrain/{parrain}', ('ProfileController@removeParrain
 Route::get('/profile/editBleu', ('ProfileController@editBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/addBleu/{bleu}', ('ProfileController@addBleu'))->middleware(['auth', 'approved']);
 Route::get('/profile/removeBleu/{bleu}', ('ProfileController@removeBleu'))->middleware(['auth', 'approved']);
+Route::get('/profile/editParrainExt', ('ProfileController@editParrainExt'))->middleware(['auth', 'approved']);
+Route::post('/profile/addParrainExt/{parrain}', ('ProfileController@addParrainExt'))->middleware(['auth', 'approved']);
+Route::get('/profile/removeParrainExt/{parrain}', ('ProfileController@removeParrainExt'))->middleware(['auth', 'approved']);
+Route::get('/profile/editBleuExt', ('ProfileController@editBleuExt'))->middleware(['auth', 'approved']);
+Route::post('/profile/addBleuExt/{bleu}', ('ProfileController@addBleuExt'))->middleware(['auth', 'approved']);
+Route::get('/profile/removeBleuExt/{bleu}', ('ProfileController@removeBleuExt'))->middleware(['auth', 'approved']);
 Route::get('/profile/{user}/image', ('ProfileController@image'));
 Route::get('/profile/search', ('ProfileController@search'));
 

@@ -95,6 +95,14 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Fonction')->withPivot('annee');
     }
 
+    public function bleus_ext(){
+        return $this->hasMany('App\ExterieurUser', 'user_id');
+    }
+
+    public function parrains_ext(){
+        return $this->hasMany('App\ExterieurUser', 'user_id');
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $from = "comite@cbinge.com";

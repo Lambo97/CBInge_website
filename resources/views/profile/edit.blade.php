@@ -254,11 +254,15 @@
     </div>
 
     <div class="form-group row">
-        
+        <a class="green-link" href="/profile/editParrainExt">Editer les parrains baptisés à l'extérieur</a>
+    </div>
 
-        
-            <a class="green-link" href="/profile/editBleu">Editer les bleus</a>
-        
+    <div class="form-group row">
+        <a class="green-link" href="/profile/editBleu">Editer les bleus</a>        
+    </div>
+
+    <div class="form-group row">
+        <a class="green-link" href="/profile/editBleuExt">Editer les bleus baptisés à l'extérieur</a>        
     </div>
 
     <div class="form-group row">

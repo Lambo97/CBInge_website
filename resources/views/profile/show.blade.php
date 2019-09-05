@@ -62,10 +62,24 @@
         @endforeach
     @endif
 
+    @if($user->parrains_ext()->where('type', 'Parrain')->first())
+        <h6 class="mb-0 mt-2 font-weight-bold">Parrain(s) baptisé(s) à l'extérieur</h6>
+        @foreach ($user->parrains_ext->where('type', 'Parrain') as $parrain)
+            <p class="mb-0 font-weight-light">{{ $parrain->prenom }} {{ $parrain->nom }} @if($parrain->surnom)({{$parrain->surnom}})@endif baptisé {{$parrain->faculte}} en {{ $parrain->annee}}</p>
+        @endforeach
+    @endif
+
     @if($user->bleus()->first())
         <h6 class="mb-0 mt-2 font-weight-bold">Bleus(s)</h6>
         @foreach ($user->bleus as $bleu)
             <p class="mb-0 font-weight-light"><a href="/profile/show/{{$bleu->id}}" class="green-link">{{ $bleu->prenom }} {{ $bleu->name }}</a> en {{$bleu->annee_bapteme}}</p>
+        @endforeach
+    @endif
+
+    @if($user->bleus_ext()->where('type', 'Bleu')->first())
+        <h6 class="mb-0 mt-2 font-weight-bold">Bleus(s) baptisé(s) à l'extérieur</h6>
+        @foreach ($user->bleus_ext->where('type', 'Bleu') as $bleu)
+            <p class="mb-0 font-weight-light">{{ $bleu->prenom }} {{ $bleu->nom }} @if($bleu->surnom)({{$bleu->surnom}})@endif {{$bleu->faculte}} en {{$bleu->annee}}</p>
         @endforeach
     @endif
 

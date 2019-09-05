@@ -7,6 +7,7 @@ use App\User;
 use Intervention\Image\Facades\Image;
 use App\Notifications\UserApproved;
 use Illuminate\Support\Facades\Storage;
+use App\ExterieurUser;
 
 class ProfileController extends Controller
 {
@@ -309,6 +310,113 @@ class ProfileController extends Controller
         $bleus = auth()->user()->bleus()->get();
 
         return view('profile.editBleu', compact('bleus'))->with('success', 'Bleu retiré');
+    }
+
+    /** ----------------------------------------------------------------------------
+     *  ----------------------------------------------------------------------------
+     * List the parrains exterieurs of the user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editParrainExt()
+    {
+        $parrains = auth()->user()->parrains_ext()->where('type', 'Parrain')->get();
+
+        return view('profile.editParrainExt', compact('parrains'));
+    }
+
+    /**
+     * Add the parrain to the user
+     *
+     * @param  User  $parrain
+     * @return \Illuminate\Http\Response
+     */
+    public function addParrainExt(Request $request)
+    {
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'annee' => ['required', 'integer', 'min:2000', 'max:'.date('Y')],
+        ]);
+        
+        $user_ext = new ExterieurUser;
+        $user_ext->nom = $request->input('nom');
+        $user_ext->prenom = $request->input('prenom');
+        $user_ext->surnom = $request->input('surnom');
+        $user_ext->user_id = auth()->user()->id;
+        $user_ext->annee = $request->input('annee');
+        $user_ext->faculte = $request->input('faculte');
+        $user_ext->type = 'Parrain';
+        $user_ext->save();
+
+
+        return redirect('/profile/editParrainExt')->with('success', 'Parrain ajouté');
+    }
+
+    /**
+     * Remove the parrain from the user
+     *
+     * @param  User  $parrain
+     * @return \Illuminate\Http\Response
+     */
+    public function removeParrainExt(ExterieurUser $parrain)
+    {
+        $parrain->delete();
+
+        return redirect('/profile/editParrainExt')->with('success', 'Parrain retiré');
+    }
+
+    /** ----------------------------------------------------------------------------
+     * List the bleus of the user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editBleuExt()
+    {
+        $bleus = auth()->user()->bleus_ext()->where('type', 'Bleu')->get();
+
+        return view('profile.editBleuExt', compact('bleus'));
+    }
+
+    /**
+     * Add the bleu to the user
+     *
+     * @param  User  $bleu
+     * @return \Illuminate\Http\Response
+     */
+    public function addBleuExt(Request $request)
+    {
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'annee' => ['required', 'integer', 'min:2000', 'max:'.date('Y')],
+        ]);
+        
+        $user_ext = new ExterieurUser;
+        $user_ext->nom = $request->input('nom');
+        $user_ext->prenom = $request->input('prenom');
+        $user_ext->surnom = $request->input('surnom');
+        $user_ext->user_id = auth()->user()->id;
+        $user_ext->annee = $request->input('annee');
+        $user_ext->faculte = $request->input('faculte');
+        $user_ext->type = 'Bleu';
+        $user_ext->save();
+
+
+        return redirect('/profile/editBleuExt')->with('success', 'Bleu ajouté');
+    }
+
+    /** 
+     * Remove the bleu from the user
+     *
+     * @param  User  $bleu
+     * @return \Illuminate\Http\Response
+     */
+    public function removeBleuExt(ExterieurUser $bleu)
+    {
+        $bleu->delete();
+
+        return redirect('/profile/editBleuExt')->with('success', 'Bleu retiré');
     }
 
     /** 
