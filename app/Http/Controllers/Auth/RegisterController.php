@@ -106,8 +106,17 @@ class RegisterController extends Controller
         ]);
 
         $admins = User::where('droit', 1)->get();
-        if($admins){
-            Notification::send($admins, new NewUser($user));
+
+        $subject = "Nouvelle inscription";
+        $message = "Nouveau bleu inscrit ! <br/>";
+        $message = $message . "Nom : ".$data['name']."<br/>";
+        $message = $message . "Nom : ".$data['prenom']."<br/>";
+        $message = $message . "Rendez vous sur www.cbinge.com/newusers pour approuver cette inscription";
+
+        
+        foreach ($admins as $admin)
+        {
+            mail($admin->email, $subject, $message);
         }
         
 

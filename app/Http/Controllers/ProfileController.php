@@ -202,8 +202,16 @@ class ProfileController extends Controller
     public function approve(User $user)
     {
         $user->update(['droit' => 7]);
-        $user->notify(new UserApproved($user));
+        // Send email
+        $subject = "Ton inscription a été validée";
+        $message = "Ton inscription a bien été enregistrée, voici les informations nécessaire pour te connecter <br/>";
+        $message = $message . "Login : '".$user->login."'<br/>";
+        $message = $message . "Utilise le mot de passe que tu as enrgesitré lors de ton inscription <br/>";
+        $message = $message . "Connecte toi maintenant sur www.cbinge.com/login <br/>";
+        $message = $message . "Si tu as des question n'hésite pas à envoer un mail à comite@cbinge.com";
 
+        
+        mail($user->email, $subject, $message);
         return redirect('/profile/newusers')->with('success', 'Utilisateur apprové');
 
     }
