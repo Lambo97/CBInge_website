@@ -88,9 +88,6 @@
             @endif
         </div>
     @endforeach
-    
-    <p class="d-none" id="first"></p>
-    <div class="d-none" id="firstc"></div>
 </div>
 
 
