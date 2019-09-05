@@ -30,9 +30,7 @@
     <!-- Copyright -->
     <div class="footer-copyright text-center pt-3 mb-0">
         <p class="font-weight-light m-0">© 2019 Copyright: CB Ingé</p>
-        <p class = "font-weight-light m-0">Site réalise par <a class="green-link" href="/profile/show/1382">Maxime Lamborelle</a> et <a class="green-link" href="/profile/show/1468">Mathieu Taquet</a>
-        sur base du site de <a class="green-link" href="/profile/show/1">Thomas Dubois</a>
-        </p>
+        <p class = "font-weight-light m-0">Site réalise par <a class="green-link" href="/profile/show/1382">Maxime Lamborelle</a> et <a class="green-link" href="/profile/show/1468">Mathieu Taquet</a></p>
         
     </div>
     <!-- Copyright -->
