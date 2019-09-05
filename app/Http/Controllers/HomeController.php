@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         foreach($toges as $toge)
         {
-            mail($toge->eamil, "Nouveau message", "Vous avez un nouveau message de ".$request->input('nom').". N'héstiez pas à lui répondre à l'adresse ".$request->input('email')."<br/>".$request->input('message'));
+            mail($toge->eamil, "Nouveau message", "Vous avez un nouveau message de ".$request->input('nom').". N'héstiez pas à lui répondre à l'adresse ".$request->input('email')."\n".$request->input('message'));
         }
 
         return redirect('/')->with('success', 'Message envoyé');

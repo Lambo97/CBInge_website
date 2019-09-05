@@ -108,15 +108,16 @@ class RegisterController extends Controller
         $admins = User::where('droit', 1)->get();
 
         $subject = "Nouvelle inscription";
-        $message = "Nouveau bleu inscrit ! <br/>";
-        $message = $message . "Nom : ".$data['name']."<br/>";
-        $message = $message . "Nom : ".$data['prenom']."<br/>";
-        $message = $message . "Rendez vous sur www.cbinge.com/newusers pour approuver cette inscription";
-
+        $message = "Nouveau bleu inscrit ! \n";
+        $message = $message . "Nom : ".$data['name']."\n";
+        $message = $message . "Nom : ".$data['prenom']."\n";
+        $message = $message . "Rendez vous sur www.cbinge.com/profile/newusers pour approuver cette inscription";
+        $from = "comite@cbinge.com";
+        $headers = "From:" . $from;
         
         foreach ($admins as $admin)
         {
-            mail($admin->email, $subject, $message);
+            mail($admin->email, $subject, $message, $headers);
         }
         
 

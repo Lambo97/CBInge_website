@@ -204,11 +204,13 @@ class ProfileController extends Controller
         $user->update(['droit' => 7]);
         // Send email
         $subject = "Ton inscription a été validée";
-        $message = "Ton inscription a bien été enregistrée, voici les informations nécessaire pour te connecter <br/>";
-        $message = $message . "Login : '".$user->login."'<br/>";
-        $message = $message . "Utilise le mot de passe que tu as enrgesitré lors de ton inscription <br/>";
-        $message = $message . "Connecte toi maintenant sur www.cbinge.com/login <br/>";
+        $message = "Ton inscription a bien été enregistrée, voici les informations nécessaire pour te connecter \n";
+        $message = $message . "Login : '".$user->login."'\n";
+        $message = $message . "Utilise le mot de passe que tu as enrgesitré lors de ton inscription \n";
+        $message = $message . "Connecte toi maintenant sur www.cbinge.com/login \n";
         $message = $message . "Si tu as des question n'hésite pas à envoer un mail à comite@cbinge.com";
+        $from = "comite@cbinge.com";
+        $headers = "From:" . $from;
 
         
         mail($user->email, $subject, $message);
