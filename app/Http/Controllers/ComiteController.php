@@ -54,7 +54,7 @@ class ComiteController extends Controller
 
         //Sans Fonctions
         $sansFonctions = User::whereHas('fonctions', function($query) use ($year){
-            $query->where('annee', $year)->where('nom', 'Togé sans fonction');
+            $query->where('annee', $year)->where('nom', 'Togé');
         })->orderBy('name')->get();
 
         //Assistants

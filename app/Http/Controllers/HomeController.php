@@ -50,9 +50,11 @@ class HomeController extends Controller
             $cb = ' du comité '.$cb;
         }
 
-        $comite = User::where('droit', '<', '4')->get();
-        if($comite){
-            Notification::send($comite, new NewContactMessage($request->input('nom'), $request->input('email'), $cb, $request->input('message')));
+        $toges = User::where('droit', '<', '4')->get();
+
+        foreach($toges as $toge)
+        {
+            mail($toge->eamil, "Nouveau message", "Vous avez un nouveau message de ".$request->input('nom').". N'héstiez pas à lui répondre à l'adresse ".$request->input('email')."<br/>".$request->input('message'));
         }
 
         return redirect('/')->with('success', 'Message envoyé');

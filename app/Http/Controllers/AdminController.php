@@ -276,7 +276,7 @@ class AdminController extends Controller
             'annee' => 'required',
         ]);
 
-        $already = User::whereHas('fonctions', function($query) use($request){
+        $already = User::where('id', $request->input('user'))->whereHas('fonctions', function($query) use($request){
             $query->where('annee', $request->input('annee'))->where('fonctions.id', $request->input('fonction'));
         })->count();
 

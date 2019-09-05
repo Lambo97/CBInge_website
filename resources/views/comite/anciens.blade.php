@@ -7,7 +7,7 @@
 @section('content')
 <h1 class="mb-3">Anciens Comités</h1>
 
-@for($annee = year() ; $annee > 1980; $annee--)
+@for($annee = year() - 1 ; $annee > 1980; $annee--)
 <div class="row mt-3">
     <div class="col-12">
         <h5>Comité {{$annee}} - {{$annee+1}}</h5>
@@ -32,8 +32,8 @@
         @if($comitard = $comites->where('annee', $annee)->where('nom', 'Délégué AGEL')->first())
         <p><b>Délégué AGEL :</b> <a href="/profile/show/{{$comitard->id}}" class="green-link">{{$comitard->prenom}} {{$comitard->name}} @if($comitard->surnom) ({{$comitard->surnom}}) @endif</a></p>
         @endif
-        <p><b>Togés sans fonction :</b>
-        @foreach($comites->where('annee', $annee)->where('nom', 'Togé sans fonction') as $toge)
+        <p><b>Togés :</b>
+        @foreach($comites->where('annee', $annee)->where('nom', 'Togé') as $toge)
         <a href="/profile/show/{{$toge->id}}" class="green-link">{{$toge->prenom}} {{$toge->name}} @if($toge->surnom) ({{$toge->surnom}}) @endif</a>,
         @endforeach
         </p>

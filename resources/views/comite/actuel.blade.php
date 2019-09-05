@@ -111,7 +111,7 @@
     @foreach($sansFonctions as $toge)
     <div class="col-md-3 col-6 mb-2">
         <img style="width:100%" class="mb-2" src="/profile/{{$toge->id}}/image">
-        <b>Togé sans fonction</b><br>
+        <b>Togé</b><br>
         <a href="/profile/show/{{$toge->id}}" class="green-link">
         {{$toge->prenom}} {{$toge->name}} <br>
         @if($toge->surnom)
